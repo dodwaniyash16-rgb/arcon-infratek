@@ -7,62 +7,127 @@ import { ServiceCard, StatCard, ProcessStep, FeatureBlock, TestimonialCard, Sect
 import { CTAStrip } from "@/components/ui/cta-strip";
 
 // Data
-const metrics = [
-  { icon: Clock, value: "24-72 hrs", label: "Turnaround" },
-  { icon: Layers, value: "Multi-Discipline", label: "Coverage" },
-  { icon: Globe, value: "Global", label: "Delivery" },
-  { icon: Shield, value: "QA-First", label: "Approach" },
-];
-
-const services = [
-  { title: "BIM Modeling", description: "Architectural, structural, and MEP models built to LOD specifications.", href: "/services/architectural-bim", icon: Box },
-  { title: "BIM Coordination", description: "Clash detection and resolution across all disciplines.", href: "/services/vdc-bim-consulting", icon: Layers },
-  { title: "Shop Drawings", description: "Fabrication-ready drawings from coordinated models.", href: "/services/structural-bim", icon: FileText },
-  { title: "Estimation & QTO", description: "Accurate quantity takeoffs and cost estimation from BIM.", href: "/services/mep-bim", icon: Calculator },
-  { title: "Scan to BIM", description: "Point cloud to intelligent BIM model conversion.", href: "/services/as-built-bim", icon: ScanLine },
-  { title: "BIM Auditing", description: "Model quality checks against your standards.", href: "/services/bim-project-management", icon: CheckCircle },
-  { title: "CAD Drafting", description: "2D documentation and drafting services.", href: "/services/civil-utilities-bim", icon: Pencil },
-  { title: "BIM Content Creation", description: "Custom Revit families and content libraries.", href: "/services/bim-project-management", icon: Blocks },
-];
-
-const processSteps = [
-  { number: "01", title: "Discover and align", description: "Understand your standards, deliverables, and timeline requirements." },
-  { number: "02", title: "Execution plan and setup", description: "Define scope, milestones, and communication protocols." },
-  { number: "03", title: "Production and coordination", description: "Execute modeling, coordination, and documentation." },
-  { number: "04", title: "QA and handover", description: "Quality checks and seamless deliverable handoff." },
-];
-
-const features = [
-  { icon: CheckCircle, title: "Standards-driven output", description: "Your naming, families, views, sheets, and QA rules are followed consistently across every deliverable." },
-  { icon: Layers, title: "Communication that does not slow projects", description: "Clear daily or milestone updates, issue logs, and quick turnarounds with minimal back-and-forth." },
-  { icon: Box, title: "Coordination-first mindset", description: "Models built for downstream use: coordination, documentation, estimating, and fabrication." },
-];
-
+const metrics = [{
+  icon: Clock,
+  value: "24-72 hrs",
+  label: "Turnaround"
+}, {
+  icon: Layers,
+  value: "Multi-Discipline",
+  label: "Coverage"
+}, {
+  icon: Globe,
+  value: "Global",
+  label: "Delivery"
+}, {
+  icon: Shield,
+  value: "QA-First",
+  label: "Approach"
+}];
+const services = [{
+  title: "BIM Modeling",
+  description: "Architectural, structural, and MEP models built to LOD specifications.",
+  href: "/services/architectural-bim",
+  icon: Box
+}, {
+  title: "BIM Coordination",
+  description: "Clash detection and resolution across all disciplines.",
+  href: "/services/vdc-bim-consulting",
+  icon: Layers
+}, {
+  title: "Shop Drawings",
+  description: "Fabrication-ready drawings from coordinated models.",
+  href: "/services/structural-bim",
+  icon: FileText
+}, {
+  title: "Estimation & QTO",
+  description: "Accurate quantity takeoffs and cost estimation from BIM.",
+  href: "/services/mep-bim",
+  icon: Calculator
+}, {
+  title: "Scan to BIM",
+  description: "Point cloud to intelligent BIM model conversion.",
+  href: "/services/as-built-bim",
+  icon: ScanLine
+}, {
+  title: "BIM Auditing",
+  description: "Model quality checks against your standards.",
+  href: "/services/bim-project-management",
+  icon: CheckCircle
+}, {
+  title: "CAD Drafting",
+  description: "2D documentation and drafting services.",
+  href: "/services/civil-utilities-bim",
+  icon: Pencil
+}, {
+  title: "BIM Content Creation",
+  description: "Custom Revit families and content libraries.",
+  href: "/services/bim-project-management",
+  icon: Blocks
+}];
+const processSteps = [{
+  number: "01",
+  title: "Discover and align",
+  description: "Understand your standards, deliverables, and timeline requirements."
+}, {
+  number: "02",
+  title: "Execution plan and setup",
+  description: "Define scope, milestones, and communication protocols."
+}, {
+  number: "03",
+  title: "Production and coordination",
+  description: "Execute modeling, coordination, and documentation."
+}, {
+  number: "04",
+  title: "QA and handover",
+  description: "Quality checks and seamless deliverable handoff."
+}];
+const features = [{
+  icon: CheckCircle,
+  title: "Standards-driven output",
+  description: "Your naming, families, views, sheets, and QA rules are followed consistently across every deliverable."
+}, {
+  icon: Layers,
+  title: "Communication that does not slow projects",
+  description: "Clear daily or milestone updates, issue logs, and quick turnarounds with minimal back-and-forth."
+}, {
+  icon: Box,
+  title: "Coordination-first mindset",
+  description: "Models built for downstream use: coordination, documentation, estimating, and fabrication."
+}];
 const sectors = ["Healthcare", "Commercial", "Industrial", "Residential", "Hospitality", "Education", "Infrastructure"];
-
-const testimonials = [
-  { quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.", author: "James Mitchell", role: "VDC Director", company: "Turner Construction" },
-  { quote: "We've worked with several BIM providers. Arcon stands out for their communication and consistency. Models arrive ready to use.", author: "Sarah Chen", role: "BIM Manager", company: "Skanska USA" },
-  { quote: "Their coordination work helped us avoid major clashes on site. The ROI was clear within the first month of the project.", author: "Michael Rodriguez", role: "Project Executive", company: "McCarthy Building" },
-];
-
+const testimonials = [{
+  quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
+  author: "James Mitchell",
+  role: "VDC Director",
+  company: "Turner Construction"
+}, {
+  quote: "We've worked with several BIM providers. Arcon stands out for their communication and consistency. Models arrive ready to use.",
+  author: "Sarah Chen",
+  role: "BIM Manager",
+  company: "Skanska USA"
+}, {
+  quote: "Their coordination work helped us avoid major clashes on site. The ROI was clear within the first month of the project.",
+  author: "Michael Rodriguez",
+  role: "Project Executive",
+  company: "McCarthy Building"
+}];
 const Index = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="container-custom">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 text-primary bg-secondary">
+        <div className="container-custom my-[110px]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="animate-fade-in">
+            <div className="animate-fade-in text-muted-foreground">
               {/* Badge */}
-              <div className="badge-pill mb-6">
+              <div className="badge-pill mb-6 text-muted-foreground">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 BIM & VDC Excellence
               </div>
 
               {/* Headline */}
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight mb-6 text-primary lg:text-6xl">
                 BIM and VDC delivery that is{" "}
                 <span className="text-gradient">fast, accurate, and accountable.</span>
               </h1>
@@ -90,13 +155,11 @@ const Index = () => {
             </div>
 
             {/* Right - Hero Image */}
-            <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="relative animate-fade-in" style={{
+            animationDelay: "0.2s"
+          }}>
               <div className="hero-image-container rounded-2xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Construction site with crane"
-                  className="w-full h-auto object-cover aspect-[4/3]"
-                />
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction site with crane" className="w-full h-auto object-cover aspect-[4/3]" />
                 {/* Video Play Button */}
                 <button className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group">
                   <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
@@ -111,28 +174,20 @@ const Index = () => {
       </section>
 
       {/* Trust Band - Metrics */}
-      <section className="py-12 bg-card border-y border-border">
+      <section className="py-12 border-y border-border bg-primary-foreground">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {metrics.map((metric, index) => (
-              <StatCard key={index} icon={metric.icon} value={metric.value} label={metric.label} />
-            ))}
+            {metrics.map((metric, index) => <StatCard key={index} icon={metric.icon} value={metric.value} label={metric.label} />)}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
       <Section>
-        <SectionHeader
-          label="Our Services"
-          title='Services designed for <span class="text-gradient">production speed</span> and <span class="text-gradient">coordination certainty.</span>'
-          description="From modeling to clash coordination to fabrication-ready documentation, we deliver consistent outputs aligned with your standards."
-        />
+        <SectionHeader label="Our Services" title='Services designed for <span class="text-gradient">production speed</span> and <span class="text-gradient">coordination certainty.</span>' description="From modeling to clash coordination to fabrication-ready documentation, we deliver consistent outputs aligned with your standards." />
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+          {services.map((service, index) => <ServiceCard key={index} {...service} />)}
         </div>
 
         <div className="text-center">
@@ -156,19 +211,13 @@ const Index = () => {
                 A delivery process your team can <span className="text-gradient">trust.</span>
               </h2>
               <div className="space-y-6">
-                {processSteps.map((step, index) => (
-                  <ProcessStep key={index} {...step} />
-                ))}
+                {processSteps.map((step, index) => <ProcessStep key={index} {...step} />)}
               </div>
             </div>
 
             {/* Right - Image */}
             <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Modern building architecture"
-                className="w-full h-auto rounded-2xl object-cover aspect-[4/3]"
-              />
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern building architecture" className="w-full h-auto rounded-2xl object-cover aspect-[4/3]" />
             </div>
           </div>
         </div>
@@ -176,30 +225,20 @@ const Index = () => {
 
       {/* Features Section */}
       <Section>
-        <SectionHeader
-          label="Why Arcon Infratek"
-          title='Built for teams that value <span class="text-gradient">precision.</span>'
-        />
+        <SectionHeader label="Why Arcon Infratek" title='Built for teams that value <span class="text-gradient">precision.</span>' />
         
         <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <FeatureBlock key={index} {...feature} />
-          ))}
+          {features.map((feature, index) => <FeatureBlock key={index} {...feature} />)}
         </div>
       </Section>
 
       {/* Portfolio Section */}
       <section className="py-16 lg:py-24 bg-card border-y border-border">
         <div className="container-custom">
-          <SectionHeader
-            label="Our Work"
-            title='<span class="text-gradient">Proven delivery</span> across project types.'
-          />
+          <SectionHeader label="Our Work" title='<span class="text-gradient">Proven delivery</span> across project types.' />
           
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {sectors.map((sector, index) => (
-              <SectorChip key={index} label={sector} href={`/portfolio?sector=${sector.toLowerCase()}`} />
-            ))}
+            {sectors.map((sector, index) => <SectorChip key={index} label={sector} href={`/portfolio?sector=${sector.toLowerCase()}`} />)}
           </div>
 
           <div className="text-center">
@@ -215,28 +254,21 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <Section>
-        <SectionHeader
-          label="Testimonials"
-          title='What our <span class="text-gradient">partners</span> say'
-        />
+        <SectionHeader label="Testimonials" title='What our <span class="text-gradient">partners</span> say' />
         
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
+          {testimonials.map((testimonial, index) => <TestimonialCard key={index} {...testimonial} />)}
         </div>
       </Section>
 
       {/* CTA Section - Dark */}
-      <CTAStrip
-        title='Ready to streamline <span class="text-gradient">BIM production</span> and <span class="text-gradient">coordination?</span>'
-        description="Share your scope and timeline. We will respond with a clear plan and estimate."
-        primaryCTA={{ text: "Schedule a Call", href: "/contact" }}
-        secondaryCTA={{ text: "Request a Quote", href: "/contact" }}
-        variant="dark"
-      />
-    </Layout>
-  );
+      <CTAStrip title='Ready to streamline <span class="text-gradient">BIM production</span> and <span class="text-gradient">coordination?</span>' description="Share your scope and timeline. We will respond with a clear plan and estimate." primaryCTA={{
+      text: "Schedule a Call",
+      href: "/contact"
+    }} secondaryCTA={{
+      text: "Request a Quote",
+      href: "/contact"
+    }} variant="dark" />
+    </Layout>;
 };
-
 export default Index;
