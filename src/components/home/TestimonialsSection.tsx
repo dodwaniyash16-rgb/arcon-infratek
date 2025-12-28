@@ -2,35 +2,34 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Arcon Infratek transformed our BIM workflow. Their attention to detail and commitment to deadlines has made them an invaluable partner.",
-    author: "Sarah Johnson",
-    role: "Project Director",
+    quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
+    author: "James Mitchell",
+    role: "VDC Director",
     company: "Turner Construction",
   },
   {
-    quote: "The quality of their modeling work is exceptional. They consistently deliver clash-free coordination that saves us time and money on site.",
-    author: "Michael Chen",
+    quote: "We've worked with several BIM providers. Arcon stands out for their communication and consistency. Models arrive ready to use.",
+    author: "Sarah Chen",
     role: "BIM Manager",
     company: "Skanska USA",
   },
   {
-    quote: "Working with Arcon has been seamless. Their team understands construction and delivers models that are actually buildable.",
-    author: "David Rodriguez",
-    role: "VP of Operations",
+    quote: "Their coordination work helped us avoid major clashes on site. The ROI was clear within the first month of the project.",
+    author: "Michael Rodriguez",
+    role: "Project Executive",
     company: "McCarthy Building",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24">
+    <section className="section-padding">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="section-label mb-4">Testimonials</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold">
-            Trusted by industry{" "}
-            <span className="text-gradient">partners</span>
+            What our <span className="text-gradient">partners</span> say
           </h2>
         </div>
 
@@ -39,7 +38,7 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="bg-card p-8 rounded-xl border border-border relative"
+              className="bg-card p-8 rounded-xl border border-border"
             >
               {/* Quote Icon */}
               <Quote className="h-8 w-8 icon-gradient mb-6 opacity-50" />

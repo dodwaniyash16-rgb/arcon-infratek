@@ -2,94 +2,49 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const projects = [
-  {
-    id: 1,
-    title: "Commercial High-Rise Development",
-    category: "Architectural BIM",
-    location: "New York, USA",
-    image: null,
-  },
-  {
-    id: 2,
-    title: "Healthcare Facility Expansion",
-    category: "MEP BIM",
-    location: "London, UK",
-    image: null,
-  },
-  {
-    id: 3,
-    title: "Mixed-Use Urban Complex",
-    category: "VDC Consulting",
-    location: "Dubai, UAE",
-    image: null,
-  },
-  {
-    id: 4,
-    title: "Industrial Manufacturing Plant",
-    category: "Structural BIM",
-    location: "Toronto, Canada",
-    image: null,
-  },
+const sectors = [
+  "Healthcare",
+  "Commercial",
+  "Industrial",
+  "Residential",
+  "Hospitality",
+  "Education",
+  "Infrastructure",
 ];
 
 const PortfolioSection = () => {
   return (
-    <section className="py-24 section-alt">
+    <section className="section-padding section-alt">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <p className="section-label mb-4">Portfolio</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold">
-              <span className="text-gradient">Proven delivery</span> across sectors
-            </h2>
-          </div>
-          <Button variant="outline" asChild>
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <p className="section-label mb-4">Our Work</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
+            <span className="text-gradient">Proven delivery</span> across project types.
+          </h2>
+        </div>
+
+        {/* Sector Filter Chips */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {sectors.map((sector, index) => (
+            <Link
+              key={index}
+              to={`/portfolio?sector=${sector.toLowerCase()}`}
+              className="sector-chip sector-chip-default"
+            >
+              {sector}
+            </Link>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90" asChild>
             <Link to="/portfolio">
-              View All Projects
+              View Portfolio
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <Link
-              key={project.id}
-              to={`/portfolio/${project.id}`}
-              className="group relative bg-background rounded-xl overflow-hidden border border-border card-hover"
-            >
-              {/* Image Placeholder */}
-              <div className="aspect-[16/10] bg-gradient-to-br from-secondary to-card flex items-center justify-center">
-                <div className="text-center p-4">
-                  <div className="w-16 h-16 bg-foreground/5 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-2xl font-heading font-bold text-gradient">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Project Image</p>
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs font-medium text-accent">
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-muted-foreground">•</span>
-                  <span className="text-xs text-muted-foreground">
-                    {project.location}
-                  </span>
-                </div>
-                <h3 className="font-heading text-lg font-semibold group-hover:text-gradient transition-colors">
-                  {project.title}
-                </h3>
-              </div>
-            </Link>
-          ))}
         </div>
       </div>
     </section>
