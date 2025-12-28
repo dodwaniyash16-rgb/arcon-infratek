@@ -8,24 +8,24 @@
 
 @layer base {
   :root {
-    /* Light Theme Colors */
-    --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    /* Light Theme Colors - Light gray page background */
+    --background: 220 20% 97%;
+    --foreground: 220 25% 14%;
 
-    --card: 210 20% 98%;
-    --card-foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 220 25% 14%;
 
-    --primary: 220 20% 10%;
+    --primary: 220 25% 14%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 220 20% 10%;
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 25% 14%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 215 16% 47%;
 
     --accent: 338 70% 48%;
     --accent-foreground: 0 0% 100%;
@@ -33,9 +33,9 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --border-secondary: 220 13% 85%;
-    --input: 220 13% 91%;
+    --border: 220 13% 88%;
+    --border-secondary: 220 13% 82%;
+    --input: 220 13% 88%;
     --ring: 338 70% 48%;
 
     --radius: 0.5rem;
@@ -51,7 +51,7 @@
     --coral: 9 84% 57%;
     --coral-foreground: 0 0% 100%;
     
-    --section-alt: 210 25% 97%;
+    --section-alt: 220 20% 95%;
     --footer: 220 20% 8%;
 
     /* Sidebar */
@@ -117,7 +117,7 @@
   /* Gradient Border */
   .border-gradient {
     position: relative;
-    background: hsl(var(--background));
+    background: hsl(var(--card));
   }
   
   .border-gradient::before {
@@ -179,12 +179,12 @@
 
   /* Nav Floating Pill */
   .nav-floating {
-    @apply bg-background/95 backdrop-blur-md shadow-lg rounded-full border border-border;
+    @apply bg-card/95 backdrop-blur-md shadow-lg rounded-full border border-border;
   }
 
   /* Badge Pill */
   .badge-pill {
-    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-sm font-medium;
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card text-sm font-medium border border-border;
   }
 
   /* Underline Animation for Links */
@@ -256,6 +256,31 @@
 
   .sector-chip-active {
     @apply bg-foreground text-background;
+  }
+
+  /* Marquee Animation for scrolling logos */
+  .marquee {
+    @apply flex gap-8;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-container {
+    @apply overflow-hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 }
 
