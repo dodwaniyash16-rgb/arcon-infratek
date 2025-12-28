@@ -115,6 +115,7 @@ import rajasthanGovtLogo from "@/assets/clients/rajasthan-govt.png";
 import unicefLogo from "@/assets/clients/unicef.png";
 import uttarakhandGovtLogo from "@/assets/clients/uttarakhand-govt.png";
 import wspLogo from "@/assets/clients/wsp.png";
+import barcelonaLogo from "@/assets/clients/barcelona.png";
 
 const clientLogos = [
   { src: godrejLogo, alt: "Godrej" },
@@ -127,6 +128,7 @@ const clientLogos = [
   { src: unicefLogo, alt: "UNICEF" },
   { src: uttarakhandGovtLogo, alt: "Government of Uttarakhand" },
   { src: wspLogo, alt: "WSP" },
+  { src: barcelonaLogo, alt: "Barcelona" },
 ];
 const processSteps = [{
   number: "01",
@@ -299,11 +301,11 @@ const Index = () => {
           <div className="marquee">
             {/* Duplicate logos for seamless loop */}
             {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <div key={index} className="flex-shrink-0 h-16 px-6 bg-card rounded-lg border border-border flex items-center justify-center">
+              <div key={index} className="flex-shrink-0 h-20 px-8 bg-card rounded-lg border border-border flex items-center justify-center">
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  className="h-10 w-auto max-w-[140px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-14 w-auto max-w-[180px] object-contain"
                 />
               </div>
             ))}
