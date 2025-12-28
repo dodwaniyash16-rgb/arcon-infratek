@@ -54,7 +54,7 @@ const Header = () => {
         }`}>
           {/* Logo - Made bigger */}
           <Link to="/" className="flex items-center">
-            <img src={logoBlack} alt="Arcon Infratek" className="h-14 w-auto" />
+            <img src={logoBlack} alt="Arcon Infratek" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
