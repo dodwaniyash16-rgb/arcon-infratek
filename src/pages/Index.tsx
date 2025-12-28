@@ -104,7 +104,30 @@ const stakeholders = [{
   icon: UserCircle,
   title: "Developers/Owners"
 }];
-const clientLogos = ["Client 1", "Client 2", "Client 3", "Client 4", "Client 5", "Client 6", "Client 7", "Client 8", "Client 9", "Client 10"];
+// Client logos imports
+import godrejLogo from "@/assets/clients/godrej.png";
+import karnatakaGovtLogo from "@/assets/clients/karnataka-govt.png";
+import unescoLogo from "@/assets/clients/unesco.png";
+import autodeskLogo from "@/assets/clients/autodesk.png";
+import mpGovtLogo from "@/assets/clients/mp-govt.png";
+import nhsrclLogo from "@/assets/clients/nhsrcl.png";
+import rajasthanGovtLogo from "@/assets/clients/rajasthan-govt.png";
+import unicefLogo from "@/assets/clients/unicef.png";
+import uttarakhandGovtLogo from "@/assets/clients/uttarakhand-govt.png";
+import wspLogo from "@/assets/clients/wsp.png";
+
+const clientLogos = [
+  { src: godrejLogo, alt: "Godrej" },
+  { src: karnatakaGovtLogo, alt: "Government of Karnataka" },
+  { src: unescoLogo, alt: "UNESCO" },
+  { src: autodeskLogo, alt: "Autodesk" },
+  { src: mpGovtLogo, alt: "Government of Madhya Pradesh" },
+  { src: nhsrclLogo, alt: "NHSRCL" },
+  { src: rajasthanGovtLogo, alt: "Government of Rajasthan" },
+  { src: unicefLogo, alt: "UNICEF" },
+  { src: uttarakhandGovtLogo, alt: "Government of Uttarakhand" },
+  { src: wspLogo, alt: "WSP" },
+];
 const processSteps = [{
   number: "01",
   title: "Discover and align",
@@ -275,9 +298,15 @@ const Index = () => {
         <div className="marquee-container py-8">
           <div className="marquee">
             {/* Duplicate logos for seamless loop */}
-            {[...clientLogos, ...clientLogos].map((logo, index) => <div key={index} className="flex-shrink-0 w-32 h-16 bg-card rounded-lg border border-border flex items-center justify-center text-muted-foreground text-sm font-medium">
-                {logo}
-              </div>)}
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
+              <div key={index} className="flex-shrink-0 h-16 px-6 bg-card rounded-lg border border-border flex items-center justify-center">
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  className="h-10 w-auto max-w-[140px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </Section>
