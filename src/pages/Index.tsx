@@ -405,7 +405,7 @@ const Index = () => {
           
           {/* Software Logos Marquee */}
           <div className="marquee-container py-8">
-            <div className="marquee">
+            <div className="marquee-slow">
               {/* Duplicate for seamless loop */}
               {[...technologies, ...technologies].map((tech, index) => (
                 <div key={index} className="flex-shrink-0 h-20 px-8 bg-background rounded-xl border border-border flex items-center justify-center">

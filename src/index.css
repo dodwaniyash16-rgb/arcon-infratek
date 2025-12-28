@@ -265,7 +265,14 @@
     width: max-content;
   }
 
-  .marquee:hover {
+  .marquee-slow {
+    @apply flex gap-8;
+    animation: marquee 45s linear infinite;
+    width: max-content;
+  }
+
+  .marquee:hover,
+  .marquee-slow:hover {
     animation-play-state: paused;
   }
 
