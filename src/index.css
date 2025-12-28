@@ -261,7 +261,7 @@
   /* Marquee Animation for scrolling logos */
   .marquee {
     @apply flex gap-8;
-    animation: marquee 15s linear infinite;
+    animation: marquee 18s linear infinite;
     width: max-content;
   }
 

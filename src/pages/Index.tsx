@@ -138,6 +138,9 @@ import teklaLogo from "@/assets/technologies/tekla.png";
 import lumionLogo from "@/assets/technologies/lumion.png";
 import navisworksLogo from "@/assets/technologies/navisworks.png";
 import sketchupLogo from "@/assets/technologies/sketchup.png";
+import solidworksLogo from "@/assets/technologies/solidworks.png";
+import staadProLogo from "@/assets/technologies/staad-pro.png";
+import twinmotionLogo from "@/assets/technologies/twinmotion.png";
 
 const clientLogos = [
   { src: godrejLogo, alt: "Godrej" },
@@ -203,6 +206,9 @@ const technologies = [
   { src: lumionLogo, alt: "Lumion" },
   { src: navisworksLogo, alt: "Autodesk Navisworks" },
   { src: sketchupLogo, alt: "SketchUp" },
+  { src: solidworksLogo, alt: "SolidWorks" },
+  { src: staadProLogo, alt: "STAAD.Pro" },
+  { src: twinmotionLogo, alt: "Twinmotion" },
 ];
 const testimonials = [{
   quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
