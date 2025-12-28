@@ -1,145 +1,112 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Clock, Layers, Globe, Shield, Box, FileText, Calculator, ScanLine, CheckCircle, Pencil, Blocks } from "lucide-react";
+import { 
+  ArrowRight, Play, Clock, Layers, Globe, Shield, Box, FileText, 
+  Calculator, ScanLine, CheckCircle, Pencil, Blocks, Users, Briefcase, 
+  Building2, HardHat, Landmark, Home, UserCircle
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
-import { ServiceCard, StatCard, ProcessStep, FeatureBlock, TestimonialCard, SectorChip } from "@/components/ui/cards";
+import { 
+  ServiceCard, StatCard, ProcessStep, FeatureBlock, TestimonialCard, 
+  SectorChip, StakeholderCard, ProjectCard 
+} from "@/components/ui/cards";
 import { CTAStrip } from "@/components/ui/cta-strip";
 
 // Data
-const metrics = [{
-  icon: Clock,
-  value: "24-72 hrs",
-  label: "Turnaround"
-}, {
-  icon: Layers,
-  value: "Multi-Discipline",
-  label: "Coverage"
-}, {
-  icon: Globe,
-  value: "Global",
-  label: "Delivery"
-}, {
-  icon: Shield,
-  value: "QA-First",
-  label: "Approach"
-}];
-const services = [{
-  title: "BIM Modeling",
-  description: "Architectural, structural, and MEP models built to LOD specifications.",
-  href: "/services/architectural-bim",
-  icon: Box
-}, {
-  title: "BIM Coordination",
-  description: "Clash detection and resolution across all disciplines.",
-  href: "/services/vdc-bim-consulting",
-  icon: Layers
-}, {
-  title: "Shop Drawings",
-  description: "Fabrication-ready drawings from coordinated models.",
-  href: "/services/structural-bim",
-  icon: FileText
-}, {
-  title: "Estimation & QTO",
-  description: "Accurate quantity takeoffs and cost estimation from BIM.",
-  href: "/services/mep-bim",
-  icon: Calculator
-}, {
-  title: "Scan to BIM",
-  description: "Point cloud to intelligent BIM model conversion.",
-  href: "/services/as-built-bim",
-  icon: ScanLine
-}, {
-  title: "BIM Auditing",
-  description: "Model quality checks against your standards.",
-  href: "/services/bim-project-management",
-  icon: CheckCircle
-}, {
-  title: "CAD Drafting",
-  description: "2D documentation and drafting services.",
-  href: "/services/civil-utilities-bim",
-  icon: Pencil
-}, {
-  title: "BIM Content Creation",
-  description: "Custom Revit families and content libraries.",
-  href: "/services/bim-project-management",
-  icon: Blocks
-}];
-const processSteps = [{
-  number: "01",
-  title: "Discover and align",
-  description: "Understand your standards, deliverables, and timeline requirements."
-}, {
-  number: "02",
-  title: "Execution plan and setup",
-  description: "Define scope, milestones, and communication protocols."
-}, {
-  number: "03",
-  title: "Production and coordination",
-  description: "Execute modeling, coordination, and documentation."
-}, {
-  number: "04",
-  title: "QA and handover",
-  description: "Quality checks and seamless deliverable handoff."
-}];
-const features = [{
-  icon: CheckCircle,
-  title: "Standards-driven output",
-  description: "Your naming, families, views, sheets, and QA rules are followed consistently across every deliverable."
-}, {
-  icon: Layers,
-  title: "Communication that does not slow projects",
-  description: "Clear daily or milestone updates, issue logs, and quick turnarounds with minimal back-and-forth."
-}, {
-  icon: Box,
-  title: "Coordination-first mindset",
-  description: "Models built for downstream use: coordination, documentation, estimating, and fabrication."
-}];
-const sectors = ["Healthcare", "Commercial", "Industrial", "Residential", "Hospitality", "Education", "Infrastructure"];
-const testimonials = [{
-  quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
-  author: "James Mitchell",
-  role: "VDC Director",
-  company: "Turner Construction"
-}, {
-  quote: "We've worked with several BIM providers. Arcon stands out for their communication and consistency. Models arrive ready to use.",
-  author: "Sarah Chen",
-  role: "BIM Manager",
-  company: "Skanska USA"
-}, {
-  quote: "Their coordination work helped us avoid major clashes on site. The ROI was clear within the first month of the project.",
-  author: "Michael Rodriguez",
-  role: "Project Executive",
-  company: "McCarthy Building"
-}];
+const metrics = [
+  { value: "24-72 hrs", label: "Turnaround" },
+  { value: "Multi-Discipline", label: "Coverage" },
+  { value: "Global", label: "Delivery" },
+  { value: "QA-First", label: "Approach" },
+];
+
+const services = [
+  { title: "BIM Modeling", description: "Architectural, structural, and MEP models built to LOD specifications.", href: "/services/architectural-bim", icon: Box },
+  { title: "BIM Coordination", description: "Clash detection and resolution across all disciplines.", href: "/services/vdc-bim-consulting", icon: Layers },
+  { title: "Shop Drawings", description: "Fabrication-ready drawings from coordinated models.", href: "/services/structural-bim", icon: FileText },
+  { title: "Estimation & QTO", description: "Accurate quantity takeoffs and cost estimation from BIM.", href: "/services/mep-bim", icon: Calculator },
+  { title: "Scan to BIM", description: "Point cloud to intelligent BIM model conversion.", href: "/services/as-built-bim", icon: ScanLine },
+  { title: "BIM Auditing", description: "Model quality checks against your standards.", href: "/services/bim-project-management", icon: CheckCircle },
+  { title: "CAD Drafting", description: "2D documentation and drafting services.", href: "/services/civil-utilities-bim", icon: Pencil },
+  { title: "BIM Content Creation", description: "Custom Revit families and content libraries.", href: "/services/bim-project-management", icon: Blocks },
+];
+
+const projects = [
+  { image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600", title: "Commercial Tower", category: "Commercial", href: "/portfolio" },
+  { image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600", title: "Healthcare Facility", category: "Healthcare", href: "/portfolio" },
+  { image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600", title: "Industrial Complex", category: "Industrial", href: "/portfolio" },
+  { image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600", title: "Residential Project", category: "Residential", href: "/portfolio" },
+];
+
+const stakeholders = [
+  { icon: Pencil, title: "Design Consultants" },
+  { icon: Users, title: "BIM Managers" },
+  { icon: Briefcase, title: "General Contractors" },
+  { icon: HardHat, title: "Trade Contractors" },
+  { icon: Landmark, title: "Government" },
+  { icon: Building2, title: "Facility Management" },
+  { icon: UserCircle, title: "Developers/Owners" },
+];
+
+const clientLogos = [
+  "Client 1", "Client 2", "Client 3", "Client 4", "Client 5", 
+  "Client 6", "Client 7", "Client 8", "Client 9", "Client 10"
+];
+
+const processSteps = [
+  { number: "01", title: "Discover and align", description: "Understand your standards, deliverables, and timeline requirements." },
+  { number: "02", title: "Execution plan and setup", description: "Define scope, milestones, and communication protocols." },
+  { number: "03", title: "Production and coordination", description: "Execute modeling, coordination, and documentation." },
+  { number: "04", title: "QA and handover", description: "Quality checks and seamless deliverable handoff." },
+];
+
+const features = [
+  { icon: CheckCircle, title: "Standards-driven output", description: "Your naming, families, views, sheets, and QA rules are followed consistently across every deliverable." },
+  { icon: Layers, title: "Communication that does not slow projects", description: "Clear daily or milestone updates, issue logs, and quick turnarounds with minimal back-and-forth." },
+  { icon: Box, title: "Coordination-first mindset", description: "Models built for downstream use: coordination, documentation, estimating, and fabrication." },
+];
+
+const technologies = [
+  "Autodesk Revit", "AutoCAD", "Navisworks", "BIM 360", "Bluebeam", 
+  "Dynamo", "ArchiCAD", "SketchUp", "Rhino", "Enscape"
+];
+
+const testimonials = [
+  { quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.", author: "James Mitchell", role: "VDC Director", company: "Turner Construction" },
+  { quote: "We've worked with several BIM providers. Arcon stands out for their communication and consistency. Models arrive ready to use.", author: "Sarah Chen", role: "BIM Manager", company: "Skanska USA" },
+  { quote: "Their coordination work helped us avoid major clashes on site. The ROI was clear within the first month of the project.", author: "Michael Rodriguez", role: "Project Executive", company: "McCarthy Building" },
+];
+
 const Index = () => {
-  return <Layout>
+  return (
+    <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 text-primary bg-secondary">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-background">
         <div className="container-custom my-[110px]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="animate-fade-in text-muted-foreground">
+            <div className="animate-fade-in">
               {/* Badge */}
-              <div className="badge-pill mb-6 text-muted-foreground">
+              <div className="badge-pill mb-6">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 BIM & VDC Excellence
               </div>
 
               {/* Headline */}
-              <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight mb-6 text-primary lg:text-6xl">
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
                 BIM and VDC delivery that is{" "}
                 <span className="text-gradient">fast, accurate, and accountable.</span>
               </h1>
 
               {/* Description */}
               <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-8 max-w-xl">
-                Arcon Infratek supports global AEC teams with Revit-based modeling, coordination, shop drawings, estimation, and BIM auditing. Clear standards, rigorous QA, and reliable turnaround.
+                Arcon Infratek supports global AEC teams with Revit-based modeling, coordination, shop drawings, estimation, and BIM auditing.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 mb-12">
-                <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90" asChild>
+                <Button size="lg" asChild>
                   <Link to="/contact">
                     Schedule a Call
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -155,17 +122,19 @@ const Index = () => {
             </div>
 
             {/* Right - Hero Image */}
-            <div className="relative animate-fade-in" style={{
-            animationDelay: "0.2s"
-          }}>
+            <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="hero-image-container rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction site with crane" className="w-full h-auto object-cover aspect-[4/3]" />
-                {/* Video Play Button */}
-                <button className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 hover:bg-black/40 transition-colors group">
-                  <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Play className="h-6 w-6 text-foreground ml-1" fill="currentColor" />
+                <img 
+                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Construction site with crane" 
+                  className="w-full h-auto object-cover aspect-[4/3]" 
+                />
+                {/* Video Play Button - Small pill at bottom right */}
+                <button className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/95 hover:bg-white rounded-full px-4 py-2 shadow-lg transition-all hover:scale-105">
+                  <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
+                    <Play className="h-4 w-4 text-background ml-0.5" fill="currentColor" />
                   </div>
-                  <span className="text-white font-medium">Watch Video</span>
+                  <span className="text-foreground font-medium text-sm">Watch Video</span>
                 </button>
               </div>
             </div>
@@ -174,20 +143,28 @@ const Index = () => {
       </section>
 
       {/* Trust Band - Metrics */}
-      <section className="py-12 border-y border-border bg-primary-foreground">
+      <section className="py-12 border-y border-border bg-card">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {metrics.map((metric, index) => <StatCard key={index} icon={metric.icon} value={metric.value} label={metric.label} />)}
+            {metrics.map((metric, index) => (
+              <StatCard key={index} value={metric.value} label={metric.label} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - NO gradient in heading */}
       <Section>
-        <SectionHeader label="Our Services" title='Services designed for <span class="text-gradient">production speed</span> and <span class="text-gradient">coordination certainty.</span>' description="From modeling to clash coordination to fabrication-ready documentation, we deliver consistent outputs aligned with your standards." />
+        <SectionHeader 
+          label="Our Services" 
+          title="Services designed for production speed and coordination certainty."
+          description="From modeling to clash coordination to fabrication-ready documentation, we deliver consistent outputs aligned with your standards." 
+        />
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {services.map((service, index) => <ServiceCard key={index} {...service} />)}
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
         </div>
 
         <div className="text-center">
@@ -197,6 +174,65 @@ const Index = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
+        </div>
+      </Section>
+
+      {/* Our Work Section - Moved after Services */}
+      <section className="py-16 lg:py-24 bg-card border-y border-border">
+        <div className="container-custom">
+          <SectionHeader 
+            label="Our Work" 
+            title={<>
+              <span className="text-gradient">Proven delivery</span> across project types.
+            </>}
+          />
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button size="lg" asChild>
+              <Link to="/portfolio">
+                View Portfolio
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Customers Section - NEW */}
+      <Section>
+        <SectionHeader 
+          label="Our Customers" 
+          title={<>
+            Trusted by <span className="text-gradient">industry leaders</span> worldwide.
+          </>}
+        />
+        
+        {/* Stakeholder boxes */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 mb-12">
+          {stakeholders.map((stakeholder, index) => (
+            <StakeholderCard key={index} {...stakeholder} />
+          ))}
+        </div>
+
+        {/* Client Logos Marquee */}
+        <div className="marquee-container py-8">
+          <div className="marquee">
+            {/* Duplicate logos for seamless loop */}
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-32 h-16 bg-card rounded-lg border border-border flex items-center justify-center text-muted-foreground text-sm font-medium"
+              >
+                {logo}
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -211,13 +247,19 @@ const Index = () => {
                 A delivery process your team can <span className="text-gradient">trust.</span>
               </h2>
               <div className="space-y-6">
-                {processSteps.map((step, index) => <ProcessStep key={index} {...step} />)}
+                {processSteps.map((step, index) => (
+                  <ProcessStep key={index} {...step} />
+                ))}
               </div>
             </div>
 
             {/* Right - Image */}
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern building architecture" className="w-full h-auto rounded-2xl object-cover aspect-[4/3]" />
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Modern building architecture" 
+                className="w-full h-auto rounded-2xl object-cover aspect-[4/3]" 
+              />
             </div>
           </div>
         </div>
@@ -225,50 +267,76 @@ const Index = () => {
 
       {/* Features Section */}
       <Section>
-        <SectionHeader label="Why Arcon Infratek" title='Built for teams that value <span class="text-gradient">precision.</span>' />
+        <SectionHeader 
+          label="Why Arcon Infratek" 
+          title={<>
+            Built for teams that value <span className="text-gradient">precision.</span>
+          </>}
+        />
         
         <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => <FeatureBlock key={index} {...feature} />)}
+          {features.map((feature, index) => (
+            <FeatureBlock key={index} {...feature} />
+          ))}
         </div>
       </Section>
 
-      {/* Portfolio Section */}
+      {/* Technologies We Use Section - NEW */}
       <section className="py-16 lg:py-24 bg-card border-y border-border">
         <div className="container-custom">
-          <SectionHeader label="Our Work" title='<span class="text-gradient">Proven delivery</span> across project types.' />
+          <SectionHeader 
+            label="Technologies" 
+            title={<>
+              Industry-leading <span className="text-gradient">software</span> we use.
+            </>}
+            description="We leverage the best tools in the industry to deliver high-quality BIM deliverables."
+          />
           
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {sectors.map((sector, index) => <SectorChip key={index} label={sector} href={`/portfolio?sector=${sector.toLowerCase()}`} />)}
-          </div>
-
-          <div className="text-center">
-            <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90" asChild>
-              <Link to="/portfolio">
-                View Portfolio
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+          {/* Software Logos Marquee */}
+          <div className="marquee-container py-8">
+            <div className="marquee">
+              {/* Duplicate for seamless loop */}
+              {[...technologies, ...technologies].map((tech, index) => (
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 px-8 py-4 bg-background rounded-xl border border-border flex items-center justify-center text-foreground font-medium"
+                >
+                  {tech}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
       <Section>
-        <SectionHeader label="Testimonials" title='What our <span class="text-gradient">partners</span> say' />
+        <SectionHeader 
+          label="Testimonials" 
+          title={<>
+            What our <span className="text-gradient">partners</span> say
+          </>}
+        />
         
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => <TestimonialCard key={index} {...testimonial} />)}
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} />
+          ))}
         </div>
       </Section>
 
       {/* CTA Section - Dark */}
-      <CTAStrip title='Ready to streamline <span class="text-gradient">BIM production</span> and <span class="text-gradient">coordination?</span>' description="Share your scope and timeline. We will respond with a clear plan and estimate." primaryCTA={{
-      text: "Schedule a Call",
-      href: "/contact"
-    }} secondaryCTA={{
-      text: "Request a Quote",
-      href: "/contact"
-    }} variant="dark" />
-    </Layout>;
+      <CTAStrip 
+        title={<>
+          Ready to streamline <span className="text-gradient">BIM production</span> and <span className="text-gradient">coordination?</span>
+        </>}
+        description="Share your scope and timeline. We will respond with a clear plan and estimate." 
+        primaryCTA={{ text: "Schedule a Call", href: "/contact" }} 
+        secondaryCTA={{ text: "Request a Quote", href: "/contact" }} 
+        variant="dark" 
+      />
+    </Layout>
+  );
 };
+
 export default Index;

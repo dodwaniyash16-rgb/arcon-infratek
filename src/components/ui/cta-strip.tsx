@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 interface CTAStripProps {
-  title: string;
+  title: React.ReactNode;
   description?: string;
   primaryCTA: {
     text: string;
@@ -27,6 +28,7 @@ export const CTAStrip = ({
   className,
 }: CTAStripProps) => {
   const isDark = variant === "dark";
+  const isStringTitle = typeof title === 'string';
   
   return (
     <section className={cn(
@@ -36,13 +38,24 @@ export const CTAStrip = ({
     )}>
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 
-            className={cn(
-              "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6",
-              isDark && "[&_.text-gradient]:text-background [&_.text-gradient]:bg-none"
-            )}
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
+          {isStringTitle ? (
+            <h2 
+              className={cn(
+                "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6",
+                isDark && "[&_.text-gradient]:text-background [&_.text-gradient]:bg-none"
+              )}
+              dangerouslySetInnerHTML={{ __html: title as string }}
+            />
+          ) : (
+            <h2 
+              className={cn(
+                "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6",
+                isDark && "[&_.text-gradient]:text-background [&_.text-gradient]:bg-none"
+              )}
+            >
+              {title}
+            </h2>
+          )}
           
           {description && (
             <p className={cn(
