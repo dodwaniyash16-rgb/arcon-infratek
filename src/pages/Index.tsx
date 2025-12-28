@@ -128,6 +128,16 @@ import inventorLogo from "@/assets/technologies/inventor.png";
 import bim360Logo from "@/assets/technologies/bim360.jpg";
 import dynamoLogo from "@/assets/technologies/dynamo.png";
 import cfdLogo from "@/assets/technologies/cfd.png";
+import enscapeLogo from "@/assets/technologies/enscape.png";
+import etabsLogo from "@/assets/technologies/etabs.png";
+import fabricationLogo from "@/assets/technologies/fabrication-camduct.png";
+import grasshopperLogo from "@/assets/technologies/grasshopper.png";
+import bluebeamLogo from "@/assets/technologies/bluebeam.png";
+import jiraLogo from "@/assets/technologies/jira.png";
+import teklaLogo from "@/assets/technologies/tekla.png";
+import lumionLogo from "@/assets/technologies/lumion.png";
+import navisworksLogo from "@/assets/technologies/navisworks.png";
+import sketchupLogo from "@/assets/technologies/sketchup.png";
 
 const clientLogos = [
   { src: godrejLogo, alt: "Godrej" },
@@ -183,6 +193,16 @@ const technologies = [
   { src: bim360Logo, alt: "Autodesk BIM 360" },
   { src: dynamoLogo, alt: "Dynamo" },
   { src: cfdLogo, alt: "Autodesk CFD" },
+  { src: enscapeLogo, alt: "Enscape" },
+  { src: etabsLogo, alt: "ETABS" },
+  { src: fabricationLogo, alt: "Autodesk Fabrication CAMduct" },
+  { src: grasshopperLogo, alt: "Grasshopper 3D" },
+  { src: bluebeamLogo, alt: "Bluebeam" },
+  { src: jiraLogo, alt: "Jira" },
+  { src: teklaLogo, alt: "Tekla" },
+  { src: lumionLogo, alt: "Lumion" },
+  { src: navisworksLogo, alt: "Autodesk Navisworks" },
+  { src: sketchupLogo, alt: "SketchUp" },
 ];
 const testimonials = [{
   quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
