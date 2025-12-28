@@ -117,6 +117,18 @@ import uttarakhandGovtLogo from "@/assets/clients/uttarakhand-govt.png";
 import wspLogo from "@/assets/clients/wsp.png";
 import barcelonaLogo from "@/assets/clients/barcelona.png";
 
+// Technology logos imports
+import revitLogo from "@/assets/technologies/revit.png";
+import dsMaxLogo from "@/assets/technologies/3ds-max.png";
+import rhinoLogo from "@/assets/technologies/rhino.png";
+import civil3dLogo from "@/assets/technologies/civil3d.jpg";
+import archicadLogo from "@/assets/technologies/archicad.png";
+import constructionCloudLogo from "@/assets/technologies/construction-cloud.jpg";
+import inventorLogo from "@/assets/technologies/inventor.png";
+import bim360Logo from "@/assets/technologies/bim360.jpg";
+import dynamoLogo from "@/assets/technologies/dynamo.png";
+import cfdLogo from "@/assets/technologies/cfd.png";
+
 const clientLogos = [
   { src: godrejLogo, alt: "Godrej" },
   { src: karnatakaGovtLogo, alt: "Government of Karnataka" },
@@ -160,7 +172,18 @@ const features = [{
   title: "Coordination-first mindset",
   description: "Models built for downstream use: coordination, documentation, estimating, and fabrication."
 }];
-const technologies = ["Autodesk Revit", "AutoCAD", "Navisworks", "BIM 360", "Bluebeam", "Dynamo", "ArchiCAD", "SketchUp", "Rhino", "Enscape"];
+const technologies = [
+  { src: revitLogo, alt: "Autodesk Revit" },
+  { src: dsMaxLogo, alt: "3DS Max" },
+  { src: rhinoLogo, alt: "Rhinoceros 3D" },
+  { src: civil3dLogo, alt: "Autodesk Civil 3D" },
+  { src: archicadLogo, alt: "ArchiCAD" },
+  { src: constructionCloudLogo, alt: "Autodesk Construction Cloud" },
+  { src: inventorLogo, alt: "Autodesk Inventor" },
+  { src: bim360Logo, alt: "Autodesk BIM 360" },
+  { src: dynamoLogo, alt: "Dynamo" },
+  { src: cfdLogo, alt: "Autodesk CFD" },
+];
 const testimonials = [{
   quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
   author: "James Mitchell",
@@ -358,9 +381,15 @@ const Index = () => {
           <div className="marquee-container py-8">
             <div className="marquee">
               {/* Duplicate for seamless loop */}
-              {[...technologies, ...technologies].map((tech, index) => <div key={index} className="flex-shrink-0 px-8 py-4 bg-background rounded-xl border border-border flex items-center justify-center text-foreground font-medium">
-                  {tech}
-                </div>)}
+              {[...technologies, ...technologies].map((tech, index) => (
+                <div key={index} className="flex-shrink-0 h-20 px-8 bg-background rounded-xl border border-border flex items-center justify-center">
+                  <img 
+                    src={tech.src} 
+                    alt={tech.alt} 
+                    className="h-14 w-auto max-w-[180px] object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
