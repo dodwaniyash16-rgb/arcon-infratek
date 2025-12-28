@@ -34,6 +34,7 @@
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
+    --border-secondary: 220 13% 85%;
     --input: 220 13% 91%;
     --ring: 338 70% 48%;
 
@@ -51,6 +52,7 @@
     --coral-foreground: 0 0% 100%;
     
     --section-alt: 210 25% 97%;
+    --footer: 220 20% 8%;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -149,20 +151,10 @@
     background-clip: text;
   }
 
-  /* Section Label (/ text / format) */
+  /* Section Label - No slashes */
   .section-label {
     @apply text-sm font-medium tracking-wider uppercase;
     color: hsl(var(--muted-foreground));
-  }
-  
-  .section-label::before {
-    content: '/ ';
-    @apply opacity-60;
-  }
-  
-  .section-label::after {
-    content: ' /';
-    @apply opacity-60;
   }
 
   /* Container */
@@ -180,9 +172,19 @@
     @apply shadow-lg -translate-y-1;
   }
 
-  /* Nav Active State */
+  /* Nav Active State - Pill style */
   .nav-active {
-    @apply bg-foreground text-background rounded-full px-4 py-1.5;
+    @apply bg-secondary text-foreground rounded-full px-4 py-1.5;
+  }
+
+  /* Nav Floating Pill */
+  .nav-floating {
+    @apply bg-background/95 backdrop-blur-md shadow-lg rounded-full border border-border;
+  }
+
+  /* Badge Pill */
+  .badge-pill {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-sm font-medium;
   }
 
   /* Underline Animation for Links */
@@ -207,6 +209,53 @@
   /* Section Backgrounds */
   .section-alt {
     background-color: hsl(var(--section-alt));
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-padding-lg {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Hero Image Container */
+  .hero-image-container {
+    @apply relative rounded-2xl overflow-hidden shadow-2xl;
+  }
+
+  /* Button Hover Shadow */
+  .btn-hover-shadow {
+    @apply transition-all duration-300;
+  }
+  
+  .btn-hover-shadow:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  /* Reveal Animation */
+  .reveal {
+    @apply opacity-0 translate-y-8;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Sector Chip */
+  .sector-chip {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .sector-chip-default {
+    @apply bg-secondary text-muted-foreground hover:bg-border hover:text-foreground;
+  }
+
+  .sector-chip-active {
+    @apply bg-foreground text-background;
   }
 }
 

@@ -6,22 +6,23 @@ import logoBlack from "@/assets/logo-black.png";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { 
     label: "Services", 
     href: "/services",
     children: [
-      { label: "VDC & BIM Consulting", href: "/services/vdc-bim-consulting" },
-      { label: "Architectural BIM", href: "/services/architectural-bim" },
-      { label: "Structural BIM", href: "/services/structural-bim" },
-      { label: "MEP BIM", href: "/services/mep-bim" },
-      { label: "Civil & Utilities BIM", href: "/services/civil-utilities-bim" },
-      { label: "As-Built BIM", href: "/services/as-built-bim" },
-      { label: "BIM Project Management", href: "/services/bim-project-management" },
+      { label: "BIM Modeling", href: "/services/architectural-bim" },
+      { label: "BIM Coordination", href: "/services/vdc-bim-consulting" },
+      { label: "Shop Drawings", href: "/services/structural-bim" },
+      { label: "Estimation & QTO", href: "/services/mep-bim" },
+      { label: "Scan to BIM", href: "/services/as-built-bim" },
+      { label: "BIM Auditing", href: "/services/bim-project-management" },
+      { label: "CAD Drafting", href: "/services/civil-utilities-bim" },
+      { label: "BIM Content Creation", href: "/services/bim-project-management" },
     ]
   },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Insights", href: "/insights" },
-  { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
@@ -46,18 +47,14 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 py-4">
       <div className="container-custom">
-        <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <nav className={`flex items-center justify-between px-6 py-3 transition-all duration-300 ${
+          isScrolled ? "nav-floating" : "bg-background/80 backdrop-blur-sm rounded-full border border-border/50"
+        }`}>
+          {/* Logo - Made bigger */}
           <Link to="/" className="flex items-center">
-            <img src={logoBlack} alt="Arcon Infratek" className="h-10 w-auto" />
+            <img src={logoBlack} alt="Arcon Infratek" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -71,10 +68,10 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors rounded-full ${
                     isActive(item.href)
-                      ? "nav-active"
-                      : "text-foreground/80 hover:text-foreground"
+                      ? "bg-secondary text-foreground"
+                      : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
                   }`}
                 >
                   {item.label}
@@ -83,13 +80,13 @@ const Header = () => {
 
                 {/* Dropdown */}
                 {item.children && openDropdown === item.label && (
-                  <div className="absolute top-full left-0 pt-2 w-64">
-                    <div className="bg-background rounded-lg shadow-lg border border-border p-2">
+                  <div className="absolute top-full left-0 pt-2 w-56">
+                    <div className="bg-background rounded-xl shadow-lg border border-border p-2">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           to={child.href}
-                          className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-foreground hover:bg-secondary rounded-md transition-colors"
+                          className="block px-4 py-2.5 text-sm text-foreground/70 hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -101,9 +98,9 @@ const Header = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Solid dark */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="outline" className="border-gradient" asChild>
+            <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6" asChild>
               <Link to="/contact">Schedule a Call</Link>
             </Button>
           </div>
@@ -123,23 +120,23 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background border-t border-border animate-fade-in">
+          <div className="lg:hidden mt-2 bg-background rounded-2xl border border-border shadow-lg animate-fade-in">
             <div className="py-4 space-y-1">
               {navItems.map((item) => (
                 <div key={item.label}>
                   <Link
                     to={item.href}
-                    className={`block px-4 py-3 text-sm font-medium ${
+                    className={`block px-6 py-3 text-sm font-medium ${
                       isActive(item.href)
                         ? "bg-secondary text-foreground"
-                        : "text-foreground/80"
+                        : "text-foreground/70"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                   {item.children && (
-                    <div className="pl-4 space-y-1">
+                    <div className="pl-6 space-y-1">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
@@ -154,8 +151,8 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="px-4 pt-4">
-                <Button className="w-full" asChild>
+              <div className="px-6 pt-4">
+                <Button className="w-full bg-foreground text-background hover:bg-foreground/90" asChild>
                   <Link to="/contact">Schedule a Call</Link>
                 </Button>
               </div>

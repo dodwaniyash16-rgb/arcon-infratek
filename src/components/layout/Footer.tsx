@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Instagram, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
@@ -7,12 +8,12 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { label: "VDC & BIM Consulting", href: "/services/vdc-bim-consulting" },
-      { label: "Architectural BIM", href: "/services/architectural-bim" },
-      { label: "Structural BIM", href: "/services/structural-bim" },
-      { label: "MEP BIM", href: "/services/mep-bim" },
-      { label: "Civil & Utilities BIM", href: "/services/civil-utilities-bim" },
-      { label: "As-Built BIM", href: "/services/as-built-bim" },
+      { label: "BIM Modeling", href: "/services/architectural-bim" },
+      { label: "BIM Coordination", href: "/services/vdc-bim-consulting" },
+      { label: "Shop Drawings", href: "/services/structural-bim" },
+      { label: "Estimation & QTO", href: "/services/mep-bim" },
+      { label: "Scan to BIM", href: "/services/as-built-bim" },
+      { label: "BIM Auditing", href: "/services/bim-project-management" },
     ],
     company: [
       { label: "About Us", href: "/about" },
@@ -43,13 +44,39 @@ const Footer = () => {
 
   return (
     <footer className="bg-foreground text-background">
+      {/* CTA Bar */}
+      <div className="border-b border-background/10">
+        <div className="container-custom py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 className="font-heading text-xl font-semibold">
+                Ready to start your next project?
+              </h3>
+              <p className="text-background/60 text-sm mt-1">
+                Get in touch for a free consultation and project estimate.
+              </p>
+            </div>
+            <Button 
+              variant="outline" 
+              className="border-background/30 text-background hover:bg-background/10 hover:text-background"
+              asChild
+            >
+              <Link to="/contact">
+                Schedule a Call
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
-              <img src={logoWhite} alt="Arcon Infratek" className="h-10 w-auto" />
+              <img src={logoWhite} alt="Arcon Infratek" className="h-12 w-auto" />
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6 max-w-sm">
               Delivering precision BIM and VDC solutions that transform construction 
