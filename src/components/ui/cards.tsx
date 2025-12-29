@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LucideIcon, Quote, ArrowUpRight } from "lucide-react";
+import { LucideIcon, ArrowUpRight, CheckCircle } from "lucide-react";
 
 // Service Card - with ArrowUpRight icon
 interface ServiceCardProps {
@@ -16,7 +16,7 @@ export const ServiceCard = ({
 }: ServiceCardProps) => {
   return <Link to={href} className="group block p-6 rounded-xl border border-border card-hover relative bg-primary-foreground">
       {/* Arrow icon top-right */}
-      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors bg-accent shadow-none" />
+      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors shadow-none bg-primary" />
       
       <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 border-accent border-solid border-0">
         <Icon className="h-6 w-6 text-sidebar-primary bg-primary" />
@@ -79,12 +79,12 @@ export const FeatureBlock = ({
   title,
   description
 }: FeatureBlockProps) => {
-  return <div className="bg-background p-8 rounded-xl border border-border">
+  return <div className="p-8 rounded-xl border border-border bg-primary-foreground">
       <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
         <Icon className="h-6 w-6 text-foreground" />
       </div>
-      <h3 className="font-heading text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{description}</p>
+      <h3 className="font-heading font-semibold mb-3 text-lg">{title}</h3>
+      <p className="leading-relaxed text-sm text-slate-400 font-semibold">{description}</p>
     </div>;
 };
 
@@ -102,7 +102,7 @@ export const TestimonialCard = ({
   company
 }: TestimonialCardProps) => {
   return <div className="bg-background p-8 rounded-xl border border-border">
-      <Quote className="h-8 w-8 text-muted-foreground mb-6 opacity-50" />
+      <CheckCircle className="h-8 w-8 text-muted-foreground mb-6 opacity-50" />
       <blockquote className="text-foreground mb-6 leading-relaxed">
         "{quote}"
       </blockquote>

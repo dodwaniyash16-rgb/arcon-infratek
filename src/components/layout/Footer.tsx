@@ -112,7 +112,7 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-6">
               <img src={logoWhite} alt="Arcon Infratek" className="h-20 w-auto" />
             </Link>
-            <p className="text-background/70 text-sm leading-relaxed mb-6 max-w-sm">
+            <p className="text-background/70 text-sm leading-relaxed mb-4 max-w-sm">
               Delivering precision BIM and VDC solutions that transform construction 
               projects. Fast, accurate, and accountable.
             </p>
