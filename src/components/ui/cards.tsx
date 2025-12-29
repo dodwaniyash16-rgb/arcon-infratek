@@ -14,17 +14,17 @@ export const ServiceCard = ({
   href,
   icon: Icon
 }: ServiceCardProps) => {
-  return <Link to={href} className="group block bg-background p-6 rounded-xl border border-border card-hover relative">
+  return <Link to={href} className="group block p-6 rounded-xl border border-border card-hover relative bg-primary-foreground">
       {/* Arrow icon top-right */}
-      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors bg-accent shadow-none" />
       
-      <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 text-sidebar-primary" />
+      <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 border-accent border-solid border-0">
+        <Icon className="h-6 w-6 text-sidebar-primary bg-primary" />
       </div>
-      <h3 className="font-heading text-lg font-semibold mb-2 group-hover:text-foreground transition-colors">
+      <h3 className="font-heading font-semibold mb-2 group-hover:text-foreground transition-colors text-base">
         {title}
       </h3>
-      <p className="text-muted-foreground text-sm leading-relaxed">
+      <p className="leading-relaxed text-xs font-semibold text-slate-400">
         {description}
       </p>
     </Link>;
@@ -147,7 +147,7 @@ export const StakeholderCard = ({
   icon: Icon,
   title
 }: StakeholderCardProps) => {
-  return <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-xl border border-border">
+  return <div className="flex flex-col items-center gap-3 p-6 bg-background border border-border rounded-lg py-[20px] px-[20px]">
       <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center">
         <Icon className="h-7 w-7 icon-gradient" />
       </div>

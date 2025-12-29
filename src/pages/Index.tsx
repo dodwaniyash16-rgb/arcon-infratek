@@ -141,20 +141,40 @@ import sketchupLogo from "@/assets/technologies/sketchup.png";
 import solidworksLogo from "@/assets/technologies/solidworks.png";
 import staadProLogo from "@/assets/technologies/staad-pro.png";
 import twinmotionLogo from "@/assets/technologies/twinmotion.png";
-
-const clientLogos = [
-  { src: godrejLogo, alt: "Godrej" },
-  { src: karnatakaGovtLogo, alt: "Government of Karnataka" },
-  { src: unescoLogo, alt: "UNESCO" },
-  { src: autodeskLogo, alt: "Autodesk" },
-  { src: mpGovtLogo, alt: "Government of Madhya Pradesh" },
-  { src: nhsrclLogo, alt: "NHSRCL" },
-  { src: rajasthanGovtLogo, alt: "Government of Rajasthan" },
-  { src: unicefLogo, alt: "UNICEF" },
-  { src: uttarakhandGovtLogo, alt: "Government of Uttarakhand" },
-  { src: wspLogo, alt: "WSP" },
-  { src: barcelonaLogo, alt: "Barcelona" },
-];
+const clientLogos = [{
+  src: godrejLogo,
+  alt: "Godrej"
+}, {
+  src: karnatakaGovtLogo,
+  alt: "Government of Karnataka"
+}, {
+  src: unescoLogo,
+  alt: "UNESCO"
+}, {
+  src: autodeskLogo,
+  alt: "Autodesk"
+}, {
+  src: mpGovtLogo,
+  alt: "Government of Madhya Pradesh"
+}, {
+  src: nhsrclLogo,
+  alt: "NHSRCL"
+}, {
+  src: rajasthanGovtLogo,
+  alt: "Government of Rajasthan"
+}, {
+  src: unicefLogo,
+  alt: "UNICEF"
+}, {
+  src: uttarakhandGovtLogo,
+  alt: "Government of Uttarakhand"
+}, {
+  src: wspLogo,
+  alt: "WSP"
+}, {
+  src: barcelonaLogo,
+  alt: "Barcelona"
+}];
 const processSteps = [{
   number: "01",
   title: "Discover and align",
@@ -185,31 +205,76 @@ const features = [{
   title: "Coordination-first mindset",
   description: "Models built for downstream use: coordination, documentation, estimating, and fabrication."
 }];
-const technologies = [
-  { src: revitLogo, alt: "Autodesk Revit" },
-  { src: dsMaxLogo, alt: "3DS Max" },
-  { src: rhinoLogo, alt: "Rhinoceros 3D" },
-  { src: civil3dLogo, alt: "Autodesk Civil 3D" },
-  { src: archicadLogo, alt: "ArchiCAD" },
-  { src: constructionCloudLogo, alt: "Autodesk Construction Cloud" },
-  { src: inventorLogo, alt: "Autodesk Inventor" },
-  { src: bim360Logo, alt: "Autodesk BIM 360" },
-  { src: dynamoLogo, alt: "Dynamo" },
-  { src: cfdLogo, alt: "Autodesk CFD" },
-  { src: enscapeLogo, alt: "Enscape" },
-  { src: etabsLogo, alt: "ETABS" },
-  { src: fabricationLogo, alt: "Autodesk Fabrication CAMduct" },
-  { src: grasshopperLogo, alt: "Grasshopper 3D" },
-  { src: bluebeamLogo, alt: "Bluebeam" },
-  { src: jiraLogo, alt: "Jira" },
-  { src: teklaLogo, alt: "Tekla" },
-  { src: lumionLogo, alt: "Lumion" },
-  { src: navisworksLogo, alt: "Autodesk Navisworks" },
-  { src: sketchupLogo, alt: "SketchUp" },
-  { src: solidworksLogo, alt: "SolidWorks" },
-  { src: staadProLogo, alt: "STAAD.Pro" },
-  { src: twinmotionLogo, alt: "Twinmotion" },
-];
+const technologies = [{
+  src: revitLogo,
+  alt: "Autodesk Revit"
+}, {
+  src: dsMaxLogo,
+  alt: "3DS Max"
+}, {
+  src: rhinoLogo,
+  alt: "Rhinoceros 3D"
+}, {
+  src: civil3dLogo,
+  alt: "Autodesk Civil 3D"
+}, {
+  src: archicadLogo,
+  alt: "ArchiCAD"
+}, {
+  src: constructionCloudLogo,
+  alt: "Autodesk Construction Cloud"
+}, {
+  src: inventorLogo,
+  alt: "Autodesk Inventor"
+}, {
+  src: bim360Logo,
+  alt: "Autodesk BIM 360"
+}, {
+  src: dynamoLogo,
+  alt: "Dynamo"
+}, {
+  src: cfdLogo,
+  alt: "Autodesk CFD"
+}, {
+  src: enscapeLogo,
+  alt: "Enscape"
+}, {
+  src: etabsLogo,
+  alt: "ETABS"
+}, {
+  src: fabricationLogo,
+  alt: "Autodesk Fabrication CAMduct"
+}, {
+  src: grasshopperLogo,
+  alt: "Grasshopper 3D"
+}, {
+  src: bluebeamLogo,
+  alt: "Bluebeam"
+}, {
+  src: jiraLogo,
+  alt: "Jira"
+}, {
+  src: teklaLogo,
+  alt: "Tekla"
+}, {
+  src: lumionLogo,
+  alt: "Lumion"
+}, {
+  src: navisworksLogo,
+  alt: "Autodesk Navisworks"
+}, {
+  src: sketchupLogo,
+  alt: "SketchUp"
+}, {
+  src: solidworksLogo,
+  alt: "SolidWorks"
+}, {
+  src: staadProLogo,
+  alt: "STAAD.Pro"
+}, {
+  src: twinmotionLogo,
+  alt: "Twinmotion"
+}];
 const testimonials = [{
   quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
   author: "James Mitchell",
@@ -229,7 +294,7 @@ const testimonials = [{
 const Index = () => {
   return <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-background">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-background text-slate-900">
         <div className="container-custom my-[110px]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -241,9 +306,9 @@ const Index = () => {
               </div>
 
               {/* Headline */}
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
+              <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight mb-6 text-slate-800 lg:text-5xl">
                 BIM and VDC delivery that is{" "}
-                <span className="text-gradient">fast, accurate, and accountable.</span>
+                <span className="text-gradient text-5xl">fast, accurate, and accountable.</span>
               </h1>
 
               {/* Description */}
@@ -349,15 +414,9 @@ const Index = () => {
         <div className="marquee-container py-8">
           <div className="marquee">
             {/* Duplicate logos for seamless loop */}
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <div key={index} className="flex-shrink-0 h-20 px-8 bg-card rounded-lg border border-border flex items-center justify-center">
-                <img 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  className="h-14 w-auto max-w-[180px] object-contain"
-                />
-              </div>
-            ))}
+            {[...clientLogos, ...clientLogos].map((logo, index) => <div key={index} className="flex-shrink-0 h-20 px-8 bg-card rounded-lg border border-border flex items-center justify-center">
+                <img src={logo.src} alt={logo.alt} className="h-14 w-auto max-w-[180px] object-contain" />
+              </div>)}
           </div>
         </div>
       </Section>
@@ -407,15 +466,9 @@ const Index = () => {
           <div className="marquee-container py-8">
             <div className="marquee-slow">
               {/* Duplicate for seamless loop */}
-              {[...technologies, ...technologies].map((tech, index) => (
-                <div key={index} className="flex-shrink-0 h-20 px-8 bg-background rounded-xl border border-border flex items-center justify-center">
-                  <img 
-                    src={tech.src} 
-                    alt={tech.alt} 
-                    className="h-14 w-auto max-w-[180px] object-contain"
-                  />
-                </div>
-              ))}
+              {[...technologies, ...technologies].map((tech, index) => <div key={index} className="flex-shrink-0 h-20 px-8 bg-background rounded-xl border border-border flex items-center justify-center">
+                  <img src={tech.src} alt={tech.alt} className="h-14 w-auto max-w-[180px] object-contain" />
+                </div>)}
             </div>
           </div>
         </div>
@@ -434,7 +487,7 @@ const Index = () => {
 
       {/* CTA Section - Dark */}
       <CTAStrip title={<>
-          Ready to streamline <span className="text-gradient">BIM production</span> and <span className="text-gradient">coordination?</span>
+          Ready to streamline <span className="text-gradient text-destructive">BIM production</span> and <span className="text-gradient">coordination?</span>
         </>} description="Share your scope and timeline. We will respond with a clear plan and estimate." primaryCTA={{
       text: "Schedule a Call",
       href: "/contact"

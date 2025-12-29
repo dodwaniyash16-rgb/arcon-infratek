@@ -2,48 +2,86 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Instagram, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoWhite from "@/assets/logo-white.png";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
   const footerLinks = {
-    services: [
-      { label: "BIM Modeling", href: "/services/architectural-bim" },
-      { label: "BIM Coordination", href: "/services/vdc-bim-consulting" },
-      { label: "Shop Drawings", href: "/services/structural-bim" },
-      { label: "Estimation & QTO", href: "/services/mep-bim" },
-      { label: "Scan to BIM", href: "/services/as-built-bim" },
-      { label: "BIM Auditing", href: "/services/bim-project-management" },
-    ],
-    company: [
-      { label: "About Us", href: "/about" },
-      { label: "Portfolio", href: "/portfolio" },
-      { label: "Careers", href: "/careers" },
-      { label: "Insights", href: "/insights" },
-      { label: "Contact", href: "/contact" },
-    ],
-    resources: [
-      { label: "Blog", href: "/insights/blog" },
-      { label: "Brochures", href: "/insights/brochures" },
-      { label: "Testimonials", href: "/insights/testimonials" },
-      { label: "Media Kit", href: "/insights/media-kit" },
-    ],
-    legal: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-      { label: "Cookie Policy", href: "/cookies" },
-    ],
+    services: [{
+      label: "BIM Modeling",
+      href: "/services/architectural-bim"
+    }, {
+      label: "BIM Coordination",
+      href: "/services/vdc-bim-consulting"
+    }, {
+      label: "Shop Drawings",
+      href: "/services/structural-bim"
+    }, {
+      label: "Estimation & QTO",
+      href: "/services/mep-bim"
+    }, {
+      label: "Scan to BIM",
+      href: "/services/as-built-bim"
+    }, {
+      label: "BIM Auditing",
+      href: "/services/bim-project-management"
+    }],
+    company: [{
+      label: "About Us",
+      href: "/about"
+    }, {
+      label: "Portfolio",
+      href: "/portfolio"
+    }, {
+      label: "Careers",
+      href: "/careers"
+    }, {
+      label: "Insights",
+      href: "/insights"
+    }, {
+      label: "Contact",
+      href: "/contact"
+    }],
+    resources: [{
+      label: "Blog",
+      href: "/insights/blog"
+    }, {
+      label: "Brochures",
+      href: "/insights/brochures"
+    }, {
+      label: "Testimonials",
+      href: "/insights/testimonials"
+    }, {
+      label: "Media Kit",
+      href: "/insights/media-kit"
+    }],
+    legal: [{
+      label: "Privacy Policy",
+      href: "/privacy"
+    }, {
+      label: "Terms of Service",
+      href: "/terms"
+    }, {
+      label: "Cookie Policy",
+      href: "/cookies"
+    }]
   };
-
-  const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  ];
-
-  return (
-    <footer className="bg-foreground text-background">
+  const socialLinks = [{
+    icon: Linkedin,
+    href: "https://linkedin.com",
+    label: "LinkedIn"
+  }, {
+    icon: Twitter,
+    href: "https://twitter.com",
+    label: "Twitter"
+  }, {
+    icon: Youtube,
+    href: "https://youtube.com",
+    label: "YouTube"
+  }, {
+    icon: Instagram,
+    href: "https://instagram.com",
+    label: "Instagram"
+  }];
+  return <footer className="bg-foreground text-background">
       {/* CTA Bar */}
       <div className="border-b border-background/10">
         <div className="container-custom py-8">
@@ -56,11 +94,7 @@ const Footer = () => {
                 Get in touch for a free consultation and project estimate.
               </p>
             </div>
-            <Button 
-              variant="outline" 
-              className="border-background/30 text-background hover:bg-background/10 hover:text-background"
-              asChild
-            >
+            <Button variant="outline" className="border-background/30 text-background hover:bg-background/10 hover:text-background" asChild>
               <Link to="/contact">
                 Schedule a Call
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -74,26 +108,20 @@ const Footer = () => {
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 my-0 mx-0 py-0 pb-[6px]">
             <Link to="/" className="inline-block mb-6">
-              <img src={logoWhite} alt="Arcon Infratek" className="h-12 w-auto" />
+              <img src={logoWhite} alt="Arcon Infratek" className="h-20 w-auto" />
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6 max-w-sm">
               Delivering precision BIM and VDC solutions that transform construction 
               projects. Fast, accurate, and accountable.
             </p>
             <div className="space-y-3">
-              <a 
-                href="mailto:info@arconinfratek.com" 
-                className="flex items-center gap-3 text-sm text-background/70 hover:text-background transition-colors"
-              >
+              <a href="mailto:info@arconinfratek.com" className="flex items-center gap-3 text-sm text-background/70 hover:text-background transition-colors">
                 <Mail className="h-4 w-4" />
                 info@arconinfratek.com
               </a>
-              <a 
-                href="tel:+1234567890" 
-                className="flex items-center gap-3 text-sm text-background/70 hover:text-background transition-colors"
-              >
+              <a href="tel:+1234567890" className="flex items-center gap-3 text-sm text-background/70 hover:text-background transition-colors">
                 <Phone className="h-4 w-4" />
                 +1 (234) 567-890
               </a>
@@ -110,16 +138,11 @@ const Footer = () => {
               Services
             </h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.services.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-sm text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -129,16 +152,11 @@ const Footer = () => {
               Company
             </h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.company.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-sm text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -148,16 +166,11 @@ const Footer = () => {
               Resources
             </h4>
             <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.resources.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-sm text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -167,16 +180,11 @@ const Footer = () => {
               Legal
             </h4>
             <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-background transition-colors"
-                  >
+              {footerLinks.legal.map(link => <li key={link.href}>
+                  <Link to={link.href} className="text-sm text-background/70 hover:text-background transition-colors">
                     {link.label}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -190,24 +198,13 @@ const Footer = () => {
               © {currentYear} Arcon Infratek. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-background/60 hover:text-background transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
+              {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label={social.label}>
+                  
+                </a>)}
             </div>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
