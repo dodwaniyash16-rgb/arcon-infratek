@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Clock, Layers, Globe, Shield, Box, FileText, Calculator, ScanLine, CheckCircle, Pencil, Blocks, Users, Briefcase, Building2, HardHat, Landmark, Home, UserCircle } from "lucide-react";
+import { ArrowRight, Play, Clock, Layers, Globe, Shield, Box, FileText, Calculator, ScanLine, CheckCircle, Pencil, Blocks, Users, Briefcase, Building2, HardHat, Landmark, Home, UserCircle, Timer, FolderCheck, UsersRound, Earth } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard, StatCard, ProcessStep, FeatureBlock, TestimonialCard, SectorChip, StakeholderCard, ProjectCard } from "@/components/ui/cards";
@@ -8,17 +8,25 @@ import { CTAStrip } from "@/components/ui/cta-strip";
 
 // Data
 const metrics = [{
-  value: "24-72 hrs",
+  icon: Timer,
+  value: 72,
+  suffix: " hrs",
   label: "Turnaround"
 }, {
-  value: "Multi-Discipline",
-  label: "Coverage"
+  icon: FolderCheck,
+  value: 500,
+  suffix: "+",
+  label: "Projects Completed"
 }, {
-  value: "Global",
-  label: "Delivery"
+  icon: UsersRound,
+  value: 350,
+  suffix: "+",
+  label: "Clients Worldwide"
 }, {
-  value: "QA-First",
-  label: "Approach"
+  icon: Earth,
+  value: 15,
+  suffix: "+",
+  label: "Countries"
 }];
 const services = [{
   title: "BIM Modeling",
@@ -351,10 +359,27 @@ const Index = () => {
       </section>
 
       {/* Trust Band - Metrics */}
-      <section className="py-12 border-y border-border bg-card">
+      <section className="py-16 lg:py-20 border-y border-border bg-card">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {metrics.map((metric, index) => <StatCard key={index} value={metric.value} label={metric.label} />)}
+          {/* Tagline */}
+          <div className="text-center mb-12">
+            <span className="badge-pill">
+              <span className="text-gradient font-semibold">Precision driven</span>
+              <span className="text-muted-foreground"> BIM services delivered right, every time.</span>
+            </span>
+          </div>
+          
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {metrics.map((metric, index) => (
+              <StatCard 
+                key={index} 
+                icon={metric.icon}
+                value={metric.value} 
+                suffix={metric.suffix}
+                label={metric.label} 
+              />
+            ))}
           </div>
         </div>
       </section>
