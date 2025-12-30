@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LucideIcon, ArrowUpRight, CheckCircle } from "lucide-react";
+import { LucideIcon, ArrowUpRight, CheckCircle, AlertTriangle } from "lucide-react";
 
 // Service Card - with ArrowUpRight icon
 interface ServiceCardProps {
@@ -19,7 +19,7 @@ export const ServiceCard = ({
       <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors shadow-none bg-primary" />
       
       <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 border-accent border-solid border-0">
-        <Icon className="h-6 w-6 text-sidebar-primary bg-primary" />
+        <AlertTriangle className="h-6 w-6 text-sidebar-primary bg-primary" />
       </div>
       <h3 className="font-heading font-semibold mb-2 group-hover:text-foreground transition-colors text-base">
         {title}

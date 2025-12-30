@@ -70,7 +70,7 @@ const Header = () => {
         <nav className={`flex items-center justify-between px-6 py-3 transition-all duration-300 ${isScrolled ? "nav-floating" : "bg-background/80 backdrop-blur-sm rounded-full border border-border/50"}`}>
           {/* Logo - Made bigger, NO shadow */}
           <Link to="/" className="flex items-center">
-            <img alt="Arcon Infratek" src="/lovable-uploads/950e7582-c373-4573-9ba0-6491f93e5e30.png" className="h-16 w-auto" />
+            <img alt="Arcon Infratek" src="/lovable-uploads/71dfcd54-f963-4eb1-9e1e-e24aa40f5fd0.png" className="h-6 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

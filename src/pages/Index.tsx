@@ -312,7 +312,7 @@ const Index = () => {
               </h1>
 
               {/* Description */}
-              <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-xl font-sans font-medium text-slate-500">Arcon Infratek supports global AEC teams with Revit-based modeling, coordination, shop drawings, estimation, and BIM auditing. Clear standards, rigorous QA, and reliable turnaround.</p>
+              <p className="text-lg leading-relaxed mb-8 max-w-xl font-sans font-medium text-slate-400 md:text-lg">Arcon Infratek supports global AEC teams with Revit-based modeling, coordination, shop drawings, estimation, and BIM auditing. Clear standards, rigorous QA, and reliable turnaround.</p>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 mb-12">
