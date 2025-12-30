@@ -48,10 +48,7 @@ export const CTAStrip = ({
             />
           ) : (
             <h2 
-              className={cn(
-                "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6",
-                isDark && "[&_.text-gradient]:text-background [&_.text-gradient]:bg-none"
-              )}
+              className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
             >
               {title}
             </h2>
