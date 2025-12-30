@@ -6,42 +6,42 @@ const services = [
   {
     title: "BIM Modeling",
     description: "Detailed Revit models for architecture, structure, and MEP disciplines built to your standards.",
-    href: "/services/architectural-bim",
+    href: "/services/bim-modeling",
   },
   {
     title: "BIM Coordination",
     description: "Multi-discipline clash detection and resolution to eliminate conflicts before construction.",
-    href: "/services/vdc-bim-consulting",
+    href: "/services/bim-coordination",
   },
   {
     title: "Shop Drawings",
     description: "Fabrication-ready documentation extracted directly from coordinated BIM models.",
-    href: "/services/structural-bim",
+    href: "/services/shop-drawings",
   },
   {
     title: "Estimation & QTO",
     description: "Accurate quantity takeoffs and cost estimates derived from model data.",
-    href: "/services/mep-bim",
+    href: "/services/estimation-qto",
   },
   {
     title: "Scan to BIM",
     description: "Point cloud processing and as-built model creation from laser scan data.",
-    href: "/services/as-built-bim",
+    href: "/services/scan-to-bim",
   },
   {
     title: "BIM Auditing",
     description: "Model quality reviews and compliance checks against project standards.",
-    href: "/services/bim-project-management",
+    href: "/services/bim-auditing",
   },
   {
     title: "CAD Drafting",
     description: "2D documentation and drafting services for projects requiring traditional deliverables.",
-    href: "/services/civil-utilities-bim",
+    href: "/services/cad-drafting",
   },
   {
     title: "BIM Content Creation",
     description: "Custom Revit families and content libraries tailored to your project needs.",
-    href: "/services/bim-project-management",
+    href: "/services/bim-content-creation",
   },
 ];
 
