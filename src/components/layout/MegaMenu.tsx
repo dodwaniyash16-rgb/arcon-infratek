@@ -111,7 +111,10 @@ const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
               {/* View All Link */}
               <Link
                 to="/services"
-                onClick={onClose}
+                onClick={() => {
+                  onClose();
+                  window.scrollTo(0, 0);
+                }}
                 className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-coral hover:text-coral/80 transition-colors"
               >
                 View All Services
