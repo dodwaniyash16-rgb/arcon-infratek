@@ -82,36 +82,44 @@ const serviceScopes = [
 
 const faqs = [
   {
-    question: "What is the typical turnaround time for BIM modeling projects?",
-    answer: "Turnaround times vary based on project complexity and scope. Simple residential projects may take 5-7 business days, while complex commercial projects typically require 2-4 weeks. For urgent requirements, we offer expedited delivery within 24-72 hours for qualifying projects.",
+    question: "What projects benefit most from LOD 300-400 BIM Modeling?",
+    answer: "LOD 300-400 modeling is ideal for complex commercial buildings, hospitals, data centers, industrial facilities, and infrastructure projects requiring precise quantities, fabrication details, and clash detection. These levels provide the detail needed for construction planning, shop drawing generation, and accurate material takeoffs.",
   },
   {
-    question: "Which Level of Development (LOD) is right for my project?",
-    answer: "The appropriate LOD depends on your project phase and intended use. LOD 200-300 is suitable for design development and coordination, LOD 350-400 for construction and fabrication, and LOD 500 for as-built documentation. We'll help you determine the optimal LOD during our initial consultation.",
+    question: "What is the difference between LOD 100, 200, 300, 400, and 500?",
+    answer: "LOD 100 is conceptual massing for early design. LOD 200 includes approximate geometry for schematic design. LOD 300 provides accurate geometry with quantities for coordination and construction documentation. LOD 400 adds fabrication-level detail for shop drawings. LOD 500 represents verified as-built conditions for facility management.",
   },
   {
-    question: "Can you work with our existing CAD or Revit files?",
-    answer: "Absolutely. We regularly work with legacy CAD files, PDFs, sketches, and existing Revit models. Our team can convert 2D drawings to 3D BIM, upgrade models to higher LOD levels, or continue development on in-progress projects.",
+    question: "How does BIM Modeling help reduce construction costs?",
+    answer: "BIM modeling reduces costs through early clash detection (preventing costly on-site rework), accurate quantity takeoffs (enabling precise budgeting), optimized material procurement, and improved coordination between disciplines. Studies show BIM can reduce project costs by 5-15% through these efficiencies.",
   },
   {
-    question: "What file formats do you deliver?",
-    answer: "We deliver in all major industry formats including Revit (.rvt), AutoCAD (.dwg), IFC, Navisworks (.nwc/.nwd), and PDF. We can also provide custom exports based on your project requirements and software preferences.",
+    question: "Can you integrate architectural, structural, and MEP models together?",
+    answer: "Yes, multi-discipline coordination is a core strength. We develop federated models combining architectural, structural, MEP, facade, and civil elements in a shared BIM environment. Our coordination process identifies and resolves clashes before construction, ensuring all systems fit properly.",
   },
   {
-    question: "How do you ensure model quality and accuracy?",
-    answer: "We follow a rigorous QA/QC process including multi-level reviews, clash detection, model auditing, and compliance checks against industry standards (BIM Forum LOD Spec, AIA guidelines). Every project undergoes senior review before delivery.",
+    question: "What software and standards do you use for BIM Modeling?",
+    answer: "We primarily use Autodesk Revit, Navisworks, BIM 360, Tekla, and Civil 3D. Our models comply with international standards including BIM Forum LOD Specification, AIA guidelines, ISO 19650, and regional codes like ADA, IBC, NFPA, ASHRAE, and SMACNA.",
   },
   {
-    question: "Do you offer clash detection as part of the service?",
-    answer: "Yes, multi-discipline clash detection and resolution is included in our coordination services. We use Navisworks and BIM 360 to identify, categorize, and resolve clashes, providing detailed coordination reports for your project team.",
+    question: "How long does it take to create a detailed BIM model?",
+    answer: "Timelines depend on project size and complexity. Simple residential models may take 5-10 business days, mid-size commercial projects 2-4 weeks, and large complex facilities 6-12 weeks. We offer expedited delivery for urgent projects. A detailed schedule is provided after reviewing your project scope.",
   },
   {
-    question: "What industries do you serve?",
-    answer: "We serve diverse sectors including commercial, residential, healthcare, hospitality, education, industrial, infrastructure, and retail. Our team has specialized experience in sector-specific requirements and compliance standards.",
+    question: "Do you provide clash detection and coordination reports?",
+    answer: "Yes, comprehensive clash detection is included in our coordination services. We use Navisworks to identify hard clashes, soft clashes, and clearance violations. Detailed coordination reports with clash matrices, resolution status, and visual markups are provided for your project team.",
   },
   {
-    question: "How quickly can I get a quote for my project?",
-    answer: "We typically provide detailed quotes within 24-48 hours of receiving your project documentation. For straightforward projects, same-day quotes are possible. Contact us with your project details for a prompt response.",
+    question: "Can you work from 2D CAD drawings or point cloud data?",
+    answer: "Absolutely. We regularly convert 2D CAD files, PDFs, sketches, and point cloud scans into detailed 3D BIM models. Our Scan-to-BIM process captures existing conditions accurately, making it ideal for renovation, retrofit, and as-built documentation projects.",
+  },
+  {
+    question: "What deliverables are included with BIM Modeling services?",
+    answer: "Deliverables typically include native Revit files (.rvt), IFC exports, Navisworks models (.nwc/.nwd), 2D drawings, schedules, quantity reports, and clash detection reports. We customize outputs based on your project requirements and can provide additional formats as needed.",
+  },
+  {
+    question: "Do you offer ongoing support after model delivery?",
+    answer: "Yes, we provide post-delivery support including model updates during construction, RFI responses, design change incorporation, and as-built documentation. We can also provide training on using the delivered models and establishing BIM workflows for your team.",
   },
 ];
 
