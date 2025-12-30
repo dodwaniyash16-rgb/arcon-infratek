@@ -16,10 +16,10 @@ export const ServiceCard = ({
 }: ServiceCardProps) => {
   return <Link to={href} className="group block p-6 rounded-xl border border-border card-hover relative bg-primary-foreground">
       {/* Arrow icon top-right */}
-      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors shadow-none bg-primary" />
+      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
       
-      <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 border-accent border-solid border-0">
-        <AlertTriangle className="h-6 w-6 text-sidebar-primary bg-primary" />
+      <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
+        <Icon className="h-6 w-6 icon-gradient" />
       </div>
       <h3 className="font-heading font-semibold mb-2 group-hover:text-foreground transition-colors text-base">
         {title}
