@@ -1,18 +1,19 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, MapPin, Building2, Users, CheckCircle, Calendar, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { ArrowRight, ArrowLeft, MapPin, Building2, Users, CheckCircle, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { getProjectBySlug, getRelatedProjects, Project } from "@/data/projects";
-
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const project = getProjectBySlug(slug || "");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Scroll to top when navigating to this page
   useEffect(() => {
     window.scrollTo(0, 0);
+    setCurrentImageIndex(0);
   }, [slug]);
 
   if (!project) {
@@ -150,26 +151,58 @@ const ProjectDetail = () => {
               {/* Gallery */}
               <div>
                 <h2 className="font-heading text-xl font-semibold mb-4 text-accent">Gallery</h2>
-                <div className="space-y-4">
-                  <div className="aspect-video rounded-lg overflow-hidden bg-secondary">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    {project.galleryImages.slice(0, 3).map((img, index) => (
-                      <div key={index} className="aspect-square rounded-lg overflow-hidden bg-secondary">
+                {(() => {
+                  const galleryImages = [project.image, ...project.galleryImages].slice(0, 2);
+                  return (
+                    <div className="relative">
+                      <div className="aspect-video rounded-lg overflow-hidden bg-secondary">
                         <img 
-                          src={img} 
-                          alt={`${project.title} gallery ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          src={galleryImages[currentImageIndex]} 
+                          alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                          className="w-full h-full object-cover transition-opacity duration-300"
                         />
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      
+                      {galleryImages.length > 1 && (
+                        <>
+                          {currentImageIndex > 0 && (
+                            <button 
+                              onClick={() => setCurrentImageIndex(prev => prev - 1)}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-background/80 backdrop-blur-sm rounded-full border border-border hover:bg-background transition-colors"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft className="h-5 w-5" />
+                            </button>
+                          )}
+                          
+                          {currentImageIndex < galleryImages.length - 1 && (
+                            <button 
+                              onClick={() => setCurrentImageIndex(prev => prev + 1)}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-background/80 backdrop-blur-sm rounded-full border border-border hover:bg-background transition-colors"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight className="h-5 w-5" />
+                            </button>
+                          )}
+                          
+                          {/* Image indicators */}
+                          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                            {galleryImages.map((_, index) => (
+                              <button
+                                key={index}
+                                onClick={() => setCurrentImageIndex(index)}
+                                className={`w-2 h-2 rounded-full transition-colors ${
+                                  index === currentImageIndex ? 'bg-background' : 'bg-background/50'
+                                }`}
+                                aria-label={`Go to image ${index + 1}`}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  );
+                })()}
               </div>
 
             </div>
