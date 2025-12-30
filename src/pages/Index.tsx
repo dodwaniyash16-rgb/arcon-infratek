@@ -486,9 +486,7 @@ const Index = () => {
       </Section>
 
       {/* CTA Section - Dark */}
-      <CTAStrip title={<>
-          Ready to streamline <span className="text-gradient text-destructive">BIM production</span> and <span className="text-gradient">coordination?</span>
-        </>} description="Share your scope and timeline. We will respond with a clear plan and estimate." primaryCTA={{
+      <CTAStrip title="Ready to streamline BIM production and coordination?" description="Share your scope and timeline. We will respond with a clear plan and estimate." primaryCTA={{
       text: "Schedule a Call",
       href: "/contact"
     }} secondaryCTA={{
