@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getFeaturedProjects } from "@/data/projects";
 
 export interface ProjectItem {
   title: string;
@@ -16,38 +17,22 @@ interface FeaturedProjectsProps {
   projects?: ProjectItem[];
 }
 
-const defaultProjects: ProjectItem[] = [
-  {
-    title: "Commercial Tower Complex",
-    category: "Commercial",
-    location: "Mumbai, India",
-    image: "/placeholder.svg",
-  },
-  {
-    title: "Healthcare Campus",
-    category: "Healthcare",
-    location: "Dubai, UAE",
-    image: "/placeholder.svg",
-  },
-  {
-    title: "Luxury Resort Development",
-    category: "Hospitality",
-    location: "Bali, Indonesia",
-    image: "/placeholder.svg",
-  },
-  {
-    title: "Educational Institution",
-    category: "Education",
-    location: "Singapore",
-    image: "/placeholder.svg",
-  },
-];
+const getDefaultProjects = (): ProjectItem[] => {
+  return getFeaturedProjects().slice(0, 4).map(project => ({
+    title: project.title,
+    category: project.category,
+    location: project.location,
+    image: project.image,
+    href: `/portfolio/${project.slug}`,
+  }));
+};
 
 const FeaturedProjects = ({ 
   title = "Featured Projects", 
   subtitle = "Explore our portfolio of successful BIM implementations across the globe.",
-  projects = defaultProjects 
+  projects
 }: FeaturedProjectsProps) => {
+  const displayProjects = projects || getDefaultProjects();
   return (
     <section className="py-20">
       <div className="container-custom">
@@ -68,7 +53,7 @@ const FeaturedProjects = ({
         </div>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
+          {displayProjects.map((project, index) => (
             <Link 
               key={index} 
               to={project.href || "/portfolio"}
