@@ -7,22 +7,22 @@ const Footer = () => {
   const footerLinks = {
     services: [{
       label: "BIM Modeling",
-      href: "/services/architectural-bim"
+      href: "/services/bim-modeling"
     }, {
       label: "BIM Coordination",
-      href: "/services/vdc-bim-consulting"
+      href: "/services/bim-coordination"
     }, {
       label: "Shop Drawings",
-      href: "/services/structural-bim"
+      href: "/services/shop-drawings"
     }, {
       label: "Estimation & QTO",
-      href: "/services/mep-bim"
+      href: "/services/estimation-qto"
     }, {
       label: "Scan to BIM",
-      href: "/services/as-built-bim"
+      href: "/services/scan-to-bim"
     }, {
       label: "BIM Auditing",
-      href: "/services/bim-project-management"
+      href: "/services/bim-auditing"
     }],
     company: [{
       label: "About Us",
