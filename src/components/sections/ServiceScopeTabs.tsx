@@ -75,17 +75,11 @@ const ServiceScopeTabs = ({
                   </div>
                 </div>
                 <div className="bg-secondary rounded-2xl aspect-video flex items-center justify-center overflow-hidden">
-                  {scope.image ? (
-                    <img 
-                      src={scope.image} 
-                      alt={scope.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="text-muted-foreground/30 text-lg font-medium">
-                      {scope.title} Preview
-                    </div>
-                  )}
+                  <img 
+                    src={scope.image || "/placeholder.svg"} 
+                    alt={scope.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </TabsContent>
