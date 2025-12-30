@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, FileText, BookOpen, Users, Play, Download, Newspaper } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Play, Download, Newspaper } from "lucide-react";
+import { blogPosts } from "@/data/blogPosts";
 
 const insightCategories = [
   {
@@ -8,7 +9,7 @@ const insightCategories = [
     title: "Blog",
     description: "Industry insights, tips, and best practices for BIM professionals.",
     href: "/insights/blog",
-    count: "25+ Articles",
+    count: "15+ Articles",
   },
   {
     icon: Download,
@@ -40,29 +41,8 @@ const insightCategories = [
   },
 ];
 
-const featuredPosts = [
-  {
-    title: "The Future of BIM: Trends to Watch in 2024",
-    category: "Industry Trends",
-    date: "Dec 15, 2024",
-    excerpt: "Explore the emerging technologies and methodologies shaping the future of BIM.",
-    href: "/insights/blog/future-of-bim-2024",
-  },
-  {
-    title: "Maximizing ROI with Effective BIM Coordination",
-    category: "Best Practices",
-    date: "Dec 10, 2024",
-    excerpt: "Learn how proper coordination can significantly reduce construction costs.",
-    href: "/insights/blog/maximizing-roi-bim-coordination",
-  },
-  {
-    title: "Scan to BIM: Best Practices for Accuracy",
-    category: "Technical Guide",
-    date: "Dec 5, 2024",
-    excerpt: "A comprehensive guide to achieving high-accuracy as-built models.",
-    href: "/insights/blog/scan-to-bim-best-practices",
-  },
-];
+// Get first 3 posts for featured section
+const featuredPosts = blogPosts.slice(0, 3);
 
 const Insights = () => {
   return (
@@ -130,22 +110,34 @@ const Insights = () => {
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredPosts.map((post, index) => (
+            {featuredPosts.map((post) => (
               <Link 
-                key={index} 
-                to={post.href}
-                className="group bg-background p-6 rounded-xl border border-border hover:border-accent/30 transition-all"
+                key={post.id} 
+                to={`/insights/blog/${post.slug}`}
+                className="group bg-background rounded-xl border border-border overflow-hidden hover:border-accent/30 hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex items-center gap-3 mb-4 text-sm">
-                  <span className="px-2 py-0.5 bg-secondary rounded text-xs font-medium">
-                    {post.category}
-                  </span>
-                  <span className="text-muted-foreground">{post.date}</span>
+                {/* Image */}
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="font-heading font-semibold mb-3 group-hover:text-accent transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{post.excerpt}</p>
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+                    <span className="text-primary font-medium">{post.category}</span>
+                    <span>·</span>
+                    <span>{post.date}</span>
+                    <span>·</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-3 group-hover:text-accent transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
+                </div>
               </Link>
             ))}
           </div>
