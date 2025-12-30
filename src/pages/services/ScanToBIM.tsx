@@ -12,6 +12,8 @@ import RelatedServicesSection from "@/components/sections/RelatedServicesSection
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
 
+// Hero image - replace with your own image path
+const heroImage = "/placeholder.svg";
 const serviceScopes = [
   {
     id: "scan-to-bim",
@@ -160,8 +162,12 @@ const ScanToBIM = () => {
                 </Button>
               </div>
             </div>
-            <div className="bg-secondary rounded-2xl aspect-video flex items-center justify-center">
-              <ScanLine className="h-24 w-24 icon-gradient opacity-50" />
+            <div className="bg-secondary rounded-2xl aspect-video overflow-hidden">
+              <img 
+                src={heroImage} 
+                alt="Scan to BIM Services" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

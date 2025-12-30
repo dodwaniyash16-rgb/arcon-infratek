@@ -1,8 +1,10 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Hero image - replace with your own image path
+const heroImage = "/placeholder.svg";
 const features = [
   "HVAC System Modeling",
   "Plumbing & Piping",
@@ -60,8 +62,12 @@ const MEPBIM = () => {
                 </Button>
               </div>
             </div>
-            <div className="bg-secondary rounded-2xl aspect-video flex items-center justify-center">
-              <Cpu className="h-24 w-24 icon-gradient opacity-50" />
+            <div className="bg-secondary rounded-2xl aspect-video overflow-hidden">
+              <img 
+                src={heroImage} 
+                alt="MEP BIM Services" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

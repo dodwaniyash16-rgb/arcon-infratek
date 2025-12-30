@@ -1,8 +1,10 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Layers, FileText, Users, Target } from "lucide-react";
+import { ArrowRight, CheckCircle, FileText, Users, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Hero image - replace with your own image path
+const heroImage = "/placeholder.svg";
 const features = [
   "BIM Execution Plan (BEP) Development",
   "Workflow Optimization & Standardization",
@@ -59,8 +61,12 @@ const VDCBIMConsulting = () => {
                 </Button>
               </div>
             </div>
-            <div className="bg-secondary rounded-2xl aspect-video flex items-center justify-center">
-              <Layers className="h-24 w-24 icon-gradient opacity-50" />
+            <div className="bg-secondary rounded-2xl aspect-video overflow-hidden">
+              <img 
+                src={heroImage} 
+                alt="VDC & BIM Consulting Services" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

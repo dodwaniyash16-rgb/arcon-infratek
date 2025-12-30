@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Layers } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ServiceScopeTabs from "@/components/sections/ServiceScopeTabs";
 import ProcessWorkflow from "@/components/sections/ProcessWorkflow";
@@ -12,6 +12,8 @@ import RelatedServicesSection from "@/components/sections/RelatedServicesSection
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
 
+// Hero image - replace with your own image path
+const heroImage = "/placeholder.svg";
 const serviceScopes = [
   {
     id: "vdc",
@@ -127,8 +129,12 @@ const BIMCoordination = () => {
                 </Button>
               </div>
             </div>
-            <div className="bg-secondary rounded-2xl aspect-video flex items-center justify-center">
-              <Layers className="h-24 w-24 icon-gradient opacity-50" />
+            <div className="bg-secondary rounded-2xl aspect-video overflow-hidden">
+              <img 
+                src={heroImage} 
+                alt="BIM Coordination Services" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
