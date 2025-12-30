@@ -172,24 +172,6 @@ const ProjectDetail = () => {
                 </div>
               </div>
 
-              {/* Share */}
-              <div>
-                <h2 className="font-heading text-xl font-semibold mb-4 text-accent">Share</h2>
-                <div className="flex gap-3">
-                  <button className="p-3 bg-card rounded-lg border border-border hover:bg-secondary transition-colors">
-                    <Facebook className="h-5 w-5" />
-                  </button>
-                  <button className="p-3 bg-card rounded-lg border border-border hover:bg-secondary transition-colors">
-                    <Twitter className="h-5 w-5" />
-                  </button>
-                  <button className="p-3 bg-card rounded-lg border border-border hover:bg-secondary transition-colors">
-                    <Linkedin className="h-5 w-5" />
-                  </button>
-                  <button className="p-3 bg-card rounded-lg border border-border hover:bg-secondary transition-colors">
-                    <Share2 className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
