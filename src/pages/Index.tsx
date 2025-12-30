@@ -31,42 +31,42 @@ const metrics = [{
 const services = [{
   title: "BIM Modeling",
   description: "Architectural, structural, and MEP models built to LOD specifications.",
-  href: "/services/architectural-bim",
+  href: "/services/bim-modeling",
   icon: Box
 }, {
   title: "BIM Coordination",
   description: "Clash detection and resolution across all disciplines.",
-  href: "/services/vdc-bim-consulting",
+  href: "/services/bim-coordination",
   icon: Layers
 }, {
   title: "Shop Drawings",
   description: "Fabrication-ready drawings from coordinated models.",
-  href: "/services/structural-bim",
+  href: "/services/shop-drawings",
   icon: FileText
 }, {
   title: "Estimation & QTO",
   description: "Accurate quantity takeoffs and cost estimation from BIM.",
-  href: "/services/mep-bim",
+  href: "/services/estimation-qto",
   icon: Calculator
 }, {
   title: "Scan to BIM",
   description: "Point cloud to intelligent BIM model conversion.",
-  href: "/services/as-built-bim",
+  href: "/services/scan-to-bim",
   icon: ScanLine
 }, {
   title: "BIM Auditing",
   description: "Model quality checks against your standards.",
-  href: "/services/bim-project-management",
+  href: "/services/bim-auditing",
   icon: CheckCircle
 }, {
   title: "CAD Drafting",
   description: "2D documentation and drafting services.",
-  href: "/services/civil-utilities-bim",
+  href: "/services/cad-drafting",
   icon: Pencil
 }, {
   title: "BIM Content Creation",
   description: "Custom Revit families and content libraries.",
-  href: "/services/bim-project-management",
+  href: "/services/bim-content-creation",
   icon: Blocks
 }];
 import { getFeaturedProjects } from "@/data/projects";
@@ -284,7 +284,7 @@ const testimonials = [{
 const Index = () => {
   return <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-background text-slate-900">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-background text-slate-800">
         <div className="container-custom my-[110px]">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
