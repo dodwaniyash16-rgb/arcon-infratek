@@ -27,6 +27,8 @@ const serviceScopes = [
       "Erection Drawings",
       "Anchor Bolt Plans",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "mep-shop",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Hanger & Support Details",
       "Sleeve & Penetration Plans",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "rebar",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Special Moment Frames",
       "Quantity Summaries",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "precast",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "Production Tickets",
       "As-Placed Verification",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "curtain-wall",
@@ -79,6 +87,8 @@ const serviceScopes = [
       "Gasket & Sealant Specs",
       "Installation Sequences",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 

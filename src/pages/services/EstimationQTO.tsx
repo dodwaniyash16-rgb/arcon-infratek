@@ -27,6 +27,8 @@ const serviceScopes = [
       "Excel Export & Integration",
       "Revision Comparison",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "cost-estimation",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Value Engineering Support",
       "Cost-to-Complete Analysis",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "5d-bim",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Cash Flow Projections",
       "Cost Visualization",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "bid-support",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "Risk Assessment",
       "Bid Day Support",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 

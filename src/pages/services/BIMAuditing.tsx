@@ -27,6 +27,8 @@ const serviceScopes = [
       "Workset Organization",
       "File Performance Assessment",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "quality-control",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Drawing Extraction Test",
       "Issue Tracking & Resolution",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "standards-review",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Export Format Testing",
       "Handover Readiness",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "model-health",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "View Template Audit",
       "Performance Recommendations",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 

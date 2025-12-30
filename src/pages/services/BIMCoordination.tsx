@@ -27,6 +27,8 @@ const serviceScopes = [
       "Trade Coordination",
       "Digital Twin Development",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "clash-detection",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Issue Tracking & Closeout",
       "BIM 360 Integration",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "model-coordination",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Model Version Control",
       "Stakeholder Communication",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "bim-management",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "Deliverable Management",
       "Progress Tracking",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 
