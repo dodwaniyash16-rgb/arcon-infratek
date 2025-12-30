@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LucideIcon, ArrowUpRight, CheckCircle, AlertTriangle } from "lucide-react";
+import { useCountUp } from "@/hooks/use-count-up";
 
 // Service Card - with ArrowUpRight icon
 interface ServiceCardProps {
@@ -30,20 +31,34 @@ export const ServiceCard = ({
     </Link>;
 };
 
-// Stat Card - simple centered text, no icon
+// Stat Card - with icon and animated counting
 interface StatCardProps {
-  icon?: LucideIcon;
-  value: string;
+  icon: LucideIcon;
+  value: number;
+  suffix?: string;
   label: string;
 }
 export const StatCard = ({
+  icon: Icon,
   value,
+  suffix = "+",
   label
 }: StatCardProps) => {
-  return <div className="text-center p-4">
-      <div className="font-heading text-2xl md:text-3xl font-bold text-foreground">{value}</div>
-      <div className="text-sm text-muted-foreground">{label}</div>
-    </div>;
+  const { count, elementRef } = useCountUp({ end: value, duration: 2500 });
+  
+  return (
+    <div ref={elementRef} className="flex items-center gap-4 p-6 bg-background rounded-xl border border-border">
+      <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+        <Icon className="h-7 w-7 icon-gradient" />
+      </div>
+      <div>
+        <div className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+          {count}{suffix}
+        </div>
+        <div className="text-sm text-muted-foreground font-medium">{label}</div>
+      </div>
+    </div>
+  );
 };
 
 // Process Step - solid bg-foreground circle
