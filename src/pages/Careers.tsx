@@ -1,7 +1,11 @@
+import { useState, useMemo } from "react";
 import Layout from "@/components/layout/Layout";
-import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Users, Zap, Heart, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { TrendingUp, Clock, Users, Heart } from "lucide-react";
+import JobFilters from "@/components/careers/JobFilters";
+import JobListings from "@/components/careers/JobListings";
+import JobDetailsDialog, { type JobOpening } from "@/components/careers/JobDetailsDialog";
+import JobApplicationDialog from "@/components/careers/JobApplicationDialog";
+import { jobOpenings, departments } from "@/data/jobOpenings";
 
 const benefits = [
   {
@@ -12,12 +16,12 @@ const benefits = [
   {
     icon: Clock,
     title: "Flexible Work",
-    description: "Remote-friendly environment with flexible schedules to support work-life balance.",
+    description: "Supportive environment with flexible schedules to support work-life balance.",
   },
   {
     icon: Users,
-    title: "Global Team",
-    description: "Work with diverse, talented professionals from around the world.",
+    title: "Global Projects",
+    description: "Work on diverse international projects with talented professionals.",
   },
   {
     icon: Heart,
@@ -26,40 +30,62 @@ const benefits = [
   },
 ];
 
-const openings = [
-  {
-    title: "Senior BIM Modeler - Architectural",
-    department: "Production",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    title: "MEP BIM Coordinator",
-    department: "Coordination",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    title: "Structural BIM Engineer",
-    department: "Production",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    title: "VDC Manager",
-    department: "Management",
-    location: "Remote",
-    type: "Full-time",
-  },
-  {
-    title: "BIM Content Developer",
-    department: "Content",
-    location: "Remote",
-    type: "Contract",
-  },
-];
-
 const Careers = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedDepartments, setSelectedDepartments] = useState<string[]>([]);
+  const [selectedJob, setSelectedJob] = useState<JobOpening | null>(null);
+  const [showDetails, setShowDetails] = useState(false);
+  const [showApplication, setShowApplication] = useState(false);
+
+  // Filter jobs based on search and department filters
+  const filteredJobs = useMemo(() => {
+    return jobOpenings.filter((job) => {
+      const matchesSearch =
+        !searchQuery ||
+        job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        job.department.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const matchesDepartment =
+        selectedDepartments.length === 0 || selectedDepartments.includes(job.department);
+
+      return matchesSearch && matchesDepartment;
+    });
+  }, [searchQuery, selectedDepartments]);
+
+  // Get departments that have jobs after filtering
+  const activeDepartments = useMemo(() => {
+    return departments.filter((dept) =>
+      filteredJobs.some((job) => job.department === dept)
+    );
+  }, [filteredJobs]);
+
+  const handleDepartmentChange = (department: string, checked: boolean) => {
+    setSelectedDepartments((prev) =>
+      checked ? [...prev, department] : prev.filter((d) => d !== department)
+    );
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setSelectedDepartments([]);
+  };
+
+  const handleJobClick = (job: JobOpening) => {
+    setSelectedJob(job);
+    setShowDetails(true);
+  };
+
+  const handleApply = (job: JobOpening) => {
+    setSelectedJob(job);
+    setShowDetails(false);
+    setShowApplication(true);
+  };
+
+  const handleBackToDetails = () => {
+    setShowApplication(false);
+    setShowDetails(true);
+  };
+
   return (
     <Layout>
       {/* Hero */}
@@ -72,8 +98,8 @@ const Careers = () => {
               <span className="text-gradient">Arcon Infratek</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Join our global team of BIM professionals and work on exciting 
-              projects with industry-leading clients.
+              Join our team of BIM professionals and work on exciting projects with
+              industry-leading clients. Your journey begins here!
             </p>
           </div>
         </div>
@@ -102,72 +128,56 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section className="py-20 section-alt">
+      {/* Ready to Make a Difference - Job Listings */}
+      <section id="apply-now" className="py-20 section-alt">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="section-label mb-4">Open Positions</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold">
-              Current <span className="text-gradient">opportunities</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-accent mb-4">
+              Ready to Make a Difference?
             </h2>
+            <p className="text-muted-foreground">Apply through the listings below!</p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-4">
-            {openings.map((job, index) => (
-              <div 
-                key={index} 
-                className="bg-background p-6 rounded-xl border border-border hover:border-accent/30 transition-colors group"
-              >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <h3 className="font-heading font-semibold text-lg mb-2 group-hover:text-accent transition-colors">
-                      {job.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Users className="h-4 w-4" />
-                        {job.department}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {job.location}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {job.type}
-                      </span>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link to="/contact">
-                      Apply Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
+
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Filters Sidebar */}
+            <div className="lg:w-64 flex-shrink-0">
+              <JobFilters
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                departments={departments}
+                selectedDepartments={selectedDepartments}
+                onDepartmentChange={handleDepartmentChange}
+                onClearFilters={handleClearFilters}
+              />
+            </div>
+
+            {/* Job Listings */}
+            <div className="flex-1">
+              <JobListings
+                jobs={filteredJobs}
+                departments={activeDepartments}
+                onJobClick={handleJobClick}
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container-custom text-center">
-          <h2 className="font-heading text-3xl font-bold mb-4">
-            Don't see a perfect fit?
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            We're always looking for talented BIM professionals. Send us your resume 
-            and we'll keep you in mind for future opportunities.
-          </p>
-          <Button size="lg" asChild>
-            <Link to="/contact">
-              Submit Your Resume
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </section>
+      {/* Job Details Dialog */}
+      <JobDetailsDialog
+        job={selectedJob}
+        open={showDetails}
+        onOpenChange={setShowDetails}
+        onApply={handleApply}
+      />
+
+      {/* Job Application Dialog */}
+      <JobApplicationDialog
+        job={selectedJob}
+        open={showApplication}
+        onOpenChange={setShowApplication}
+        onBack={handleBackToDetails}
+      />
     </Layout>
   );
 };
