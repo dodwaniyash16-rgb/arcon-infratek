@@ -27,6 +27,8 @@ const serviceScopes = [
       "Interior Design Modeling",
       "Facade Development",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "structural",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Connection Detailing",
       "Structural Analysis Integration",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "mep",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Equipment Scheduling",
       "MEP Coordination",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "facade",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "Quantity Takeoffs",
       "Installation Sequencing",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "landscape",
@@ -79,6 +87,8 @@ const serviceScopes = [
       "Planting Plans",
       "Site Coordination",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 

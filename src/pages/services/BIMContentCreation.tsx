@@ -27,6 +27,8 @@ const serviceScopes = [
       "LOD Compliance",
       "Performance Optimization",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "manufacturer-content",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Maintenance Information",
       "Marketing Visualization",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "template-development",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Title Blocks",
       "Standard Details",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "dynamo-scripts",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "Schedule Generation",
       "Reporting Automation",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 

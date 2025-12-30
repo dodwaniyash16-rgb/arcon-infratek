@@ -27,6 +27,8 @@ const serviceScopes = [
       "Deviation Reporting",
       "Quality Verification",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "scan-to-cad",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "MEP Documentation",
       "As-Built Updates",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "laser-scanning",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Progress Monitoring",
       "Deliverable Export",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "asset-documentation",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "CAFM Integration",
       "Asset Tagging",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 

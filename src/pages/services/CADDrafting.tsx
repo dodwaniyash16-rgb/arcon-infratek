@@ -27,6 +27,8 @@ const serviceScopes = [
       "Finish Plans",
       "Reflected Ceiling Plans",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "structural-cad",
@@ -40,6 +42,8 @@ const serviceScopes = [
       "Steel Fabrication Details",
       "Structural Sections",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "mep-cad",
@@ -53,6 +57,8 @@ const serviceScopes = [
       "Single Line Diagrams",
       "Isometric Details",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "civil-cad",
@@ -66,6 +72,8 @@ const serviceScopes = [
       "Drainage Details",
       "Survey Conversion",
     ],
+    // Add your image path here
+    image: "",
   },
   {
     id: "cad-conversion",
@@ -79,6 +87,8 @@ const serviceScopes = [
       "Layer Standardization",
       "Redline Updates",
     ],
+    // Add your image path here
+    image: "",
   },
 ];
 
