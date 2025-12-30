@@ -69,27 +69,9 @@ const services = [{
   href: "/services/bim-project-management",
   icon: Blocks
 }];
-const projects = [{
-  image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600",
-  title: "Commercial Tower",
-  category: "Commercial",
-  href: "/portfolio"
-}, {
-  image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600",
-  title: "Healthcare Facility",
-  category: "Healthcare",
-  href: "/portfolio"
-}, {
-  image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600",
-  title: "Industrial Complex",
-  category: "Industrial",
-  href: "/portfolio"
-}, {
-  image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600",
-  title: "Residential Project",
-  category: "Residential",
-  href: "/portfolio"
-}];
+import { getFeaturedProjects } from "@/data/projects";
+
+const featuredProjects = getFeaturedProjects();
 const stakeholders = [{
   icon: Pencil,
   title: "Design Consultants"
@@ -410,7 +392,15 @@ const Index = () => {
             </>} />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {projects.map((project, index) => <ProjectCard key={index} {...project} />)}
+            {featuredProjects.map((project, index) => (
+              <ProjectCard 
+                key={index} 
+                image={project.image}
+                title={project.title}
+                category={project.category}
+                href={`/portfolio/${project.slug}`}
+              />
+            ))}
           </div>
 
           <div className="text-center">
