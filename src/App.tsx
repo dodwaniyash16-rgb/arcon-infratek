@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/portfolio/ProjectDetail";
 import Insights from "./pages/Insights";
 
 // Service Pages
@@ -79,7 +80,7 @@ const App = () => (
           
           {/* Portfolio */}
           <Route path="/portfolio" element={<Portfolio />} />
-          
+          <Route path="/portfolio/:slug" element={<ProjectDetail />} />
           {/* Insights */}
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/blog" element={<Blog />} />
