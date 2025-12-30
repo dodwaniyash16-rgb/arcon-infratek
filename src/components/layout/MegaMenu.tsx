@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Layers, Building2, Ruler, Calculator, ScanLine, FileCheck, Pencil, Box, Users, HardHat, Briefcase, Building, Landmark, Settings } from "lucide-react";
+import { ArrowRight, Building2, HardHat, Briefcase, Building, Landmark, Settings, Ruler, Pencil, Users } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+
+interface ServiceItem {
+  label: string;
+  href: string;
+}
 
 interface ServiceCategory {
   title: string;
-  href?: string;
-  items: {
-    label: string;
-    href: string;
-  }[];
+  items: ServiceItem[];
 }
 
 interface StakeholderItem {
@@ -22,6 +23,8 @@ const serviceCategories: ServiceCategory[] = [
     items: [
       { label: "BIM Modeling", href: "/services/bim-modeling" },
       { label: "BIM Coordination", href: "/services/bim-coordination" },
+      { label: "BIM Project Management", href: "/services/bim-project-management" },
+      { label: "VDC & BIM Consulting", href: "/services/vdc-bim-consulting" },
       { label: "Shop Drawings", href: "/services/shop-drawings" },
       { label: "Estimation & QTO", href: "/services/estimation-qto" },
     ],
@@ -33,6 +36,8 @@ const serviceCategories: ServiceCategory[] = [
       { label: "BIM Auditing", href: "/services/bim-auditing" },
       { label: "CAD Drafting", href: "/services/cad-drafting" },
       { label: "BIM Content Creation", href: "/services/bim-content-creation" },
+      { label: "MEP BIM Services", href: "/services/mep-bim" },
+      { label: "Structural BIM", href: "/services/structural-bim" },
     ],
   },
 ];
@@ -55,31 +60,28 @@ const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
   if (!isOpen) return null;
 
   return (
-    <div 
-      className="absolute top-full left-0 right-0 pt-4"
-      onMouseLeave={onClose}
-    >
+    <div className="absolute top-full left-0 right-0 pt-1">
       <div className="container-custom">
-        <div className="bg-foreground text-background rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
-          <div className="grid lg:grid-cols-3 divide-x divide-background/10">
+        <div className="bg-slate-800 text-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in">
+          <div className="grid lg:grid-cols-3 divide-x divide-white/10">
             {/* Service Categories */}
             {serviceCategories.map((category, index) => (
-              <div key={index} className="p-8">
-                <h3 className="text-gradient font-heading font-semibold mb-6 text-sm uppercase tracking-wider">
+              <div key={index} className="p-6">
+                <h3 className="text-gradient font-heading font-semibold mb-4 text-xs uppercase tracking-wider">
                   {category.title}
                 </h3>
-                <ul className="space-y-1">
+                <ul className="space-y-0.5">
                   {category.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
                       <Link
                         to={item.href}
                         onClick={onClose}
-                        className="group flex items-center justify-between py-2.5 px-3 -mx-3 rounded-lg hover:bg-background/10 transition-colors"
+                        className="group flex items-center justify-between py-2 px-3 -mx-3 rounded-lg hover:bg-white/10 transition-colors"
                       >
-                        <span className="text-background/80 group-hover:text-background transition-colors">
+                        <span className="text-sm text-white/80 group-hover:text-white transition-colors">
                           {item.label}
                         </span>
-                        <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                        <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                       </Link>
                     </li>
                   ))}
@@ -88,18 +90,18 @@ const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
             ))}
             
             {/* Who We Serve */}
-            <div className="p-8 bg-background/5">
-              <h3 className="text-gradient font-heading font-semibold mb-6 text-sm uppercase tracking-wider">
+            <div className="p-6 bg-white/5">
+              <h3 className="text-gradient font-heading font-semibold mb-4 text-xs uppercase tracking-wider">
                 Who We Serve
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2">
                 {stakeholders.map((stakeholder, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 py-2 px-3 rounded-lg bg-background/5 hover:bg-background/10 transition-colors group cursor-default"
+                    className="flex items-center gap-2.5 py-1.5 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group cursor-default"
                   >
-                    <stakeholder.icon className="h-4 w-4 text-coral" />
-                    <span className="text-sm text-background/70 group-hover:text-background transition-colors">
+                    <stakeholder.icon className="h-3.5 w-3.5 text-coral" />
+                    <span className="text-xs text-white/70 group-hover:text-white transition-colors">
                       {stakeholder.label}
                     </span>
                   </div>
@@ -110,10 +112,10 @@ const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
               <Link
                 to="/services"
                 onClick={onClose}
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-coral hover:text-coral/80 transition-colors"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-coral hover:text-coral/80 transition-colors"
               >
                 View All Services
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           </div>

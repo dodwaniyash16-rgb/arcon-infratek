@@ -20,6 +20,8 @@ const mobileServices = [
     items: [
       { label: "BIM Modeling", href: "/services/bim-modeling" },
       { label: "BIM Coordination", href: "/services/bim-coordination" },
+      { label: "BIM Project Management", href: "/services/bim-project-management" },
+      { label: "VDC & BIM Consulting", href: "/services/vdc-bim-consulting" },
       { label: "Shop Drawings", href: "/services/shop-drawings" },
       { label: "Estimation & QTO", href: "/services/estimation-qto" },
     ],
@@ -31,6 +33,8 @@ const mobileServices = [
       { label: "BIM Auditing", href: "/services/bim-auditing" },
       { label: "CAD Drafting", href: "/services/cad-drafting" },
       { label: "BIM Content Creation", href: "/services/bim-content-creation" },
+      { label: "MEP BIM Services", href: "/services/mep-bim" },
+      { label: "Structural BIM", href: "/services/structural-bim" },
     ],
   },
 ];
@@ -62,13 +66,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-4 text-destructive">
+    <header className="fixed top-0 left-0 right-0 z-50 py-3 text-destructive">
       <div className="container-custom">
         <nav
-          className={`flex items-center justify-between px-6 py-3 transition-all duration-300 ${
+          className={`flex items-center justify-between px-6 py-2 transition-all duration-300 ${
             isScrolled
-              ? "nav-floating"
-              : "bg-background/80 backdrop-blur-sm rounded-full border border-border/50"
+              ? "bg-white shadow-lg rounded-full border border-border/30"
+              : "bg-white/95 backdrop-blur-sm rounded-full border border-border/30"
           }`}
         >
           {/* Logo */}
@@ -81,24 +85,23 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5">
             {navItems.map((item) => (
               <div
                 key={item.label}
                 className="relative"
                 onMouseEnter={() => item.hasMegaMenu && setIsMegaMenuOpen(true)}
-                onMouseLeave={() => item.hasMegaMenu && setIsMegaMenuOpen(false)}
               >
                 <Link
                   to={item.href}
-                  className={`flex items-center gap-1 px-4 py-2 text-sm transition-colors rounded-full ${
+                  className={`flex items-center gap-1 px-3 py-1.5 text-sm transition-colors rounded-full ${
                     isActive(item.href)
                       ? "bg-secondary text-foreground font-medium"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/50 font-normal"
                   }`}
                 >
                   {item.label}
-                  {item.hasMegaMenu && <ChevronDown className="h-4 w-4" />}
+                  {item.hasMegaMenu && <ChevronDown className="h-3.5 w-3.5" />}
                 </Link>
               </div>
             ))}
@@ -125,7 +128,12 @@ const Header = () => {
         </nav>
 
         {/* Mega Menu - Desktop */}
-        <MegaMenu isOpen={isMegaMenuOpen} onClose={() => setIsMegaMenuOpen(false)} />
+        <div 
+          onMouseEnter={() => setIsMegaMenuOpen(true)}
+          onMouseLeave={() => setIsMegaMenuOpen(false)}
+        >
+          <MegaMenu isOpen={isMegaMenuOpen} onClose={() => setIsMegaMenuOpen(false)} />
+        </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
