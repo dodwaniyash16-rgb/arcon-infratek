@@ -220,8 +220,8 @@ const ScanToBIM = () => {
       <CTAStrip
         title="Have point cloud data that needs modeling?"
         description="Get accurate BIM models from your laser scans."
-        primaryCTA={{ label: "Start Your Project", href: "/contact" }}
-        secondaryCTA={{ label: "Download Brochure", href: "/insights/brochures" }}
+        primaryCTA={{ text: "Start Your Project", href: "/contact" }}
+        secondaryCTA={{ text: "Download Brochure", href: "/insights/brochures" }}
       />
     </Layout>
   );

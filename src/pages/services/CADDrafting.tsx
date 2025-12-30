@@ -200,8 +200,8 @@ const CADDrafting = () => {
       <CTAStrip
         title="Need professional CAD drafting?"
         description="Get accurate drawings from our experienced team."
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
-        secondaryCTA={{ label: "View Samples", href: "/portfolio" }}
+        primaryCTA={{ text: "Request a Quote", href: "/contact" }}
+        secondaryCTA={{ text: "View Samples", href: "/portfolio" }}
       />
     </Layout>
   );

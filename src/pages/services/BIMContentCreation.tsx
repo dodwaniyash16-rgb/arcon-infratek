@@ -187,8 +187,8 @@ const BIMContentCreation = () => {
       <CTAStrip
         title="Need custom BIM content?"
         description="Let's discuss your family and library requirements."
-        primaryCTA={{ label: "Start a Project", href: "/contact" }}
-        secondaryCTA={{ label: "View Samples", href: "/portfolio" }}
+        primaryCTA={{ text: "Start a Project", href: "/contact" }}
+        secondaryCTA={{ text: "View Samples", href: "/portfolio" }}
       />
     </Layout>
   );

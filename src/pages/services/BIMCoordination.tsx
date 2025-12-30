@@ -187,8 +187,8 @@ const BIMCoordination = () => {
       <CTAStrip
         title="Ready to streamline your project coordination?"
         description="Connect with our VDC experts for a consultation."
-        primaryCTA={{ label: "Schedule a Call", href: "/contact" }}
-        secondaryCTA={{ label: "Download Brochure", href: "/insights/brochures" }}
+        primaryCTA={{ text: "Schedule a Call", href: "/contact" }}
+        secondaryCTA={{ text: "Download Brochure", href: "/insights/brochures" }}
       />
     </Layout>
   );
