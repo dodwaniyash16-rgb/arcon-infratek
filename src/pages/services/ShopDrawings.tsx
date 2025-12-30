@@ -200,8 +200,8 @@ const ShopDrawings = () => {
       <CTAStrip
         title="Need shop drawings for your project?"
         description="Get a quote from our detailing experts today."
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
-        secondaryCTA={{ label: "View Samples", href: "/portfolio" }}
+        primaryCTA={{ text: "Request a Quote", href: "/contact" }}
+        secondaryCTA={{ text: "View Samples", href: "/portfolio" }}
       />
     </Layout>
   );

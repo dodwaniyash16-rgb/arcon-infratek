@@ -186,8 +186,8 @@ const EstimationQTO = () => {
       <CTAStrip
         title="Need accurate quantities for your bid?"
         description="Get a competitive edge with BIM-based takeoffs."
-        primaryCTA={{ label: "Request a Quote", href: "/contact" }}
-        secondaryCTA={{ label: "Download Brochure", href: "/insights/brochures" }}
+        primaryCTA={{ text: "Request a Quote", href: "/contact" }}
+        secondaryCTA={{ text: "Download Brochure", href: "/insights/brochures" }}
       />
     </Layout>
   );

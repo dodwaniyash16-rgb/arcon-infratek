@@ -22,6 +22,14 @@ import MEPBIM from "./pages/services/MEPBIM";
 import CivilUtilitiesBIM from "./pages/services/CivilUtilitiesBIM";
 import AsBuiltBIM from "./pages/services/AsBuiltBIM";
 import BIMProjectManagement from "./pages/services/BIMProjectManagement";
+import BIMModeling from "./pages/services/BIMModeling";
+import BIMCoordination from "./pages/services/BIMCoordination";
+import ShopDrawings from "./pages/services/ShopDrawings";
+import EstimationQTO from "./pages/services/EstimationQTO";
+import ScanToBIM from "./pages/services/ScanToBIM";
+import BIMAuditing from "./pages/services/BIMAuditing";
+import CADDrafting from "./pages/services/CADDrafting";
+import BIMContentCreation from "./pages/services/BIMContentCreation";
 
 // Insights Pages
 import Blog from "./pages/insights/Blog";
@@ -59,6 +67,14 @@ const App = () => (
           <Route path="/services/civil-utilities-bim" element={<CivilUtilitiesBIM />} />
           <Route path="/services/as-built-bim" element={<AsBuiltBIM />} />
           <Route path="/services/bim-project-management" element={<BIMProjectManagement />} />
+          <Route path="/services/bim-modeling" element={<BIMModeling />} />
+          <Route path="/services/bim-coordination" element={<BIMCoordination />} />
+          <Route path="/services/shop-drawings" element={<ShopDrawings />} />
+          <Route path="/services/estimation-qto" element={<EstimationQTO />} />
+          <Route path="/services/scan-to-bim" element={<ScanToBIM />} />
+          <Route path="/services/bim-auditing" element={<BIMAuditing />} />
+          <Route path="/services/cad-drafting" element={<CADDrafting />} />
+          <Route path="/services/bim-content-creation" element={<BIMContentCreation />} />
           
           {/* Portfolio */}
           <Route path="/portfolio" element={<Portfolio />} />

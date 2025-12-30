@@ -187,8 +187,8 @@ const BIMAuditing = () => {
       <CTAStrip
         title="Need your models audited?"
         description="Get a comprehensive quality assessment today."
-        primaryCTA={{ label: "Request an Audit", href: "/contact" }}
-        secondaryCTA={{ label: "Download Checklist", href: "/insights/brochures" }}
+        primaryCTA={{ text: "Request an Audit", href: "/contact" }}
+        secondaryCTA={{ text: "Download Checklist", href: "/insights/brochures" }}
       />
     </Layout>
   );

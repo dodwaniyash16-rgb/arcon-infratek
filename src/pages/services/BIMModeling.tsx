@@ -208,8 +208,8 @@ const BIMModeling = () => {
       <CTAStrip
         title="Ready to start your BIM modeling project?"
         description="Get in touch with our experts for a personalized consultation and project quote."
-        primaryCTA={{ label: "Schedule a Call", href: "/contact" }}
-        secondaryCTA={{ label: "Download Brochure", href: "/insights/brochures" }}
+        primaryCTA={{ text: "Schedule a Call", href: "/contact" }}
+        secondaryCTA={{ text: "Download Brochure", href: "/insights/brochures" }}
       />
     </Layout>
   );
