@@ -33,6 +33,7 @@ import BIMContentCreation from "./pages/services/BIMContentCreation";
 
 // Insights Pages
 import Blog from "./pages/insights/Blog";
+import BlogPost from "./pages/insights/BlogPost";
 import Brochures from "./pages/insights/Brochures";
 import Testimonials from "./pages/insights/Testimonials";
 import Media from "./pages/insights/Media";
@@ -82,9 +83,11 @@ const App = () => (
           {/* Insights */}
           <Route path="/insights" element={<Insights />} />
           <Route path="/insights/blog" element={<Blog />} />
+          <Route path="/insights/blog/:slug" element={<BlogPost />} />
           <Route path="/insights/brochures" element={<Brochures />} />
           <Route path="/insights/testimonials" element={<Testimonials />} />
           <Route path="/insights/media" element={<Media />} />
+          <Route path="/insights/media-kit" element={<MediaKit />} />
           <Route path="/insights/media-kit" element={<MediaKit />} />
           
           {/* Legal */}
