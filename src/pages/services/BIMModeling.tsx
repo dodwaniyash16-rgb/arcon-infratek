@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import mepBimImage from "@/assets/services/mep-bim.png";
 import { Button } from "@/components/ui/button";
 import ServiceScopeTabs from "@/components/sections/ServiceScopeTabs";
 import ProcessWorkflow from "@/components/sections/ProcessWorkflow";
@@ -58,7 +59,7 @@ const serviceScopes = [
       "MEP Coordination",
     ],
     // Add your image path here
-    image: "",
+    image: mepBimImage,
   },
   {
     id: "facade",
