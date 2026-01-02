@@ -2,7 +2,11 @@ import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import architecturalBimImage from "@/assets/services/architectural-bim.png";
+import structuralBimImage from "@/assets/services/structural-bim.png";
 import mepBimImage from "@/assets/services/mep-bim.png";
+import facadeBimImage from "@/assets/services/facade-bim.png";
+import landscapeBimImage from "@/assets/services/landscape-bim.png";
 import { Button } from "@/components/ui/button";
 import ServiceScopeTabs from "@/components/sections/ServiceScopeTabs";
 import ProcessWorkflow from "@/components/sections/ProcessWorkflow";
@@ -28,8 +32,7 @@ const serviceScopes = [
       "Interior Design Modeling",
       "Facade Development",
     ],
-    // Add your image path here
-    image: "",
+    image: architecturalBimImage,
   },
   {
     id: "structural",
@@ -43,8 +46,7 @@ const serviceScopes = [
       "Connection Detailing",
       "Structural Analysis Integration",
     ],
-    // Add your image path here
-    image: "",
+    image: structuralBimImage,
   },
   {
     id: "mep",
@@ -58,7 +60,6 @@ const serviceScopes = [
       "Equipment Scheduling",
       "MEP Coordination",
     ],
-    // Add your image path here
     image: mepBimImage,
   },
   {
@@ -73,8 +74,7 @@ const serviceScopes = [
       "Quantity Takeoffs",
       "Installation Sequencing",
     ],
-    // Add your image path here
-    image: "",
+    image: facadeBimImage,
   },
   {
     id: "landscape",
@@ -88,8 +88,7 @@ const serviceScopes = [
       "Planting Plans",
       "Site Coordination",
     ],
-    // Add your image path here
-    image: "",
+    image: landscapeBimImage,
   },
 ];
 
