@@ -2,9 +2,7 @@ import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, FileText, Users, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+import heroImage from "@/assets/services/vdc-bim-consulting.png";
 const features = [
   "BIM Execution Plan (BEP) Development",
   "Workflow Optimization & Standardization",
