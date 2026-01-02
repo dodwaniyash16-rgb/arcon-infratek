@@ -11,6 +11,10 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import vdcServicesImage from "@/assets/services/vdc-services.png";
+import clashDetectionImage from "@/assets/services/clash-detection.png";
+import modelCoordinationImage from "@/assets/services/model-coordination.png";
+import bimManagementImage from "@/assets/services/bim-management.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -27,8 +31,7 @@ const serviceScopes = [
       "Trade Coordination",
       "Digital Twin Development",
     ],
-    // Add your image path here
-    image: "",
+    image: vdcServicesImage,
   },
   {
     id: "clash-detection",
@@ -42,8 +45,7 @@ const serviceScopes = [
       "Issue Tracking & Closeout",
       "BIM 360 Integration",
     ],
-    // Add your image path here
-    image: "",
+    image: clashDetectionImage,
   },
   {
     id: "model-coordination",
@@ -57,8 +59,7 @@ const serviceScopes = [
       "Model Version Control",
       "Stakeholder Communication",
     ],
-    // Add your image path here
-    image: "",
+    image: modelCoordinationImage,
   },
   {
     id: "bim-management",
@@ -72,8 +73,7 @@ const serviceScopes = [
       "Deliverable Management",
       "Progress Tracking",
     ],
-    // Add your image path here
-    image: "",
+    image: bimManagementImage,
   },
 ];
 
