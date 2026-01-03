@@ -11,6 +11,10 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import modelAuditingImage from "@/assets/services/model-auditing.png";
+import qualityControlImage from "@/assets/services/quality-control.png";
+import standardsReviewImage from "@/assets/services/standards-review.png";
+import modelHealthCheckImage from "@/assets/services/model-health-check.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -27,8 +31,7 @@ const serviceScopes = [
       "Workset Organization",
       "File Performance Assessment",
     ],
-    // Add your image path here
-    image: "",
+    image: modelAuditingImage,
   },
   {
     id: "quality-control",
@@ -42,8 +45,7 @@ const serviceScopes = [
       "Drawing Extraction Test",
       "Issue Tracking & Resolution",
     ],
-    // Add your image path here
-    image: "",
+    image: qualityControlImage,
   },
   {
     id: "standards-review",
@@ -57,8 +59,7 @@ const serviceScopes = [
       "Export Format Testing",
       "Handover Readiness",
     ],
-    // Add your image path here
-    image: "",
+    image: standardsReviewImage,
   },
   {
     id: "model-health",
@@ -72,8 +73,7 @@ const serviceScopes = [
       "View Template Audit",
       "Performance Recommendations",
     ],
-    // Add your image path here
-    image: "",
+    image: modelHealthCheckImage,
   },
 ];
 
