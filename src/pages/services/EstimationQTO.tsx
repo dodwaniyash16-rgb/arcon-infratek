@@ -11,6 +11,10 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import estimationQtyTakeoff from "@/assets/services/estimation-qty-takeoff.png";
+import estimationCost from "@/assets/services/estimation-cost.png";
+import estimation5dBim from "@/assets/services/estimation-5d-bim.png";
+import estimationBidSupport from "@/assets/services/estimation-bid-support.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -27,8 +31,7 @@ const serviceScopes = [
       "Excel Export & Integration",
       "Revision Comparison",
     ],
-    // Add your image path here
-    image: "",
+    image: estimationQtyTakeoff,
   },
   {
     id: "cost-estimation",
@@ -42,8 +45,7 @@ const serviceScopes = [
       "Value Engineering Support",
       "Cost-to-Complete Analysis",
     ],
-    // Add your image path here
-    image: "",
+    image: estimationCost,
   },
   {
     id: "5d-bim",
@@ -57,8 +59,7 @@ const serviceScopes = [
       "Cash Flow Projections",
       "Cost Visualization",
     ],
-    // Add your image path here
-    image: "",
+    image: estimation5dBim,
   },
   {
     id: "bid-support",
@@ -72,8 +73,7 @@ const serviceScopes = [
       "Risk Assessment",
       "Bid Day Support",
     ],
-    // Add your image path here
-    image: "",
+    image: estimationBidSupport,
   },
 ];
 
