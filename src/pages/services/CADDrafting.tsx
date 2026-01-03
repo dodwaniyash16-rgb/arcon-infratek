@@ -13,6 +13,9 @@ import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
 import cadArchitecturalImage from "@/assets/services/cad-architectural.png";
 import cadStructuralImage from "@/assets/services/cad-structural.png";
+import cadMepImage from "@/assets/services/cad-mep.png";
+import cadCivilImage from "@/assets/services/cad-civil.png";
+import cadConversionImage from "@/assets/services/cad-conversion.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -57,8 +60,7 @@ const serviceScopes = [
       "Single Line Diagrams",
       "Isometric Details",
     ],
-    // Add your image path here
-    image: "",
+    image: cadMepImage,
   },
   {
     id: "civil-cad",
@@ -72,8 +74,7 @@ const serviceScopes = [
       "Drainage Details",
       "Survey Conversion",
     ],
-    // Add your image path here
-    image: "",
+    image: cadCivilImage,
   },
   {
     id: "cad-conversion",
@@ -87,8 +88,7 @@ const serviceScopes = [
       "Layer Standardization",
       "Redline Updates",
     ],
-    // Add your image path here
-    image: "",
+    image: cadConversionImage,
   },
 ];
 
