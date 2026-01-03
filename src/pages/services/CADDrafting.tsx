@@ -11,6 +11,8 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import cadArchitecturalImage from "@/assets/services/cad-architectural.png";
+import cadStructuralImage from "@/assets/services/cad-structural.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -27,8 +29,7 @@ const serviceScopes = [
       "Finish Plans",
       "Reflected Ceiling Plans",
     ],
-    // Add your image path here
-    image: "",
+    image: cadArchitecturalImage,
   },
   {
     id: "structural-cad",
@@ -42,8 +43,7 @@ const serviceScopes = [
       "Steel Fabrication Details",
       "Structural Sections",
     ],
-    // Add your image path here
-    image: "",
+    image: cadStructuralImage,
   },
   {
     id: "mep-cad",

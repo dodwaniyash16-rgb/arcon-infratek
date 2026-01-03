@@ -11,6 +11,10 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import scanToBimImage from "@/assets/services/scan-to-bim.png";
+import scanToCadImage from "@/assets/services/scan-to-cad.png";
+import laserScanningImage from "@/assets/services/laser-scanning.png";
+import assetDocumentationImage from "@/assets/services/asset-documentation.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -27,8 +31,7 @@ const serviceScopes = [
       "Deviation Reporting",
       "Quality Verification",
     ],
-    // Add your image path here
-    image: "",
+    image: scanToBimImage,
   },
   {
     id: "scan-to-cad",
@@ -42,8 +45,7 @@ const serviceScopes = [
       "MEP Documentation",
       "As-Built Updates",
     ],
-    // Add your image path here
-    image: "",
+    image: scanToCadImage,
   },
   {
     id: "laser-scanning",
@@ -57,8 +59,7 @@ const serviceScopes = [
       "Progress Monitoring",
       "Deliverable Export",
     ],
-    // Add your image path here
-    image: "",
+    image: laserScanningImage,
   },
   {
     id: "asset-documentation",
@@ -72,8 +73,7 @@ const serviceScopes = [
       "CAFM Integration",
       "Asset Tagging",
     ],
-    // Add your image path here
-    image: "",
+    image: assetDocumentationImage,
   },
 ];
 
