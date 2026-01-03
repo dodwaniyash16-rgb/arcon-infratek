@@ -11,8 +11,11 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import revitFamiliesImage from "@/assets/services/content-revit-families.png";
+import manufacturerContentImage from "@/assets/services/content-manufacturer.png";
+import templateDevelopmentImage from "@/assets/services/content-templates.png";
+import dynamoImage from "@/assets/services/content-dynamo.png";
 
-// Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
 const serviceScopes = [
   {
@@ -27,8 +30,7 @@ const serviceScopes = [
       "LOD Compliance",
       "Performance Optimization",
     ],
-    // Add your image path here
-    image: "",
+    image: revitFamiliesImage,
   },
   {
     id: "manufacturer-content",
@@ -42,8 +44,7 @@ const serviceScopes = [
       "Maintenance Information",
       "Marketing Visualization",
     ],
-    // Add your image path here
-    image: "",
+    image: manufacturerContentImage,
   },
   {
     id: "template-development",
@@ -57,8 +58,7 @@ const serviceScopes = [
       "Title Blocks",
       "Standard Details",
     ],
-    // Add your image path here
-    image: "",
+    image: templateDevelopmentImage,
   },
   {
     id: "dynamo-scripts",
@@ -72,8 +72,7 @@ const serviceScopes = [
       "Schedule Generation",
       "Reporting Automation",
     ],
-    // Add your image path here
-    image: "",
+    image: dynamoImage,
   },
 ];
 

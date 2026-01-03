@@ -2,9 +2,9 @@ import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import structuralBimHero from "@/assets/services/structural-bim-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = structuralBimHero;
 const features = [
   "Steel Structure Modeling",
   "Concrete Structure Modeling",
