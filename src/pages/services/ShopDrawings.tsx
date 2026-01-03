@@ -11,6 +11,11 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import shopStructuralSteel from "@/assets/services/shop-structural-steel.png";
+import shopMep from "@/assets/services/shop-mep.png";
+import shopRebar from "@/assets/services/shop-rebar.png";
+import shopPrecast from "@/assets/services/shop-precast.png";
+import shopCurtainWall from "@/assets/services/shop-curtain-wall.png";
 
 // Hero image - replace with your own image path
 const heroImage = "/placeholder.svg";
@@ -27,8 +32,7 @@ const serviceScopes = [
       "Erection Drawings",
       "Anchor Bolt Plans",
     ],
-    // Add your image path here
-    image: "",
+    image: shopStructuralSteel,
   },
   {
     id: "mep-shop",
@@ -42,8 +46,7 @@ const serviceScopes = [
       "Hanger & Support Details",
       "Sleeve & Penetration Plans",
     ],
-    // Add your image path here
-    image: "",
+    image: shopMep,
   },
   {
     id: "rebar",
@@ -57,8 +60,7 @@ const serviceScopes = [
       "Special Moment Frames",
       "Quantity Summaries",
     ],
-    // Add your image path here
-    image: "",
+    image: shopRebar,
   },
   {
     id: "precast",
@@ -72,8 +74,7 @@ const serviceScopes = [
       "Production Tickets",
       "As-Placed Verification",
     ],
-    // Add your image path here
-    image: "",
+    image: shopPrecast,
   },
   {
     id: "curtain-wall",
@@ -87,8 +88,7 @@ const serviceScopes = [
       "Gasket & Sealant Specs",
       "Installation Sequences",
     ],
-    // Add your image path here
-    image: "",
+    image: shopCurtainWall,
   },
 ];
 
