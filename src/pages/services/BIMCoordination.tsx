@@ -15,9 +15,9 @@ import vdcServicesImage from "@/assets/services/vdc-services.png";
 import clashDetectionImage from "@/assets/services/clash-detection.png";
 import modelCoordinationImage from "@/assets/services/model-coordination.png";
 import bimManagementImage from "@/assets/services/bim-management.png";
+import bimCoordinationHero from "@/assets/services/bim-coordination-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = bimCoordinationHero;
 const serviceScopes = [
   {
     id: "vdc",

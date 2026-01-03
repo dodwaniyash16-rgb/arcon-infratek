@@ -16,9 +16,9 @@ import shopMep from "@/assets/services/shop-mep.png";
 import shopRebar from "@/assets/services/shop-rebar.png";
 import shopPrecast from "@/assets/services/shop-precast.png";
 import shopCurtainWall from "@/assets/services/shop-curtain-wall.png";
+import shopDrawingsHero from "@/assets/services/shop-drawings-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = shopDrawingsHero;
 const serviceScopes = [
   {
     id: "structural-steel",

@@ -16,9 +16,9 @@ import cadStructuralImage from "@/assets/services/cad-structural.png";
 import cadMepImage from "@/assets/services/cad-mep.png";
 import cadCivilImage from "@/assets/services/cad-civil.png";
 import cadConversionImage from "@/assets/services/cad-conversion.png";
+import cadDraftingHero from "@/assets/services/cad-drafting-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = cadDraftingHero;
 const serviceScopes = [
   {
     id: "architectural-cad",
