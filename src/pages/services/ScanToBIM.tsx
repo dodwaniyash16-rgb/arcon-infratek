@@ -15,9 +15,9 @@ import scanToBimImage from "@/assets/services/scan-to-bim.png";
 import scanToCadImage from "@/assets/services/scan-to-cad.png";
 import laserScanningImage from "@/assets/services/laser-scanning.png";
 import assetDocumentationImage from "@/assets/services/asset-documentation.png";
+import scanToBimHero from "@/assets/services/scan-to-bim-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = scanToBimHero;
 const serviceScopes = [
   {
     id: "scan-to-bim",

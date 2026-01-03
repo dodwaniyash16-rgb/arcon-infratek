@@ -15,8 +15,9 @@ import revitFamiliesImage from "@/assets/services/content-revit-families.png";
 import manufacturerContentImage from "@/assets/services/content-manufacturer.png";
 import templateDevelopmentImage from "@/assets/services/content-templates.png";
 import dynamoImage from "@/assets/services/content-dynamo.png";
+import bimContentHero from "@/assets/services/bim-content-hero.png";
 
-const heroImage = "/placeholder.svg";
+const heroImage = bimContentHero;
 const serviceScopes = [
   {
     id: "revit-families",

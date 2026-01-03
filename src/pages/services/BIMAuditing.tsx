@@ -15,9 +15,9 @@ import modelAuditingImage from "@/assets/services/model-auditing.png";
 import qualityControlImage from "@/assets/services/quality-control.png";
 import standardsReviewImage from "@/assets/services/standards-review.png";
 import modelHealthCheckImage from "@/assets/services/model-health-check.png";
+import bimAuditingHero from "@/assets/services/bim-auditing-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = bimAuditingHero;
 const serviceScopes = [
   {
     id: "model-audit",

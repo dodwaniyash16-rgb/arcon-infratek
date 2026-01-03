@@ -15,9 +15,9 @@ import estimationQtyTakeoff from "@/assets/services/estimation-qty-takeoff.png";
 import estimationCost from "@/assets/services/estimation-cost.png";
 import estimation5dBim from "@/assets/services/estimation-5d-bim.png";
 import estimationBidSupport from "@/assets/services/estimation-bid-support.png";
+import estimationQtoHero from "@/assets/services/estimation-qto-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = estimationQtoHero;
 const serviceScopes = [
   {
     id: "quantity-takeoff",

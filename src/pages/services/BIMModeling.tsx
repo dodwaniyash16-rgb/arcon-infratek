@@ -16,9 +16,9 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import bimModelingHero from "@/assets/services/bim-modeling-hero.png";
 
-// Hero image - replace with your own image path
-const heroImage = "/placeholder.svg";
+const heroImage = bimModelingHero;
 const serviceScopes = [
   {
     id: "architectural",
