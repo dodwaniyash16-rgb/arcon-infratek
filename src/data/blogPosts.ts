@@ -1,3 +1,14 @@
+// Blog images
+import blogFutureBim2025 from "@/assets/blog/blog-future-bim-2025.png";
+import blogClashDetection from "@/assets/blog/blog-clash-detection.png";
+import blogMepCoordination from "@/assets/blog/blog-mep-coordination.png";
+import blogScanToBim from "@/assets/blog/blog-scan-to-bim.png";
+import blogFacilityManagement from "@/assets/blog/blog-facility-management.png";
+import blogRevitBestPractices from "@/assets/blog/blog-revit-best-practices.png";
+import blog4dBim from "@/assets/blog/blog-4d-bim.png";
+import blog5dBim from "@/assets/blog/blog-5d-bim.png";
+import blogDigitalTwins from "@/assets/blog/blog-digital-twins.png";
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -20,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 15, 2024",
     readTime: "5 min",
     excerpt: "Explore the emerging technologies and methodologies that are reshaping how we approach building information modeling in the construction industry.",
-    image: "/placeholder.svg",
+    image: blogFutureBim2025,
     author: "Arcon Infratek Team",
     content: `
       <p>The construction industry is undergoing a digital transformation, and Building Information Modeling (BIM) is at the forefront of this revolution. As we look ahead to 2025, several key trends are emerging that will shape the future of BIM adoption and implementation.</p>
@@ -52,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 10, 2024",
     readTime: "7 min",
     excerpt: "Learn the proven strategies for identifying and resolving conflicts between building systems before they become costly on-site problems.",
-    image: "/placeholder.svg",
+    image: blogClashDetection,
     author: "Arcon Infratek Team",
     content: `
       <p>Clash detection is one of the most valuable capabilities of BIM, allowing project teams to identify conflicts between different building systems before construction begins. However, the effectiveness of clash detection depends heavily on how it's implemented.</p>
@@ -124,7 +135,7 @@ export const blogPosts: BlogPost[] = [
     date: "Nov 28, 2024",
     readTime: "8 min",
     excerpt: "Discover effective approaches to coordinating mechanical, electrical, and plumbing systems in vertical construction projects.",
-    image: "/placeholder.svg",
+    image: blogMepCoordination,
     author: "Arcon Infratek Team",
     content: `
       <p>MEP coordination in high-rise buildings presents unique challenges due to vertical distribution requirements, limited shaft space, and the critical importance of system reliability. Effective coordination strategies are essential for project success.</p>
@@ -156,7 +167,7 @@ export const blogPosts: BlogPost[] = [
     date: "Nov 20, 2024",
     readTime: "10 min",
     excerpt: "Everything you need to know about converting point cloud data into accurate, usable BIM models for renovation and retrofit projects.",
-    image: "/placeholder.svg",
+    image: blogScanToBim,
     author: "Arcon Infratek Team",
     content: `
       <p>Scan to BIM has revolutionized how we document existing conditions. This comprehensive guide covers the entire process from field scanning to final model delivery, helping you understand what to expect and how to get the best results.</p>
@@ -191,7 +202,7 @@ export const blogPosts: BlogPost[] = [
     date: "Nov 15, 2024",
     readTime: "6 min",
     excerpt: "How building owners can leverage BIM models beyond construction for ongoing operations and maintenance efficiency.",
-    image: "/placeholder.svg",
+    image: blogFacilityManagement,
     author: "Arcon Infratek Team",
     content: `
       <p>While BIM is often associated with design and construction, its greatest long-term value may be in facility management. Buildings spend far more time in operation than in construction, making operational BIM a smart investment.</p>
@@ -223,7 +234,7 @@ export const blogPosts: BlogPost[] = [
     date: "Nov 8, 2024",
     readTime: "7 min",
     excerpt: "Essential strategies for maintaining model performance and team coordination on complex Revit projects.",
-    image: "/placeholder.svg",
+    image: blogRevitBestPractices,
     author: "Arcon Infratek Team",
     content: `
       <p>Large-scale projects push Revit to its limits. Without proper strategies, model performance degrades, coordination becomes chaotic, and productivity suffers. These best practices keep large projects running smoothly.</p>
@@ -255,7 +266,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 30, 2024",
     readTime: "8 min",
     excerpt: "How linking 3D models with project schedules creates powerful visualization and planning capabilities for construction teams.",
-    image: "/placeholder.svg",
+    image: blog4dBim,
     author: "Arcon Infratek Team",
     content: `
       <p>4D BIM adds the dimension of time to 3D models, creating animated construction sequences that transform how projects are planned and communicated. This capability is revolutionizing construction scheduling.</p>
@@ -287,7 +298,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 22, 2024",
     readTime: "6 min",
     excerpt: "Leveraging BIM quantity takeoffs and cost databases to create more accurate, responsive project estimates.",
-    image: "/placeholder.svg",
+    image: blog5dBim,
     author: "Arcon Infratek Team",
     content: `
       <p>5D BIM integrates cost data with 3D models, enabling dynamic cost estimation that updates automatically as design evolves. This capability transforms the relationship between design and budget management.</p>
@@ -319,7 +330,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 15, 2024",
     readTime: "9 min",
     excerpt: "Understanding how real-time data integration is creating new possibilities for building performance and management.",
-    image: "/placeholder.svg",
+    image: blogDigitalTwins,
     author: "Arcon Infratek Team",
     content: `
       <p>Digital twins extend BIM beyond static documentation into dynamic, data-connected models that reflect real-time building conditions. This technology is transforming how buildings are operated and maintained.</p>
