@@ -55,13 +55,10 @@ const Footer = () => {
     }],
     legal: [{
       label: "Privacy Policy",
-      href: "/privacy"
-    }, {
-      label: "Terms of Service",
-      href: "/terms"
+      href: "/privacy-policy"
     }, {
       label: "Cookie Policy",
-      href: "/cookies"
+      href: "/cookie-policy"
     }]
   };
   const socialLinks = [{
