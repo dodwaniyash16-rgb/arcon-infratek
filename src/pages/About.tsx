@@ -27,6 +27,7 @@ import officeTeamImage from "@/assets/office-team.png";
 import unicefLogo from "@/assets/clients/unicef.png";
 import karnatakaLogo from "@/assets/clients/karnataka-govt.png";
 import mpLogo from "@/assets/clients/mp-govt.png";
+import worldMapImage from "@/assets/world-map.png";
 
 // Animated stat component
 const AnimatedStat = ({ 
@@ -52,7 +53,7 @@ const AnimatedStat = ({
   );
 };
 
-// Service card for What We Do section
+// Service card for What We Do section - with premium hover effect
 const ServiceCard = ({ 
   title, 
   icon: Icon, 
@@ -64,19 +65,32 @@ const ServiceCard = ({
 }) => (
   <Link 
     to={href}
-    className="group bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:border-primary/20"
+    className="group block bg-card border border-border rounded-2xl p-6 hover:border-transparent hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative"
   >
-    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#c5328f] to-[#fec967] flex items-center justify-center mb-4">
-      <Icon className="w-6 h-6 text-white" />
+    {/* Thin gradient border overlay on hover */}
+    <div 
+      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      style={{ 
+        background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
+        padding: '1px',
+        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+        WebkitMaskComposite: 'xor',
+        maskComposite: 'exclude'
+      }}
+    />
+    <div className="relative z-10">
+      <div className="w-12 h-12 rounded-xl bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-4 transition-all duration-300">
+        <Icon className="w-6 h-6 icon-gradient group-hover-icon-white transition-all duration-300" />
+      </div>
+      <h3 className="font-heading font-semibold text-foreground group-hover:text-gradient transition-all">
+        {title}
+      </h3>
+      <ArrowRight className="w-4 h-4 mt-3 text-gradient" />
     </div>
-    <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
-      {title}
-    </h3>
-    <ArrowRight className="w-4 h-4 mt-3 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
   </Link>
 );
 
-// Value card component
+// Value card component - with premium hover effect
 const ValueCard = ({ 
   icon: Icon, 
   title, 
@@ -86,12 +100,25 @@ const ValueCard = ({
   title: string; 
   description: string;
 }) => (
-  <div className="bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
-    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#c5328f] to-[#fec967] flex items-center justify-center mb-5">
-      <Icon className="w-7 h-7 text-white" />
+  <div className="group bg-card border border-border rounded-2xl p-6 hover:border-transparent hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative">
+    {/* Thin gradient border overlay on hover */}
+    <div 
+      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      style={{ 
+        background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
+        padding: '1px',
+        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+        WebkitMaskComposite: 'xor',
+        maskComposite: 'exclude'
+      }}
+    />
+    <div className="relative z-10">
+      <div className="w-14 h-14 rounded-2xl bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-5 transition-all duration-300">
+        <Icon className="w-7 h-7 icon-gradient group-hover-icon-white transition-all duration-300" />
+      </div>
+      <h3 className="font-heading font-semibold text-lg text-foreground mb-3 group-hover:text-gradient transition-all">{title}</h3>
+      <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
     </div>
-    <h3 className="font-heading font-semibold text-lg text-foreground mb-3">{title}</h3>
-    <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
   </div>
 );
 
@@ -332,82 +359,12 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Map Column */}
-            <div className="relative bg-card border border-border rounded-2xl p-8 overflow-hidden">
-              <svg viewBox="0 0 400 350" className="w-full h-auto">
-                {/* Simplified India Map */}
-                <path 
-                  d="M120 80 L180 60 L220 70 L260 90 L280 120 L300 140 L310 180 L300 220 L280 260 L250 290 L220 310 L180 320 L150 310 L130 280 L120 250 L100 220 L90 180 L100 140 L110 100 Z" 
-                  fill="hsl(var(--muted))" 
-                  stroke="hsl(var(--border))" 
-                  strokeWidth="2"
-                />
-                
-                {/* Project coverage dots */}
-                {[
-                  [150, 120], [180, 130], [200, 110], [220, 140], [170, 160],
-                  [190, 180], [210, 170], [240, 160], [160, 200], [200, 200],
-                  [180, 220], [220, 210], [150, 240], [190, 260], [220, 250],
-                  [170, 280], [200, 290], [250, 180], [130, 180], [140, 220],
-                ].map(([cx, cy], i) => (
-                  <circle 
-                    key={i} 
-                    cx={cx} 
-                    cy={cy} 
-                    r="4" 
-                    fill="hsl(var(--primary))" 
-                    opacity="0.4"
-                  />
-                ))}
-                
-                {/* Office locations with gradient pins */}
-                <defs>
-                  <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#c5328f" />
-                    <stop offset="100%" stopColor="#fec967" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Indore */}
-                <g>
-                  <circle cx="175" cy="190" r="10" fill="url(#pinGradient)" />
-                  <circle cx="175" cy="190" r="5" fill="white" />
-                  <text x="175" y="175" textAnchor="middle" className="text-xs fill-foreground font-medium">Indore (HQ)</text>
-                </g>
-                
-                {/* Delhi */}
-                <g>
-                  <circle cx="190" cy="120" r="8" fill="url(#pinGradient)" />
-                  <circle cx="190" cy="120" r="4" fill="white" />
-                  <text x="190" y="105" textAnchor="middle" className="text-xs fill-foreground font-medium">Delhi</text>
-                </g>
-                
-                {/* International markers (outside India) */}
-                {/* Dubai */}
-                <g>
-                  <circle cx="80" cy="160" r="8" fill="url(#pinGradient)" />
-                  <circle cx="80" cy="160" r="4" fill="white" />
-                  <text x="80" y="145" textAnchor="middle" className="text-xs fill-foreground font-medium">Dubai</text>
-                </g>
-                
-                {/* USA */}
-                <g>
-                  <circle cx="50" cy="80" r="8" fill="url(#pinGradient)" />
-                  <circle cx="50" cy="80" r="4" fill="white" />
-                  <text x="50" y="65" textAnchor="middle" className="text-xs fill-foreground font-medium">Wyoming, USA</text>
-                </g>
-              </svg>
-              
-              {/* Legend */}
-              <div className="flex items-center gap-6 mt-6 pt-6 border-t border-border">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-primary opacity-40" />
-                  <span className="text-sm text-muted-foreground">Project Coverage</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[#c5328f] to-[#fec967]" />
-                  <span className="text-sm text-muted-foreground">Office Locations</span>
-                </div>
-              </div>
+            <div className="relative bg-card border border-border rounded-2xl p-4 overflow-hidden">
+              <img 
+                src={worldMapImage} 
+                alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" 
+                className="w-full h-auto"
+              />
             </div>
             
             {/* Office Details Column */}
