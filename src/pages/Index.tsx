@@ -10,6 +10,7 @@ import { CTAStrip } from "@/components/ui/cta-strip";
 const metrics = [{
   icon: Timer,
   value: 72,
+  prefix: "24-",
   suffix: " hrs",
   label: "Turnaround"
 }, {
@@ -357,7 +358,8 @@ const Index = () => {
               <StatCard 
                 key={index} 
                 icon={metric.icon}
-                value={metric.value} 
+                value={metric.value}
+                prefix={metric.prefix}
                 suffix={metric.suffix}
                 label={metric.label} 
               />

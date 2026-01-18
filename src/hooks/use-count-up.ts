@@ -9,15 +9,18 @@ interface UseCountUpOptions {
 export function useCountUp({ end, duration = 2000, startOnMount = true }: UseCountUpOptions) {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const hasCompletedRef = useRef(false);
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!startOnMount) return;
+    if (!startOnMount || hasCompletedRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !hasStarted) {
+        if (entries[0].isIntersecting && !hasStarted && !hasCompletedRef.current) {
           setHasStarted(true);
+          setIsAnimating(true);
         }
       },
       { threshold: 0.1 }
@@ -31,7 +34,7 @@ export function useCountUp({ end, duration = 2000, startOnMount = true }: UseCou
   }, [startOnMount, hasStarted]);
 
   useEffect(() => {
-    if (!hasStarted) return;
+    if (!hasStarted || hasCompletedRef.current) return;
 
     let startTime: number;
     let animationFrame: number;
@@ -42,10 +45,14 @@ export function useCountUp({ end, duration = 2000, startOnMount = true }: UseCou
       
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * end));
+      setCount(Math.round(easeOutQuart * end));
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+        setIsAnimating(false);
+        hasCompletedRef.current = true;
       }
     };
 
@@ -54,5 +61,5 @@ export function useCountUp({ end, duration = 2000, startOnMount = true }: UseCou
     return () => cancelAnimationFrame(animationFrame);
   }, [hasStarted, end, duration]);
 
-  return { count, elementRef };
+  return { count, elementRef, isAnimating };
 }
