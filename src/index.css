@@ -151,6 +151,15 @@
     background-clip: text;
   }
 
+  /* Icon becomes white on group hover */
+  .group:hover .icon-white {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: white !important;
+    background-clip: unset !important;
+    color: white;
+  }
+
   /* Section Label - No slashes */
   .section-label {
     @apply text-sm font-medium tracking-wider uppercase;
