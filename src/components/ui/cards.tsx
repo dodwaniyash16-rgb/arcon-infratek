@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { LucideIcon, ArrowUpRight, CheckCircle, AlertTriangle } from "lucide-react";
+import { LucideIcon, ArrowUpRight, CheckCircle, ArrowRight } from "lucide-react";
 import { useCountUp } from "@/hooks/use-count-up";
 
-// Service Card - with ArrowUpRight icon
+// Service Card - with ArrowUpRight icon and premium hover effect
 interface ServiceCardProps {
   title: string;
   description: string;
@@ -15,20 +15,35 @@ export const ServiceCard = ({
   href,
   icon: Icon
 }: ServiceCardProps) => {
-  return <Link to={href} className="group block p-6 rounded-xl border border-border card-hover relative bg-primary-foreground">
-      {/* Arrow icon top-right */}
-      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+  return (
+    <Link 
+      to={href} 
+      className="group block p-6 rounded-xl border border-border hover:border-transparent relative bg-primary-foreground transition-all duration-300 hover:shadow-lg"
+    >
+      {/* Gradient border overlay on hover */}
+      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-gradient pointer-events-none" />
       
-      <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
-        <Icon className="h-6 w-6 icon-gradient" />
+      {/* Arrow icon top-right */}
+      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors z-10" />
+      
+      {/* Icon box - transforms to gradient on hover */}
+      <div className="w-12 h-12 rounded-lg bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-4 transition-all duration-300">
+        <Icon className="h-6 w-6 icon-gradient group-hover:icon-white transition-all duration-300" />
       </div>
+      
       <h3 className="font-heading font-semibold mb-2 group-hover:text-foreground transition-colors text-base">
         {title}
       </h3>
-      <p className="leading-relaxed text-xs font-semibold text-slate-400">
+      <p className="leading-relaxed text-xs font-semibold text-slate-400 mb-4">
         {description}
       </p>
-    </Link>;
+      
+      {/* Learn More link - appears on hover */}
+      <span className="text-sm font-medium text-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1">
+        Learn More <ArrowRight className="h-4 w-4" />
+      </span>
+    </Link>
+  );
 };
 
 // Stat Card - with icon and animated counting
