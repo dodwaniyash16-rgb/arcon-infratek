@@ -8,6 +8,12 @@ import blogRevitBestPractices from "@/assets/blog/blog-revit-best-practices.png"
 import blog4dBim from "@/assets/blog/blog-4d-bim.png";
 import blog5dBim from "@/assets/blog/blog-5d-bim.png";
 import blogDigitalTwins from "@/assets/blog/blog-digital-twins.png";
+import blogLodStandards from "@/assets/blog/blog-lod-standards.png";
+import blogBimImplementationRoadmap from "@/assets/blog/blog-bim-implementation-roadmap.png";
+import blogBimCoordinationMistakes from "@/assets/blog/blog-bim-coordination-mistakes.png";
+import blogShopDrawings from "@/assets/blog/blog-shop-drawings.png";
+import blogIso19650 from "@/assets/blog/blog-iso-19650.png";
+import blogCloudCollaboration from "@/assets/blog/blog-cloud-collaboration.png";
 
 export interface BlogPost {
   id: string;
@@ -23,6 +29,39 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  // Featured post - BIM Coordination Mistakes (id: 12)
+  {
+    id: "12",
+    title: "Common BIM Coordination Mistakes and How to Avoid Them",
+    slug: "common-bim-coordination-mistakes",
+    category: "Best Practices",
+    date: "Oct 1, 2024",
+    readTime: "5 min",
+    excerpt: "Learn from others' experience by understanding the most frequent pitfalls in BIM coordination processes.",
+    image: blogBimCoordinationMistakes,
+    author: "Arcon Infratek Team",
+    content: `
+      <p>Even experienced teams make coordination mistakes. Learning from common pitfalls helps organizations improve their coordination processes and avoid costly errors.</p>
+      
+      <h2>Starting Coordination Too Late</h2>
+      <p>Waiting until design is nearly complete to begin coordination limits options for conflict resolution. Early coordination, even with preliminary models, prevents major issues from becoming embedded in the design.</p>
+      
+      <h2>Unclear Model Ownership</h2>
+      <p>When responsibility for model elements is unclear, issues fall through the cracks. Establish explicit model ownership and maintain current responsibility matrices throughout the project.</p>
+      
+      <h2>Ignoring Minor Clashes</h2>
+      <p>Small clashes can accumulate into major coordination problems. Establish a consistent process for addressing all clashes, even those that seem insignificant individually.</p>
+      
+      <h2>Poor Documentation</h2>
+      <p>Coordination decisions need documentation. Without records of what was decided and why, issues resurface and teams repeat discussions. Maintain clear coordination logs.</p>
+      
+      <h2>Inconsistent Update Cycles</h2>
+      <p>When team members update models on different schedules, coordination suffers. Establish and enforce regular model update and exchange schedules.</p>
+      
+      <h2>Conclusion</h2>
+      <p>Most coordination mistakes stem from process failures rather than technical limitations. Disciplined adherence to good coordination practices prevents the majority of common problems.</p>
+    `
+  },
   {
     id: "1",
     title: "The Future of BIM in Construction: Trends to Watch in 2025",
@@ -100,7 +139,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 5, 2024",
     readTime: "6 min",
     excerpt: "A comprehensive guide to Level of Development standards and how they impact model reliability at different project phases.",
-    image: "/placeholder.svg",
+    image: blogLodStandards,
     author: "Arcon Infratek Team",
     content: `
       <p>Level of Development (LOD) is a fundamental concept in BIM that defines the degree of completeness and reliability of model elements. Understanding LOD is essential for effective model management and clear communication among project stakeholders.</p>
@@ -362,7 +401,7 @@ export const blogPosts: BlogPost[] = [
     date: "Oct 8, 2024",
     readTime: "7 min",
     excerpt: "A practical guide to planning and executing successful BIM adoption within construction and design organizations.",
-    image: "/placeholder.svg",
+    image: blogBimImplementationRoadmap,
     author: "Arcon Infratek Team",
     content: `
       <p>Successful BIM implementation requires more than software installation. It demands organizational change, process redesign, and sustained commitment. This roadmap guides organizations through the implementation journey.</p>
@@ -387,38 +426,6 @@ export const blogPosts: BlogPost[] = [
     `
   },
   {
-    id: "12",
-    title: "Common BIM Coordination Mistakes and How to Avoid Them",
-    slug: "common-bim-coordination-mistakes",
-    category: "Best Practices",
-    date: "Oct 1, 2024",
-    readTime: "5 min",
-    excerpt: "Learn from others' experience by understanding the most frequent pitfalls in BIM coordination processes.",
-    image: "/placeholder.svg",
-    author: "Arcon Infratek Team",
-    content: `
-      <p>Even experienced teams make coordination mistakes. Learning from common pitfalls helps organizations improve their coordination processes and avoid costly errors.</p>
-      
-      <h2>Starting Coordination Too Late</h2>
-      <p>Waiting until design is nearly complete to begin coordination limits options for conflict resolution. Early coordination, even with preliminary models, prevents major issues from becoming embedded in the design.</p>
-      
-      <h2>Unclear Model Ownership</h2>
-      <p>When responsibility for model elements is unclear, issues fall through the cracks. Establish explicit model ownership and maintain current responsibility matrices throughout the project.</p>
-      
-      <h2>Ignoring Minor Clashes</h2>
-      <p>Small clashes can accumulate into major coordination problems. Establish a consistent process for addressing all clashes, even those that seem insignificant individually.</p>
-      
-      <h2>Poor Documentation</h2>
-      <p>Coordination decisions need documentation. Without records of what was decided and why, issues resurface and teams repeat discussions. Maintain clear coordination logs.</p>
-      
-      <h2>Inconsistent Update Cycles</h2>
-      <p>When team members update models on different schedules, coordination suffers. Establish and enforce regular model update and exchange schedules.</p>
-      
-      <h2>Conclusion</h2>
-      <p>Most coordination mistakes stem from process failures rather than technical limitations. Disciplined adherence to good coordination practices prevents the majority of common problems.</p>
-    `
-  },
-  {
     id: "13",
     title: "Creating Accurate Shop Drawings from BIM Models",
     slug: "shop-drawings-from-bim",
@@ -426,7 +433,7 @@ export const blogPosts: BlogPost[] = [
     date: "Sep 25, 2024",
     readTime: "6 min",
     excerpt: "Best practices for generating fabrication-ready documentation directly from coordinated BIM models.",
-    image: "/placeholder.svg",
+    image: blogShopDrawings,
     author: "Arcon Infratek Team",
     content: `
       <p>Shop drawings bridge design intent and fabrication reality. BIM models can streamline shop drawing production while improving accuracy, but only when proper practices are followed.</p>
@@ -458,7 +465,7 @@ export const blogPosts: BlogPost[] = [
     date: "Sep 18, 2024",
     readTime: "8 min",
     excerpt: "Understanding the international standard for managing information over the whole lifecycle of built assets using BIM.",
-    image: "/placeholder.svg",
+    image: blogIso19650,
     author: "Arcon Infratek Team",
     content: `
       <p>ISO 19650 provides an international framework for BIM information management. Understanding this standard is essential for organizations working on international projects or seeking to adopt best-practice approaches.</p>
@@ -490,7 +497,7 @@ export const blogPosts: BlogPost[] = [
     date: "Sep 10, 2024",
     readTime: "7 min",
     excerpt: "How cloud platforms are enabling new levels of real-time collaboration on BIM projects across distributed teams.",
-    image: "/placeholder.svg",
+    image: blogCloudCollaboration,
     author: "Arcon Infratek Team",
     content: `
       <p>Cloud technology has transformed BIM collaboration, enabling real-time access to project information regardless of location. Understanding cloud capabilities helps teams maximize collaboration effectiveness.</p>
