@@ -152,12 +152,12 @@
   }
 
   /* Icon becomes white on group hover */
-  .group:hover .icon-white {
+  .group:hover .group-hover-icon-white {
     background: none !important;
     -webkit-background-clip: unset !important;
     -webkit-text-fill-color: white !important;
     background-clip: unset !important;
-    color: white;
+    color: white !important;
   }
 
   /* Section Label - No slashes */

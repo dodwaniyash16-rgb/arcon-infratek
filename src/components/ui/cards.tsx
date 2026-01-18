@@ -18,30 +18,44 @@ export const ServiceCard = ({
   return (
     <Link 
       to={href} 
-      className="group block p-6 rounded-xl border border-border hover:border-transparent relative bg-primary-foreground transition-all duration-300 hover:shadow-lg"
+      className="group block p-6 rounded-xl border border-border hover:border-transparent relative bg-primary-foreground transition-all duration-300 hover:shadow-md"
     >
-      {/* Gradient border overlay on hover */}
-      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-gradient pointer-events-none" />
+      {/* Thin gradient border overlay on hover */}
+      <div 
+        className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{ 
+          background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
+          padding: '1px',
+          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude'
+        }}
+      />
       
-      {/* Arrow icon top-right */}
-      <ArrowUpRight className="absolute top-4 right-4 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors z-10" />
-      
-      {/* Icon box - transforms to gradient on hover */}
-      <div className="w-12 h-12 rounded-lg bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-4 transition-all duration-300">
-        <Icon className="h-6 w-6 icon-gradient group-hover:icon-white transition-all duration-300" />
+      {/* Content wrapper with z-index to stay above border */}
+      <div className="relative z-10">
+        {/* Arrow icon top-right */}
+        <ArrowUpRight className="absolute top-0 right-0 h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+        
+        {/* Icon box - transforms to gradient on hover */}
+        <div className="w-12 h-12 rounded-lg bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-4 transition-all duration-300">
+          <Icon className="h-6 w-6 icon-gradient group-hover-icon-white transition-all duration-300" />
+        </div>
+        
+        {/* Title - turns gradient on hover */}
+        <h3 className="font-heading font-semibold mb-2 transition-all text-base text-foreground group-hover:text-gradient">
+          {title}
+        </h3>
+        
+        <p className="leading-relaxed text-xs font-semibold text-slate-400 mb-4">
+          {description}
+        </p>
+        
+        {/* Learn More link - always visible with gradient */}
+        <span className="text-sm font-medium text-gradient flex items-center gap-1">
+          Learn More <ArrowRight className="h-4 w-4" />
+        </span>
       </div>
-      
-      <h3 className="font-heading font-semibold mb-2 group-hover:text-foreground transition-colors text-base">
-        {title}
-      </h3>
-      <p className="leading-relaxed text-xs font-semibold text-slate-400 mb-4">
-        {description}
-      </p>
-      
-      {/* Learn More link - appears on hover */}
-      <span className="text-sm font-medium text-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1">
-        Learn More <ArrowRight className="h-4 w-4" />
-      </span>
     </Link>
   );
 };
