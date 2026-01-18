@@ -46,20 +46,18 @@ export const StatCard = ({
   suffix = "+",
   label
 }: StatCardProps) => {
-  const { count, elementRef, isAnimating } = useCountUp({ end: value, duration: 2500 });
+  const { count, elementRef } = useCountUp({ end: value, duration: 2500 });
   
   return (
     <div 
       ref={elementRef} 
-      className={`flex items-center gap-4 p-6 bg-background rounded-xl transition-all duration-500 ${
-        isAnimating ? 'border-gradient' : 'border border-border'
-      }`}
+      className="flex items-center gap-4 p-6 bg-background rounded-xl border border-border"
     >
       <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
         <Icon className="h-7 w-7 icon-gradient" />
       </div>
       <div>
-        <div className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+        <div className="font-heading text-2xl md:text-3xl font-bold text-foreground">
           {prefix}{count}{suffix}
         </div>
         <div className="text-sm text-muted-foreground font-medium">{label}</div>
