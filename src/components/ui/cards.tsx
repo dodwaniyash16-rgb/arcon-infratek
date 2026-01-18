@@ -18,7 +18,7 @@ export const ServiceCard = ({
   return (
     <Link 
       to={href} 
-      className="group block p-6 rounded-xl border border-border hover:border-transparent relative bg-primary-foreground transition-all duration-300 hover:shadow-md"
+      className="group block p-6 rounded-xl border border-border hover:border-transparent relative bg-primary-foreground transition-all duration-300 hover:shadow-md hover:scale-[1.02]"
     >
       {/* Thin gradient border overlay on hover */}
       <div 
