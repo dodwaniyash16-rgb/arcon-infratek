@@ -35,25 +35,32 @@ export const ServiceCard = ({
 interface StatCardProps {
   icon: LucideIcon;
   value: number;
+  prefix?: string;
   suffix?: string;
   label: string;
 }
 export const StatCard = ({
   icon: Icon,
   value,
+  prefix = "",
   suffix = "+",
   label
 }: StatCardProps) => {
-  const { count, elementRef } = useCountUp({ end: value, duration: 2500 });
+  const { count, elementRef, isAnimating } = useCountUp({ end: value, duration: 2500 });
   
   return (
-    <div ref={elementRef} className="flex items-center gap-4 p-6 bg-background rounded-xl border border-border">
+    <div 
+      ref={elementRef} 
+      className={`flex items-center gap-4 p-6 bg-background rounded-xl transition-all duration-500 ${
+        isAnimating ? 'border-gradient' : 'border border-border'
+      }`}
+    >
       <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
         <Icon className="h-7 w-7 icon-gradient" />
       </div>
       <div>
         <div className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-          {count}{suffix}
+          {prefix}{count}{suffix}
         </div>
         <div className="text-sm text-muted-foreground font-medium">{label}</div>
       </div>
