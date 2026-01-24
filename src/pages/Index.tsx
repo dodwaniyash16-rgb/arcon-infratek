@@ -1,11 +1,11 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Clock, Layers, Globe, Shield, Box, FileText, Calculator, ScanLine, CheckCircle, Pencil, Blocks, Users, Briefcase, Building2, HardHat, Landmark, Home, UserCircle, Timer, FolderCheck, UsersRound, Earth } from "lucide-react";
+import { ArrowRight, Clock, Layers, Globe, Shield, Box, FileText, Calculator, ScanLine, CheckCircle, Pencil, Blocks, Users, Briefcase, Building2, HardHat, Landmark, Home, UserCircle, Timer, FolderCheck, UsersRound, Earth } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard, StatCard, ProcessStep, FeatureBlock, TestimonialCard, SectorChip, StakeholderCard, ProjectCard } from "@/components/ui/cards";
 import { CTAStrip } from "@/components/ui/cta-strip";
-
+import HeroSection from "@/components/home/HeroSection";
 // Data
 const metrics = [{
   icon: Timer,
@@ -285,61 +285,7 @@ const testimonials = [{
 const Index = () => {
   return <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-background text-slate-800">
-        <div className="container-custom my-[110px]">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="animate-fade-in">
-              {/* Badge */}
-              <div className="badge-pill mb-6 text-muted-foreground">
-                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                BIM & VDC Excellence
-              </div>
-
-              {/* Headline */}
-              <h1 className="font-heading text-4xl md:text-5xl font-bold leading-tight mb-6 text-slate-800 lg:text-5xl">
-                BIM and VDC delivery that is{" "}
-                <span className="text-gradient text-5xl">fast, accurate, and accountable.</span>
-              </h1>
-
-              {/* Description */}
-              <p className="text-lg leading-relaxed mb-8 max-w-xl font-sans font-medium text-slate-400 md:text-lg">Arcon Infratek supports global AEC teams with Revit-based modeling, coordination, shop drawings, estimation, and BIM auditing. Clear standards, rigorous QA, and reliable turnaround.</p>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-4 mb-12">
-                <Button size="lg" asChild>
-                  <Link to="/contact">
-                    Schedule a Call
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link to="/services">
-                    Explore Services
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Right - Hero Image */}
-            <div className="relative animate-fade-in" style={{
-            animationDelay: "0.2s"
-          }}>
-              <div className="hero-image-container rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction site with crane" className="w-full h-auto object-cover aspect-[4/3]" />
-                {/* Video Play Button - Small pill at bottom right */}
-                <button className="absolute bottom-4 right-4 flex items-center gap-2 bg-white/95 hover:bg-white rounded-full px-4 py-2 shadow-lg transition-all hover:scale-105">
-                  <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
-                    <Play className="h-4 w-4 text-background ml-0.5" fill="currentColor" />
-                  </div>
-                  <span className="text-foreground font-medium text-sm">Watch Video</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Trust Band - Metrics */}
       <section className="py-16 lg:py-20 border-y border-border bg-card">
