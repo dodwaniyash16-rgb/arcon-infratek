@@ -15,6 +15,14 @@ import sfrHouston02 from "@/assets/projects/sfr-houston-02.png";
 import skylineTechOffice01 from "@/assets/projects/skyline-tech-office-01.png";
 import industrialProcessPlant01 from "@/assets/projects/industrial-process-plant-01.png";
 import industrialProcessPlant02 from "@/assets/projects/industrial-process-plant-02.png";
+import jaipurRail01 from "@/assets/projects/jaipur-rail-01.png";
+import jaipurRail02 from "@/assets/projects/jaipur-rail-02.png";
+import universityResearch01 from "@/assets/projects/university-research-01.png";
+import pharmaceuticalDublin01 from "@/assets/projects/pharmaceutical-dublin-01.png";
+import dataCenterBoston01 from "@/assets/projects/data-center-boston-01.png";
+import unicefSehore01 from "@/assets/projects/unicef-sehore-01.png";
+import unicefVidisha01 from "@/assets/projects/unicef-vidisha-01.png";
+import unicefUjjain01 from "@/assets/projects/unicef-ujjain-01.png";
 
 export interface Project {
   id: number;
@@ -147,8 +155,8 @@ export const projects: Project[] = [
     client: "Confidential Data Infrastructure Firm",
     scale: "6,00,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: dataCenterBoston01,
+    galleryImages: [dataCenterBoston01],
     overview: "A scan-to-BIM project capturing the as-built conditions of an operational data center. The scope involved precise modeling of cable tray routes, cooling systems, and power distribution for facility management and future expansion planning.",
     deliverables: ["Scan-to-BIM modeling", "Cable tray documentation", "Cooling system modeling", "Facility management support"],
     featured: false,
@@ -177,8 +185,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "5,80,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefUjjain01,
+    galleryImages: [unicefUjjain01],
     overview: "A healthcare facility designed for comprehensive community health services. BIM coordination focused on optimizing departmental layouts and ensuring seamless utility integration.",
     deliverables: ["Architectural BIM modeling", "Department layout optimization", "MEP coordination", "Clash detection"],
     featured: false,
@@ -192,8 +200,8 @@ export const projects: Project[] = [
     client: "Confidential Academic Institution",
     scale: "6,40,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: universityResearch01,
+    galleryImages: [universityResearch01],
     overview: "A multi-building research campus with specialized laboratory and cleanroom facilities. BIM coordination addressed complex HVAC requirements and vibration-sensitive equipment installations.",
     deliverables: ["Laboratory BIM modeling", "Cleanroom coordination", "HVAC systems modeling", "Equipment coordination"],
     featured: false,
@@ -207,8 +215,8 @@ export const projects: Project[] = [
     client: "Celtis Contractors",
     scale: "7,50,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: pharmaceuticalDublin01,
+    galleryImages: [pharmaceuticalDublin01],
     overview: "A GMP-compliant pharmaceutical manufacturing facility requiring precise coordination of process utilities and cleanroom systems. BIM modeling supported regulatory compliance documentation.",
     deliverables: ["Process utility modeling", "Cleanroom BIM coordination", "Regulatory documentation support", "Clash detection"],
     featured: false,
@@ -222,8 +230,8 @@ export const projects: Project[] = [
     client: "Government of Rajasthan",
     scale: "4,52,000 sq.ft",
     status: "Consultancy",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: jaipurRail01,
+    galleryImages: [jaipurRail01, jaipurRail02],
     overview: "A rail transit station project involving BIM consultancy for design development and coordination. The scope included passenger flow analysis, platform design, and integration with existing rail infrastructure.",
     deliverables: ["BIM consultancy services", "Passenger flow analysis", "Platform design coordination", "Infrastructure integration"],
     featured: false,
@@ -282,8 +290,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "3,00,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefSehore01,
+    galleryImages: [unicefSehore01],
     overview: "A community healthcare center providing essential medical services. BIM modeling focused on efficient space utilization and compliance with healthcare facility standards.",
     deliverables: ["Architectural BIM modeling", "Space planning optimization", "MEP coordination", "Compliance documentation"],
     featured: false,
@@ -357,8 +365,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "2,00,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefVidisha01,
+    galleryImages: [unicefVidisha01],
     overview: "A healthcare center focused on maternal and child health services. BIM coordination ensured efficient facility layout and utility integration.",
     deliverables: ["Architectural BIM modeling", "Facility layout optimization", "MEP coordination", "Construction documentation"],
     featured: false,
