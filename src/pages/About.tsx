@@ -27,7 +27,7 @@ import officeTeamImage from "@/assets/office-team.png";
 import unicefLogo from "@/assets/clients/unicef.png";
 import karnatakaLogo from "@/assets/clients/karnataka-govt.png";
 import mpLogo from "@/assets/clients/mp-govt.png";
-import worldMapImage from "@/assets/world-map.png";
+import worldMapImage from "@/assets/world-map-new.png";
 
 // Animated stat component
 const AnimatedStat = ({ 
@@ -359,7 +359,7 @@ const About = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Map Column */}
-            <div className="relative bg-card border border-border rounded-2xl p-4 overflow-hidden">
+            <div className="relative overflow-hidden">
               <img 
                 src={worldMapImage} 
                 alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" 

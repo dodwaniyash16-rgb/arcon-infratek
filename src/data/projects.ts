@@ -12,6 +12,8 @@ import sfrSanDiego01 from "@/assets/projects/sfr-san-diego-01.png";
 import sfrSanDiego02 from "@/assets/projects/sfr-san-diego-02.png";
 import sfrHouston01 from "@/assets/projects/sfr-houston-01.png";
 import sfrHouston02 from "@/assets/projects/sfr-houston-02.png";
+import sfrJacksonville01 from "@/assets/projects/sfr-jacksonville-01.png";
+import sfrJacksonville02 from "@/assets/projects/sfr-jacksonville-02.png";
 import skylineTechOffice01 from "@/assets/projects/skyline-tech-office-01.png";
 import industrialProcessPlant01 from "@/assets/projects/industrial-process-plant-01.png";
 import industrialProcessPlant02 from "@/assets/projects/industrial-process-plant-02.png";
@@ -69,27 +71,6 @@ export const projects: Project[] = [
       "Construction execution support using BIM",
       "Project management and stakeholder coordination",
       "As built BIM documentation for final handover"
-    ],
-    featured: true,
-  },
-  {
-    id: 2,
-    slug: "pharmaceutical-manufacturing-facility-dublin",
-    title: "Pharmaceutical Manufacturing Facility",
-    category: "Industrial",
-    location: "Dublin, Ireland",
-    client: "Confidential Pharma Manufacturer",
-    scale: "8,50,00 sq.ft",
-    status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
-    overview: "A greenfield pharmaceutical manufacturing facility developed around a fully coordinated multi discipline BIM environment to support rigorous design validation, construction planning, and industry specific regulatory compliance. The integrated BIM workflow enabled seamless collaboration between architectural, structural, and MEP disciplines, ensuring spatial coordination, design accuracy, and constructability. The model was used as a central information source to optimize sequencing, reduce coordination risks, and align project delivery with stringent pharmaceutical quality and compliance requirements throughout the design and construction lifecycle.",
-    deliverables: [
-      "Integrated Architectural Structural and MEP BIM",
-      "Clash free coordination model",
-      "MEP shop drawings",
-      "Construction sequencing support",
-      "BIM documentation for handover"
     ],
     featured: true,
   },
@@ -154,7 +135,7 @@ export const projects: Project[] = [
       "Clash detection and reporting",
       "LOD 300 BIM deliverables"
     ],
-    featured: false,
+    featured: true,
   },
   {
     id: 6,
@@ -540,8 +521,8 @@ export const projects: Project[] = [
     client: "Private Client",
     scale: "1,95,00 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: sfrJacksonville01,
+    galleryImages: [sfrJacksonville01, sfrJacksonville02],
     overview: "A high end residential project where coordinated Architectural and Structural BIM modeling was carried out to support design clarity, regulatory compliance, and construction accuracy. The BIM workflow ensured precise alignment between design intent and structural feasibility while enabling efficient approvals and smooth execution.",
     deliverables: [
       "Architectural and Structural BIM",
