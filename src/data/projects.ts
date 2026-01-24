@@ -23,6 +23,13 @@ import dataCenterBoston01 from "@/assets/projects/data-center-boston-01.png";
 import unicefSehore01 from "@/assets/projects/unicef-sehore-01.png";
 import unicefVidisha01 from "@/assets/projects/unicef-vidisha-01.png";
 import unicefUjjain01 from "@/assets/projects/unicef-ujjain-01.png";
+import unicefRatlam01 from "@/assets/projects/unicef-ratlam-01.png";
+import unicefBhopal01 from "@/assets/projects/unicef-bhopal-01.png";
+import unicefJhabua01 from "@/assets/projects/unicef-jhabua-01.png";
+import unicefDhar01 from "@/assets/projects/unicef-dhar-01.png";
+import unicefJabalpur01 from "@/assets/projects/unicef-jabalpur-01.png";
+import titanHouston01 from "@/assets/projects/titan-houston-01.png";
+import daishanPetrochemical01 from "@/assets/projects/daishan-petrochemical-01.png";
 
 export interface Project {
   id: number;
@@ -50,8 +57,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "22,00,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefRatlam01,
+    galleryImages: [unicefRatlam01],
     overview: "A large-scale healthcare infrastructure project developed to enhance public health services in underserved regions. The BIM modeling scope involved detailed architectural and MEP coordination to support fast-track construction timelines while meeting stringent healthcare standards.",
     deliverables: ["Architectural BIM modeling", "MEP coordination", "Clash detection and resolution", "Construction documentation"],
     featured: true,
@@ -80,8 +87,8 @@ export const projects: Project[] = [
     client: "Confidential Energy Firm",
     scale: "4,20,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: titanHouston01,
+    galleryImages: [titanHouston01],
     overview: "An offshore process platform project requiring detailed structural and piping BIM coordination. The scope included modular construction planning with precise weight and center-of-gravity calculations for marine installation.",
     deliverables: ["Structural steel BIM modeling", "Process piping coordination", "Modular construction planning", "Installation sequence modeling"],
     featured: true,
@@ -95,8 +102,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "14,00,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefBhopal01,
+    galleryImages: [unicefBhopal01],
     overview: "A comprehensive healthcare complex designed to serve maternal and child health needs. BIM coordination focused on optimizing patient flow, medical gas systems, and infection control requirements through detailed spatial analysis.",
     deliverables: ["Architectural BIM modeling", "Medical gas systems coordination", "MEP clash detection", "Construction phasing support"],
     featured: true,
@@ -140,8 +147,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "8,60,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefJhabua01,
+    galleryImages: [unicefJhabua01],
     overview: "A district-level healthcare facility with specialized pediatric and maternal care units. The BIM scope included detailed equipment coordination and utility routing to support 24/7 operations.",
     deliverables: ["Architectural BIM modeling", "Equipment room layouts", "MEP coordination", "Construction documentation"],
     featured: false,
@@ -170,8 +177,8 @@ export const projects: Project[] = [
     client: "XiC Contractor",
     scale: "2,50,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: daishanPetrochemical01,
+    galleryImages: [daishanPetrochemical01],
     overview: "A petrochemical process module requiring complex piping and structural coordination. BIM modeling supported modular fabrication with detailed isometrics and material take-offs.",
     deliverables: ["Process piping BIM modeling", "Structural steel coordination", "Isometric drawings", "Material take-offs"],
     featured: false,
@@ -260,8 +267,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "4,40,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefDhar01,
+    galleryImages: [unicefDhar01],
     overview: "A district healthcare facility focused on primary care and emergency services. BIM modeling supported fast-track construction with prefabricated component coordination.",
     deliverables: ["Architectural BIM modeling", "Prefabrication coordination", "MEP systems modeling", "Construction support"],
     featured: false,
@@ -335,8 +342,8 @@ export const projects: Project[] = [
     client: "UNICEF",
     scale: "3,00,000 sq.ft",
     status: "Built",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: unicefJabalpur01,
+    galleryImages: [unicefJabalpur01],
     overview: "A healthcare facility designed to enhance medical services in the region. BIM modeling supported efficient construction planning and utility coordination.",
     deliverables: ["Architectural BIM modeling", "Construction planning support", "MEP coordination", "Documentation"],
     featured: false,

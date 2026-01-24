@@ -151,8 +151,10 @@ const ProjectDetail = () => {
               {/* Gallery */}
               <div>
                 <h2 className="font-heading text-xl font-semibold mb-4 text-accent">Gallery</h2>
-                {(() => {
-                  const galleryImages = [project.image, ...project.galleryImages].slice(0, 2);
+              {(() => {
+                  // Deduplicate: use galleryImages directly to avoid duplicate main image
+                  const uniqueImages = project.galleryImages.filter(img => img !== "/placeholder.svg");
+                  const galleryImages = uniqueImages.length > 0 ? uniqueImages.slice(0, 2) : [project.image];
                   return (
                     <div className="relative">
                       <div className="aspect-video rounded-lg overflow-hidden bg-secondary">
