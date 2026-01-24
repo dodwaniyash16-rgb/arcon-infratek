@@ -104,13 +104,13 @@ const HeroSection = () => {
 
           {/* Right Image Slideshow */}
           <div className="relative animate-fade-in-delay-2">
-            <div className="hero-image-container aspect-[4/3] relative overflow-hidden">
+            <div className="hero-image-container aspect-[16/10] rounded-2xl shadow-2xl relative overflow-hidden bg-muted">
               {projectImages.map((image, index) => (
                 <img 
                   key={index}
                   src={image}
                   alt={`BIM Project ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+                  className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out ${
                     index === currentIndex 
                       ? 'opacity-100 scale-100' 
                       : 'opacity-0 scale-105'
@@ -119,9 +119,8 @@ const HeroSection = () => {
               ))}
               
               {/* Subtle gradient overlay for polish */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none rounded-2xl" />
             </div>
-            
           </div>
         </div>
       </div>
