@@ -6,6 +6,15 @@ import ellijayTower01 from "@/assets/projects/ellijay-tower-01.png";
 import ellijayTower02 from "@/assets/projects/ellijay-tower-02.png";
 import bangaloreMetro01 from "@/assets/projects/bangalore-metro-01.png";
 import bangaloreMetro02 from "@/assets/projects/bangalore-metro-02.png";
+import mixedUseResidential01 from "@/assets/projects/mixed-use-residential-01.png";
+import mixedUseResidential02 from "@/assets/projects/mixed-use-residential-02.png";
+import sfrSanDiego01 from "@/assets/projects/sfr-san-diego-01.png";
+import sfrSanDiego02 from "@/assets/projects/sfr-san-diego-02.png";
+import sfrHouston01 from "@/assets/projects/sfr-houston-01.png";
+import sfrHouston02 from "@/assets/projects/sfr-houston-02.png";
+import skylineTechOffice01 from "@/assets/projects/skyline-tech-office-01.png";
+import industrialProcessPlant01 from "@/assets/projects/industrial-process-plant-01.png";
+import industrialProcessPlant02 from "@/assets/projects/industrial-process-plant-02.png";
 
 export interface Project {
   id: number;
@@ -108,8 +117,8 @@ export const projects: Project[] = [
     client: "Reclo EPC Firm",
     scale: "85,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: industrialProcessPlant01,
+    galleryImages: [industrialProcessPlant01, industrialProcessPlant02],
     overview: "A modular process plant project requiring detailed pipe rack and equipment modeling for offsite fabrication. BIM coordination ensured precise fit-up during field installation with minimal rework.",
     deliverables: ["Pipe rack BIM modeling", "Equipment layout coordination", "Modular fabrication drawings", "Field installation support"],
     featured: false,
@@ -228,8 +237,8 @@ export const projects: Project[] = [
     client: "LDG Group",
     scale: "6,52,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: mixedUseResidential01,
+    galleryImages: [mixedUseResidential01, mixedUseResidential02],
     overview: "A large-scale mixed-use development combining residential towers with retail and amenity spaces. BIM coordination ensured efficient vertical transportation and utility distribution across multiple buildings.",
     deliverables: ["Architectural BIM modeling", "MEP coordination", "Vertical transportation modeling", "Site coordination"],
     featured: false,
@@ -258,8 +267,8 @@ export const projects: Project[] = [
     client: "TNC Associates",
     scale: "2,10,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: skylineTechOffice01,
+    galleryImages: [skylineTechOffice01],
     overview: "A modern tech office space designed for collaborative work environments. BIM coordination addressed complex data infrastructure, flexible workspaces, and sustainable building systems.",
     deliverables: ["Architectural BIM modeling", "Data infrastructure coordination", "MEP systems modeling", "Sustainability analysis support"],
     featured: false,
@@ -333,8 +342,8 @@ export const projects: Project[] = [
     client: "Private Client",
     scale: "2,40,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: sfrSanDiego01,
+    galleryImages: [sfrSanDiego01, sfrSanDiego02],
     overview: "A luxury single-family residential development with custom architectural features. BIM modeling supported detailed interior coordination and landscape integration.",
     deliverables: ["Architectural BIM modeling", "Interior coordination", "MEP systems modeling", "Landscape coordination"],
     featured: false,
@@ -363,8 +372,8 @@ export const projects: Project[] = [
     client: "Private Client",
     scale: "1,80,000 sq.ft",
     status: "Completed",
-    image: "/placeholder.svg",
-    galleryImages: ["/placeholder.svg"],
+    image: sfrHouston01,
+    galleryImages: [sfrHouston01, sfrHouston02],
     overview: "A custom residential project with detailed architectural and MEP coordination. BIM modeling supported construction efficiency and quality control.",
     deliverables: ["Architectural BIM modeling", "MEP coordination", "Construction documentation", "Quality control support"],
     featured: false,
