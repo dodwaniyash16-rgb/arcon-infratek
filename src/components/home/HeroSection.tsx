@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Clock, Layers, Globe, Shield } from "lucide-react";
+import { ArrowRight, Clock, Layers, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getFeaturedProjects } from "@/data/projects";
 
 const metrics = [
   {
@@ -26,6 +28,24 @@ const metrics = [
 ];
 
 const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const featuredProjects = getFeaturedProjects();
+  
+  // Filter out placeholder images and get valid project images
+  const projectImages = featuredProjects
+    .map(p => p.image)
+    .filter(img => img && img !== "/placeholder.svg");
+
+  useEffect(() => {
+    if (projectImages.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % projectImages.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [projectImages.length]);
+
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-16">
       {/* Background */}
@@ -83,25 +103,43 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image Slideshow */}
           <div className="relative animate-fade-in-delay-2">
-            <div className="hero-image-container aspect-[4/3]">
-              <img 
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="BIM Construction Project"
-                className="w-full h-full object-cover"
-              />
-              {/* Video Button Overlay */}
-              <button className="absolute inset-0 flex items-center justify-center group">
-                <div className="w-20 h-20 rounded-full bg-background/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Play className="h-8 w-8 text-foreground fill-foreground ml-1" />
-                </div>
-              </button>
+            <div className="hero-image-container aspect-[4/3] relative overflow-hidden">
+              {projectImages.map((image, index) => (
+                <img 
+                  key={index}
+                  src={image}
+                  alt={`BIM Project ${index + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+                    index === currentIndex 
+                      ? 'opacity-100 scale-100' 
+                      : 'opacity-0 scale-105'
+                  }`}
+                />
+              ))}
+              
+              {/* Subtle gradient overlay for polish */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
-            {/* Watch Video Label */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-background px-4 py-2 rounded-full shadow-md border border-border">
-              <span className="text-sm font-medium">Watch Video</span>
-            </div>
+            
+            {/* Slide indicators */}
+            {projectImages.length > 1 && (
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {projectImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentIndex 
+                        ? 'bg-foreground w-6' 
+                        : 'bg-foreground/30 hover:bg-foreground/50'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
