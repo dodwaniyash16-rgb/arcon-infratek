@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Layers, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getFeaturedProjects } from "@/data/projects";
+import { projects } from "@/data/projects";
 
 const metrics = [
   {
@@ -29,10 +29,9 @@ const metrics = [
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const featuredProjects = getFeaturedProjects();
   
-  // Filter out placeholder images and get valid project images
-  const projectImages = featuredProjects
+  // Get ALL project images for the slideshow
+  const projectImages = projects
     .map(p => p.image)
     .filter(img => img && img !== "/placeholder.svg");
 
@@ -123,23 +122,6 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
             
-            {/* Slide indicators */}
-            {projectImages.length > 1 && (
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-                {projectImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentIndex 
-                        ? 'bg-foreground w-6' 
-                        : 'bg-foreground/30 hover:bg-foreground/50'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>

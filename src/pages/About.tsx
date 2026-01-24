@@ -357,26 +357,26 @@ const About = () => {
             </p>
           </div>
           
+          {/* Full-width Map */}
+          <div className="mb-12">
+            <img 
+              src={worldMapImage} 
+              alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" 
+              className="w-full h-auto max-w-5xl mx-auto"
+            />
+          </div>
+          
+          {/* Office Details */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Map Column */}
-            <div className="relative overflow-hidden">
+            <div className="rounded-2xl overflow-hidden">
               <img 
-                src={worldMapImage} 
-                alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" 
-                className="w-full h-auto"
+                src={officeTeamImage} 
+                alt="Arcon Infratek Office" 
+                className="w-full h-64 object-cover"
               />
             </div>
             
-            {/* Office Details Column */}
             <div className="space-y-6">
-              <div className="rounded-2xl overflow-hidden mb-8">
-                <img 
-                  src={officeTeamImage} 
-                  alt="Arcon Infratek Office" 
-                  className="w-full h-48 object-cover"
-                />
-              </div>
-              
               <div className="grid sm:grid-cols-2 gap-4">
                 {offices.map((office) => (
                   <OfficeCard key={office.city} {...office} />
