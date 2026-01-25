@@ -231,7 +231,8 @@
 
   /* Hero Image Container */
   .hero-image-container {
-    @apply relative overflow-hidden;
+    @apply relative overflow-hidden rounded-2xl;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
 
   /* Button Hover Shadow */
