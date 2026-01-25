@@ -301,7 +301,7 @@ const About = () => {
               <div className="marquee">
                 {[...clientLogos, ...clientLogos].map((logo, index) => (
                   <div key={index} className="flex-shrink-0 h-16 px-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 flex items-center justify-center mx-2">
-                    <img src={logo.src} alt={logo.alt} className="h-10 w-auto max-w-[140px] object-contain brightness-0 invert opacity-80" />
+                    <img src={logo.src} alt={logo.alt} className="h-10 w-auto max-w-[140px] object-contain" />
                   </div>
                 ))}
               </div>
