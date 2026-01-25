@@ -132,6 +132,7 @@ import sketchupLogo from "@/assets/technologies/sketchup.png";
 import solidworksLogo from "@/assets/technologies/solidworks.png";
 import staadProLogo from "@/assets/technologies/staad-pro.png";
 import twinmotionLogo from "@/assets/technologies/twinmotion.png";
+import processImage from "@/assets/process-delivery.png";
 const clientLogos = [{
   src: godrejLogo,
   alt: "Godrej"
@@ -402,7 +403,7 @@ const Index = () => {
 
             {/* Right - Image */}
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern building architecture" className="w-full h-auto rounded-2xl object-cover aspect-[4/3]" />
+              <img src={processImage} alt="BIM delivery process - team collaboration and coordination" className="w-full h-auto rounded-2xl object-cover aspect-[4/3]" />
             </div>
           </div>
         </div>
