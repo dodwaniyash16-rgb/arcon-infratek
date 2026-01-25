@@ -21,10 +21,12 @@ const metrics = [{
   label: "Audit-Ready Outputs"
 }];
 const HeroSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // Get ALL project images for the slideshow, excluding the first image
+  const projectImages = projects.map(p => p.image).filter(img => img && img !== "/placeholder.svg").slice(1);
+  
+  // Start with image 4 (index 3 in original array, now index 2 after excluding first)
+  const [currentIndex, setCurrentIndex] = useState(2);
 
-  // Get ALL project images for the slideshow
-  const projectImages = projects.map(p => p.image).filter(img => img && img !== "/placeholder.svg");
   useEffect(() => {
     if (projectImages.length <= 1) return;
     const interval = setInterval(() => {
