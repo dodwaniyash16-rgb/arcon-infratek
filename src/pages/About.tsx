@@ -1,28 +1,9 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { 
-  Target, 
-  Clock, 
-  Users, 
-  Globe, 
-  ArrowRight,
-  MapPin,
-  Building2,
-  Layers,
-  FileCheck,
-  ScanLine
-} from "lucide-react";
+import { Target, Clock, Users, Globe, ArrowRight, MapPin, Building2, Layers, FileCheck, ScanLine } from "lucide-react";
 import { useCountUp } from "@/hooks/use-count-up";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import officeTeamImage from "@/assets/office-team.png";
 import unicefLogo from "@/assets/clients/unicef.png";
 import karnatakaLogo from "@/assets/clients/karnataka-govt.png";
@@ -30,54 +11,50 @@ import mpLogo from "@/assets/clients/mp-govt.png";
 import worldMapImage from "@/assets/world-map-new.png";
 
 // Animated stat component
-const AnimatedStat = ({ 
-  value, 
-  suffix = "", 
+const AnimatedStat = ({
+  value,
+  suffix = "",
   prefix = "",
-  label 
-}: { 
-  value: number; 
-  suffix?: string; 
+  label
+}: {
+  value: number;
+  suffix?: string;
   prefix?: string;
   label: string;
 }) => {
-  const { count, elementRef } = useCountUp({ end: value, duration: 2000 });
-  
-  return (
-    <div ref={elementRef} className="text-center">
+  const {
+    count,
+    elementRef
+  } = useCountUp({
+    end: value,
+    duration: 2000
+  });
+  return <div ref={elementRef} className="text-center">
       <div className="text-4xl md:text-5xl font-bold text-white font-heading">
         {prefix}{count}{suffix}
       </div>
       <div className="text-white/70 mt-2 text-sm">{label}</div>
-    </div>
-  );
+    </div>;
 };
 
 // Service card for What We Do section - with premium hover effect
-const ServiceCard = ({ 
-  title, 
-  icon: Icon, 
-  href 
-}: { 
-  title: string; 
-  icon: React.ElementType; 
+const ServiceCard = ({
+  title,
+  icon: Icon,
+  href
+}: {
+  title: string;
+  icon: React.ElementType;
   href: string;
-}) => (
-  <Link 
-    to={href}
-    className="group block bg-card border border-border rounded-2xl p-6 hover:border-transparent hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative"
-  >
+}) => <Link to={href} className="group block bg-card border border-border rounded-2xl p-6 hover:border-transparent hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative">
     {/* Thin gradient border overlay on hover */}
-    <div 
-      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-      style={{ 
-        background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
-        padding: '1px',
-        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-        WebkitMaskComposite: 'xor',
-        maskComposite: 'exclude'
-      }}
-    />
+    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{
+    background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
+    padding: '1px',
+    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+    WebkitMaskComposite: 'xor',
+    maskComposite: 'exclude'
+  }} />
     <div className="relative z-10">
       <div className="w-12 h-12 rounded-xl bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-4 transition-all duration-300">
         <Icon className="w-6 h-6 icon-gradient group-hover-icon-white transition-all duration-300" />
@@ -87,31 +64,26 @@ const ServiceCard = ({
       </h3>
       <ArrowRight className="w-4 h-4 mt-3 text-gradient" />
     </div>
-  </Link>
-);
+  </Link>;
 
 // Value card component - with premium hover effect
-const ValueCard = ({ 
-  icon: Icon, 
-  title, 
-  description 
-}: { 
-  icon: React.ElementType; 
-  title: string; 
+const ValueCard = ({
+  icon: Icon,
+  title,
+  description
+}: {
+  icon: React.ElementType;
+  title: string;
   description: string;
-}) => (
-  <div className="group bg-card border border-border rounded-2xl p-6 hover:border-transparent hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative">
+}) => <div className="group bg-card border border-border rounded-2xl p-6 hover:border-transparent hover:shadow-md hover:scale-[1.02] transition-all duration-300 relative">
     {/* Thin gradient border overlay on hover */}
-    <div 
-      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-      style={{ 
-        background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
-        padding: '1px',
-        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-        WebkitMaskComposite: 'xor',
-        maskComposite: 'exclude'
-      }}
-    />
+    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{
+    background: 'linear-gradient(90deg, hsl(328, 65%, 48%), hsl(351, 75%, 55%), hsl(40, 98%, 70%))',
+    padding: '1px',
+    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+    WebkitMaskComposite: 'xor',
+    maskComposite: 'exclude'
+  }} />
     <div className="relative z-10">
       <div className="w-14 h-14 rounded-2xl bg-secondary group-hover:bg-gradient-brand flex items-center justify-center mb-5 transition-all duration-300">
         <Icon className="w-7 h-7 icon-gradient group-hover-icon-white transition-all duration-300" />
@@ -119,20 +91,18 @@ const ValueCard = ({
       <h3 className="font-heading font-semibold text-lg text-foreground mb-3 group-hover:text-gradient transition-all">{title}</h3>
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
     </div>
-  </div>
-);
+  </div>;
 
 // Office location card
-const OfficeCard = ({ 
-  city, 
-  country, 
-  description 
-}: { 
-  city: string; 
-  country: string; 
+const OfficeCard = ({
+  city,
+  country,
+  description
+}: {
+  city: string;
+  country: string;
   description: string;
-}) => (
-  <div className="flex items-start gap-3 p-4 bg-card border border-border rounded-xl">
+}) => <div className="flex items-start gap-3 p-4 bg-card border border-border rounded-xl">
     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#c5328f] to-[#fec967] flex items-center justify-center flex-shrink-0">
       <MapPin className="w-5 h-5 text-white" />
     </div>
@@ -140,49 +110,60 @@ const OfficeCard = ({
       <h4 className="font-heading font-semibold text-foreground">{city}, {country}</h4>
       <p className="text-muted-foreground text-sm">{description}</p>
     </div>
-  </div>
-);
-
-const values = [
-  {
-    icon: Target,
-    title: "Precision First",
-    description: "Every model we deliver is audit-ready and clash-free, meeting the highest industry standards for coordination and documentation.",
-  },
-  {
-    icon: Clock,
-    title: "Speed Without Compromise",
-    description: "24-72 hour turnaround times without sacrificing quality. Our multi-timezone operations keep your projects moving.",
-  },
-  {
-    icon: Users,
-    title: "Collaborative Partnership",
-    description: "We integrate seamlessly with your team, processes, and tools — functioning as a true extension of your workforce.",
-  },
-  {
-    icon: Globe,
-    title: "Global Coverage",
-    description: "Local expertise across 4 continents ensures your projects receive culturally aware, timezone-friendly support.",
-  },
-];
-
-const services = [
-  { title: "BIM Modeling", icon: Layers, href: "/services/bim-modeling" },
-  { title: "BIM Coordination", icon: Building2, href: "/services/bim-coordination" },
-  { title: "Shop Drawings", icon: FileCheck, href: "/services/shop-drawings" },
-  { title: "Scan to BIM", icon: ScanLine, href: "/services/scan-to-bim" },
-];
-
-const offices = [
-  { city: "Indore", country: "India", description: "Headquarters" },
-  { city: "Delhi", country: "India", description: "North India Operations" },
-  { city: "Dubai", country: "UAE", description: "Middle East & GCC Hub" },
-  { city: "Wyoming", country: "USA", description: "Americas Operations" },
-];
-
+  </div>;
+const values = [{
+  icon: Target,
+  title: "Precision First",
+  description: "Every model we deliver is audit-ready and clash-free, meeting the highest industry standards for coordination and documentation."
+}, {
+  icon: Clock,
+  title: "Speed Without Compromise",
+  description: "24-72 hour turnaround times without sacrificing quality. Our multi-timezone operations keep your projects moving."
+}, {
+  icon: Users,
+  title: "Collaborative Partnership",
+  description: "We integrate seamlessly with your team, processes, and tools — functioning as a true extension of your workforce."
+}, {
+  icon: Globe,
+  title: "Global Coverage",
+  description: "Local expertise across 4 continents ensures your projects receive culturally aware, timezone-friendly support."
+}];
+const services = [{
+  title: "BIM Modeling",
+  icon: Layers,
+  href: "/services/bim-modeling"
+}, {
+  title: "BIM Coordination",
+  icon: Building2,
+  href: "/services/bim-coordination"
+}, {
+  title: "Shop Drawings",
+  icon: FileCheck,
+  href: "/services/shop-drawings"
+}, {
+  title: "Scan to BIM",
+  icon: ScanLine,
+  href: "/services/scan-to-bim"
+}];
+const offices = [{
+  city: "Indore",
+  country: "India",
+  description: "Headquarters"
+}, {
+  city: "Delhi",
+  country: "India",
+  description: "North India Operations"
+}, {
+  city: "Dubai",
+  country: "UAE",
+  description: "Middle East & GCC Hub"
+}, {
+  city: "Wyoming",
+  country: "USA",
+  description: "Americas Operations"
+}];
 const About = () => {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-background">
         <div className="container-custom">
@@ -242,9 +223,7 @@ const About = () => {
               </Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {services.map((service) => (
-                <ServiceCard key={service.title} {...service} />
-              ))}
+              {services.map(service => <ServiceCard key={service.title} {...service} />)}
             </div>
           </div>
         </div>
@@ -252,10 +231,9 @@ const About = () => {
 
       {/* Our Team Section with Office Image */}
       <section className="relative py-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${officeTeamImage})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${officeTeamImage})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
         <div className="container-custom relative z-10">
@@ -296,7 +274,7 @@ const About = () => {
           </div>
           
           {/* Client Trust Badge */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center py-[34px]">
             <p className="text-white/60 text-sm mb-4">Trusted by industry leaders including</p>
             <div className="flex items-center gap-6 px-6 py-4 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
               <img src={unicefLogo} alt="UNICEF" className="h-8 object-contain brightness-0 invert opacity-70" />
@@ -359,28 +337,18 @@ const About = () => {
           
           {/* Full-width Map */}
           <div className="mb-12">
-            <img 
-              src={worldMapImage} 
-              alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" 
-              className="w-full h-auto max-w-5xl mx-auto"
-            />
+            <img src={worldMapImage} alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" className="w-full h-auto max-w-5xl mx-auto" />
           </div>
           
           {/* Office Details */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="rounded-2xl overflow-hidden">
-              <img 
-                src={officeTeamImage} 
-                alt="Arcon Infratek Office" 
-                className="w-full h-64 object-cover"
-              />
+              <img src={officeTeamImage} alt="Arcon Infratek Office" className="w-full h-64 object-cover" />
             </div>
             
             <div className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
-                {offices.map((office) => (
-                  <OfficeCard key={office.city} {...office} />
-                ))}
+                {offices.map(office => <OfficeCard key={office.city} {...office} />)}
               </div>
               
               <Button variant="outline" asChild className="w-full sm:w-auto">
@@ -408,9 +376,7 @@ const About = () => {
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value) => (
-              <ValueCard key={value.title} {...value} />
-            ))}
+            {values.map(value => <ValueCard key={value.title} {...value} />)}
           </div>
         </div>
       </section>
@@ -435,8 +401,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
