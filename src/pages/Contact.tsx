@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useReCaptcha } from "@/hooks/useReCaptcha";
 
 const contactInfo = [
   {
@@ -36,6 +37,7 @@ const contactInfo = [
 
 const Contact = () => {
   const { toast } = useToast();
+  const { verifyReCaptcha, isVerifying } = useReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -49,6 +51,18 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    // Verify reCAPTCHA before submission
+    const isHuman = await verifyReCaptcha("contact_form");
+    if (!isHuman) {
+      toast({
+        title: "Verification Failed",
+        description: "Please try again. If the problem persists, refresh the page.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
     
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -204,8 +218,8 @@ const Contact = () => {
                       required
                     />
                   </div>
-                  <Button type="submit" size="lg" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                  <Button type="submit" size="lg" disabled={isSubmitting || isVerifying}>
+                    {isSubmitting || isVerifying ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>

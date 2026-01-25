@@ -19,6 +19,7 @@ import {
 import { MapPin, Clock, Briefcase, ArrowLeft, Upload, Plus, X } from "lucide-react";
 import { toast } from "sonner";
 import type { JobOpening } from "./JobDetailsDialog";
+import { useReCaptcha } from "@/hooks/useReCaptcha";
 
 interface JobApplicationDialogProps {
   job: JobOpening | null;
@@ -48,6 +49,7 @@ interface FormData {
 }
 
 const JobApplicationDialog = ({ job, open, onOpenChange, onBack }: JobApplicationDialogProps) => {
+  const { verifyReCaptcha, isVerifying } = useReCaptcha();
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     middleName: "",
@@ -127,6 +129,14 @@ const JobApplicationDialog = ({ job, open, onOpenChange, onBack }: JobApplicatio
     }
 
     setIsSubmitting(true);
+
+    // Verify reCAPTCHA before submission
+    const isHuman = await verifyReCaptcha("job_application");
+    if (!isHuman) {
+      toast.error("Verification failed. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       // Create email body with application details
@@ -516,8 +526,8 @@ Additional Documents: ${additionalDocs.length > 0 ? additionalDocs.map(d => d.na
           </p>
 
           {/* Submit Button */}
-          <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Submit Application"}
+          <Button type="submit" size="lg" className="w-full" disabled={isSubmitting || isVerifying}>
+            {isSubmitting || isVerifying ? "Submitting..." : "Submit Application"}
           </Button>
         </form>
       </DialogContent>
