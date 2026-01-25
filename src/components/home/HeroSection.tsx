@@ -85,21 +85,6 @@ const HeroSection = () => {
                 </Link>
               </Button>
             </div>
-
-            {/* Inline Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-border">
-              {metrics.map((metric, index) => (
-                <div key={index} className="text-center md:text-left">
-                  <metric.icon className="h-5 w-5 icon-gradient mx-auto md:mx-0 mb-2" />
-                  <div className="font-heading font-semibold text-sm">
-                    {metric.value}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    {metric.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right Image Slideshow */}
