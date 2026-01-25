@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Users, Play, Download, Newspaper } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Download } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 
 const insightCategories = [
@@ -24,20 +24,6 @@ const insightCategories = [
     description: "Hear what our clients say about working with Arcon Infratek.",
     href: "/insights/testimonials",
     count: "50+ Reviews",
-  },
-  {
-    icon: Play,
-    title: "Media",
-    description: "Videos, webinars, and presentations showcasing our work.",
-    href: "/insights/media",
-    count: "15+ Videos",
-  },
-  {
-    icon: Newspaper,
-    title: "Media Kit",
-    description: "Press releases, logos, and brand assets for media use.",
-    href: "/insights/media-kit",
-    count: "Brand Assets",
   },
 ];
 
