@@ -89,13 +89,13 @@ const HeroSection = () => {
 
           {/* Right Image Slideshow */}
           <div className="relative animate-fade-in-delay-2 flex items-center justify-center">
-            <div className="hero-image-container aspect-[4/3] w-full rounded-2xl shadow-2xl relative overflow-hidden bg-muted">
+            <div className="hero-image-container w-full max-w-[600px] h-[400px] lg:h-[450px] rounded-2xl shadow-2xl relative overflow-hidden bg-muted">
               {projectImages.map((image, index) => (
                 <img 
                   key={index}
                   src={image}
                   alt={`BIM Project ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out ${
+                  className={`absolute inset-0 w-full h-full object-contain object-center transition-all duration-1000 ease-in-out ${
                     index === currentIndex 
                       ? 'opacity-100 scale-100' 
                       : 'opacity-0 scale-105'
