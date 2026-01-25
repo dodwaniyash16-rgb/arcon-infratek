@@ -46,7 +46,7 @@ const HeroSection = () => {
   }, [projectImages.length]);
 
   return (
-    <section className="relative pt-24 pb-12 lg:pt-28 lg:pb-16">
+    <section className="relative pt-24 pb-24 lg:pt-28 lg:pb-32">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 to-background" />
       
