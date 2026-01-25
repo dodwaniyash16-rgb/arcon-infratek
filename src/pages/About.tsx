@@ -365,24 +365,18 @@ const About = () => {
             <img src={worldMapImage} alt="Global Office Locations - Indore, Delhi, Dubai, Wyoming USA" className="w-full h-auto max-w-5xl mx-auto" />
           </div>
           
-          {/* Office Details */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="rounded-2xl overflow-hidden">
-              <img src={officeTeamImage} alt="Arcon Infratek Office" className="w-full h-64 object-cover" />
-            </div>
-            
-            <div className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                {offices.map(office => <OfficeCard key={office.city} {...office} />)}
-              </div>
-              
-              <Button variant="outline" asChild className="w-full sm:w-auto">
-                <Link to="/portfolio">
-                  Explore Our Projects
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </div>
+          {/* Office Details - Single Row */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {offices.map(office => <OfficeCard key={office.city} {...office} />)}
+          </div>
+          
+          <div className="text-center">
+            <Button variant="outline" asChild>
+              <Link to="/portfolio">
+                Explore Our Projects
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
