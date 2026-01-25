@@ -88,8 +88,8 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="relative animate-fade-in-delay-2">
-            <div className="hero-image-container aspect-[16/10] rounded-2xl shadow-2xl relative overflow-hidden bg-muted">
+          <div className="relative animate-fade-in-delay-2 flex items-center justify-center">
+            <div className="hero-image-container aspect-[4/3] w-full rounded-2xl shadow-2xl relative overflow-hidden bg-muted">
               {projectImages.map((image, index) => (
                 <img 
                   key={index}
