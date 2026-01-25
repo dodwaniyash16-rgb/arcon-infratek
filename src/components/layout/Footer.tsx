@@ -118,13 +118,13 @@ const Footer = () => {
                 <Mail className="h-4 w-4" />
                 info@arconinfratek.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-sm text-background/70 hover:text-background transition-colors">
+              <a href="tel:+14049191976" className="flex items-center gap-3 text-sm text-background/70 hover:text-background transition-colors">
                 <Phone className="h-4 w-4" />
-                +1 (234) 567-890
+                +1 (404) 919-1976
               </a>
               <div className="flex items-start gap-3 text-sm text-background/70">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>123 Construction Way, Building District, NY 10001</span>
+                <span>1200 Prairie Wind Loop, Cheyenne, WY 82001</span>
               </div>
             </div>
           </div>
