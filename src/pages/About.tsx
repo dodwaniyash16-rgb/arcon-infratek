@@ -8,7 +8,28 @@ import officeTeamImage from "@/assets/office-team.png";
 import unicefLogo from "@/assets/clients/unicef.png";
 import karnatakaLogo from "@/assets/clients/karnataka-govt.png";
 import mpLogo from "@/assets/clients/mp-govt.png";
+import autodeskLogo from "@/assets/clients/autodesk.png";
+import godrejLogo from "@/assets/clients/godrej.png";
+import nhsrclLogo from "@/assets/clients/nhsrcl.png";
+import rajasthanLogo from "@/assets/clients/rajasthan-govt.png";
+import unescoLogo from "@/assets/clients/unesco.png";
+import uttarakhandLogo from "@/assets/clients/uttarakhand-govt.png";
+import wspLogo from "@/assets/clients/wsp.png";
 import worldMapImage from "@/assets/world-map-new.png";
+
+// Client logos for marquee
+const clientLogos = [
+  { src: unicefLogo, alt: "UNICEF" },
+  { src: karnatakaLogo, alt: "Government of Karnataka" },
+  { src: mpLogo, alt: "Government of Madhya Pradesh" },
+  { src: autodeskLogo, alt: "Autodesk" },
+  { src: godrejLogo, alt: "Godrej" },
+  { src: nhsrclLogo, alt: "NHSRCL" },
+  { src: rajasthanLogo, alt: "Government of Rajasthan" },
+  { src: unescoLogo, alt: "UNESCO" },
+  { src: uttarakhandLogo, alt: "Government of Uttarakhand" },
+  { src: wspLogo, alt: "WSP" },
+];
 
 // Animated stat component
 const AnimatedStat = ({
@@ -273,13 +294,17 @@ const About = () => {
             <AnimatedStat value={10} suffix="+" label="Years Avg. Experience" />
           </div>
           
-          {/* Client Trust Badge */}
-          <div className="flex flex-col items-center py-[34px]">
-            <p className="text-white/60 text-sm mb-4">Trusted by industry leaders including</p>
-            <div className="flex items-center gap-8 px-8 py-5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
-              <img src={unicefLogo} alt="UNICEF" className="h-12 object-contain brightness-0 invert opacity-70" />
-              <img src={karnatakaLogo} alt="Government of Karnataka" className="h-12 object-contain brightness-0 invert opacity-70" />
-              <img src={mpLogo} alt="Government of Madhya Pradesh" className="h-12 object-contain brightness-0 invert opacity-70" />
+          {/* Client Trust Badge - Scrolling Marquee */}
+          <div className="flex flex-col items-center pt-8">
+            <p className="text-white/60 text-sm mb-6">Trusted by industry leaders including</p>
+            <div className="marquee-container py-4 w-full">
+              <div className="marquee">
+                {[...clientLogos, ...clientLogos].map((logo, index) => (
+                  <div key={index} className="flex-shrink-0 h-16 px-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 flex items-center justify-center mx-2">
+                    <img src={logo.src} alt={logo.alt} className="h-10 w-auto max-w-[140px] object-contain brightness-0 invert opacity-80" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
