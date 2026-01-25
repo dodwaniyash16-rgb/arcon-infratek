@@ -339,13 +339,14 @@ const Index = () => {
               <span className="text-gradient">Proven delivery</span> across project types.
             </>} />
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {featuredProjects.map((project, index) => (
               <ProjectCard 
                 key={index} 
                 image={project.image}
                 title={project.title}
                 category={project.category}
+                location={project.location}
                 href={`/portfolio/${project.slug}`}
               />
             ))}

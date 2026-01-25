@@ -210,19 +210,24 @@ interface ProjectCardProps {
   title: string;
   category: string;
   href: string;
+  location?: string;
 }
 export const ProjectCard = ({
   image,
   title,
   category,
-  href
+  href,
+  location
 }: ProjectCardProps) => {
-  return <Link to={href} className="group block relative rounded-xl overflow-hidden card-hover">
-      <img src={image} alt={title} className="w-full aspect-[4/3] object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform">
-        <p className="text-white/80 text-xs uppercase tracking-wider mb-1">{category}</p>
-        <h3 className="text-white font-semibold">{title}</h3>
+  return (
+    <Link to={href} className="group block relative rounded-xl overflow-hidden card-hover">
+      <img src={image} alt={title} className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-5">
+        <p className="text-white/70 text-xs uppercase tracking-wider mb-2 font-medium">{category}</p>
+        <h3 className="text-white font-heading font-semibold text-lg mb-1 group-hover:text-accent transition-colors">{title}</h3>
+        {location && <p className="text-white/60 text-sm">{location}</p>}
       </div>
-    </Link>;
+    </Link>
+  );
 };
