@@ -263,7 +263,7 @@ const About = () => {
               Our Team
             </span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-6">
-              120+ BIM Professionals Powering Your Projects
+              75+ BIM Professionals Powering Your Projects
             </h2>
             <p className="text-white/80 text-lg leading-relaxed mb-10">
               Our multidisciplinary team brings together architects, structural engineers, MEP specialists, 
@@ -272,7 +272,7 @@ const About = () => {
             </p>
             <div className="flex flex-wrap gap-8">
               <div className="text-center">
-                <div className="text-5xl font-bold text-white font-heading">120+</div>
+                <div className="text-5xl font-bold text-white font-heading">75+</div>
                 <div className="text-white/70 mt-1">Team Members</div>
               </div>
               <div className="text-center">
@@ -289,7 +289,7 @@ const About = () => {
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <AnimatedStat value={8} prefix="$" suffix="B+" label="Value of Projects Delivered" />
-            <AnimatedStat value={120} suffix="+" label="BIM Professionals" />
+            <AnimatedStat value={75} suffix="+" label="BIM Professionals" />
             <AnimatedStat value={4} label="Global Offices" />
             <AnimatedStat value={10} suffix="+" label="Years Avg. Experience" />
           </div>
