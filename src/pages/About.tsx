@@ -276,10 +276,10 @@ const About = () => {
           {/* Client Trust Badge */}
           <div className="flex flex-col items-center py-[34px]">
             <p className="text-white/60 text-sm mb-4">Trusted by industry leaders including</p>
-            <div className="flex items-center gap-6 px-6 py-4 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
-              <img src={unicefLogo} alt="UNICEF" className="h-8 object-contain brightness-0 invert opacity-70" />
-              <img src={karnatakaLogo} alt="Government of Karnataka" className="h-8 object-contain brightness-0 invert opacity-70" />
-              <img src={mpLogo} alt="Government of Madhya Pradesh" className="h-8 object-contain brightness-0 invert opacity-70" />
+            <div className="flex items-center gap-8 px-8 py-5 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+              <img src={unicefLogo} alt="UNICEF" className="h-12 object-contain brightness-0 invert opacity-70" />
+              <img src={karnatakaLogo} alt="Government of Karnataka" className="h-12 object-contain brightness-0 invert opacity-70" />
+              <img src={mpLogo} alt="Government of Madhya Pradesh" className="h-12 object-contain brightness-0 invert opacity-70" />
             </div>
           </div>
         </div>
