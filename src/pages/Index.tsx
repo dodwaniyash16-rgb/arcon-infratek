@@ -132,7 +132,6 @@ import sketchupLogo from "@/assets/technologies/sketchup.png";
 import solidworksLogo from "@/assets/technologies/solidworks.png";
 import staadProLogo from "@/assets/technologies/staad-pro.png";
 import twinmotionLogo from "@/assets/technologies/twinmotion.png";
-import processImage from "@/assets/process-delivery.png";
 const clientLogos = [{
   src: godrejLogo,
   alt: "Godrej"
@@ -401,9 +400,45 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right - Image */}
-            <div className="relative">
-              <img src={processImage} alt="BIM delivery process - team collaboration and coordination" className="w-full h-auto rounded-2xl object-cover aspect-[4/3]" />
+            {/* Right - Process Diagram */}
+            <div className="relative bg-gradient-to-br from-secondary to-background rounded-2xl p-8 border border-border">
+              <div className="grid grid-cols-2 gap-4">
+                {processSteps.map((step, index) => (
+                  <div 
+                    key={index}
+                    className="relative bg-background rounded-xl p-5 border border-border hover:border-accent/40 transition-all duration-300 hover:shadow-lg group"
+                  >
+                    {/* Step number badge */}
+                    <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-brand flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      {step.number}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="pt-2">
+                      <h4 className="font-heading font-semibold text-sm mb-1 group-hover:text-gradient transition-colors">
+                        {step.title}
+                      </h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                    
+                    {/* Connector arrow (except last) */}
+                    {index < 3 && (
+                      <div className="absolute hidden md:block">
+                        {index % 2 === 0 ? (
+                          <ArrowRight className="absolute -right-6 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40" />
+                        ) : (
+                          <ArrowRight className="absolute -bottom-6 left-1/2 -translate-x-1/2 rotate-90 h-4 w-4 text-muted-foreground/40" />
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              
+              {/* Central connecting element */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-gradient-brand opacity-20 blur-xl" />
             </div>
           </div>
         </div>
