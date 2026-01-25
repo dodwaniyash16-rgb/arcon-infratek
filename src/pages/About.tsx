@@ -179,9 +179,9 @@ const offices = [{
   country: "UAE",
   description: "Middle East & GCC Hub"
 }, {
-  city: "Wyoming",
+  city: "Cheyenne",
   country: "USA",
-  description: "Americas Operations"
+  description: "1200 Prairie Wind Loop, WY 82001"
 }];
 const About = () => {
   return <Layout>
