@@ -180,7 +180,7 @@ const offices = [{
   country: "UAE",
   description: "Middle East & GCC Hub"
 }, {
-  city: "Cheyenne",
+  city: "Wyoming",
   country: "USA",
   description: "1200 Prairie Wind Loop, WY 82001"
 }];
