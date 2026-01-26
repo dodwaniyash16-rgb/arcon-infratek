@@ -1,12 +1,51 @@
 import { useState } from "react";
+import { z } from "zod";
 import Layout from "@/components/layout/Layout";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useReCaptcha } from "@/hooks/useReCaptcha";
+
+// Zod validation schema
+const contactSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, "Full name is required")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+  company: z
+    .string()
+    .trim()
+    .max(100, "Company name must be less than 100 characters")
+    .optional()
+    .or(z.literal("")),
+  phone: z
+    .string()
+    .trim()
+    .max(20, "Phone number must be less than 20 characters")
+    .regex(/^[\d\s\-+()]*$/, "Please enter a valid phone number")
+    .optional()
+    .or(z.literal("")),
+  service: z.string().optional().or(z.literal("")),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Project details are required")
+    .min(20, "Please provide at least 20 characters")
+    .max(2000, "Message must be less than 2000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+type FormErrors = Partial<Record<keyof ContactFormData, string>>;
 
 const contactInfo = [
   {
@@ -39,7 +78,8 @@ const Contact = () => {
   const { toast } = useToast();
   const { verifyReCaptcha, isVerifying } = useReCaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     company: "",
@@ -48,8 +88,53 @@ const Contact = () => {
     message: "",
   });
 
+  const validateField = (field: keyof ContactFormData, value: string) => {
+    const partialData = { ...formData, [field]: value };
+    const result = contactSchema.safeParse(partialData);
+    
+    if (!result.success) {
+      const fieldError = result.error.errors.find(e => e.path[0] === field);
+      if (fieldError) {
+        setErrors(prev => ({ ...prev, [field]: fieldError.message }));
+      } else {
+        setErrors(prev => {
+          const newErrors = { ...prev };
+          delete newErrors[field];
+          return newErrors;
+        });
+      }
+    } else {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate all fields
+    const result = contactSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const newErrors: FormErrors = {};
+      result.error.errors.forEach(err => {
+        const field = err.path[0] as keyof ContactFormData;
+        if (!newErrors[field]) {
+          newErrors[field] = err.message;
+        }
+      });
+      setErrors(newErrors);
+      toast({
+        title: "Please fix the errors",
+        description: "Some fields need your attention.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     // Verify reCAPTCHA before submission
@@ -64,12 +149,24 @@ const Contact = () => {
       return;
     }
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Project Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company || "Not provided"}
+Phone: ${formData.phone || "Not provided"}
+Service Interest: ${formData.service || "General inquiry"}
+
+Project Details:
+${formData.message}
+    `.trim());
+
+    window.location.href = `mailto:info@arconinfratek.com?subject=${subject}&body=${body}`;
     
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Email client opened!",
+      description: "Please send the email to complete your inquiry. We'll respond within 24 hours.",
     });
     
     setFormData({
@@ -80,15 +177,24 @@ const Contact = () => {
       service: "",
       message: "",
     });
+    setErrors({});
     setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    validateField(name as keyof ContactFormData, value);
+  };
+
+  const isLoading = isSubmitting || isVerifying;
 
   return (
     <Layout>
@@ -141,7 +247,7 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <div className="bg-card p-8 rounded-xl border border-border">
                 <h2 className="font-heading text-2xl font-bold mb-6">Send us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name *</Label>
@@ -150,9 +256,17 @@ const Contact = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         placeholder="John Doe"
-                        required
+                        aria-invalid={!!errors.name}
+                        aria-describedby={errors.name ? "name-error" : undefined}
+                        className={errors.name ? "border-destructive focus-visible:ring-destructive" : ""}
                       />
+                      {errors.name && (
+                        <p id="name-error" className="text-sm text-destructive" role="alert">
+                          {errors.name}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email Address *</Label>
@@ -162,9 +276,17 @@ const Contact = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         placeholder="john@company.com"
-                        required
+                        aria-invalid={!!errors.email}
+                        aria-describedby={errors.email ? "email-error" : undefined}
+                        className={errors.email ? "border-destructive focus-visible:ring-destructive" : ""}
                       />
+                      {errors.email && (
+                        <p id="email-error" className="text-sm text-destructive" role="alert">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="company">Company</Label>
@@ -173,8 +295,17 @@ const Contact = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         placeholder="Company Name"
+                        aria-invalid={!!errors.company}
+                        aria-describedby={errors.company ? "company-error" : undefined}
+                        className={errors.company ? "border-destructive focus-visible:ring-destructive" : ""}
                       />
+                      {errors.company && (
+                        <p id="company-error" className="text-sm text-destructive" role="alert">
+                          {errors.company}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
@@ -183,8 +314,17 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         placeholder="+1 (234) 567-890"
+                        aria-invalid={!!errors.phone}
+                        aria-describedby={errors.phone ? "phone-error" : undefined}
+                        className={errors.phone ? "border-destructive focus-visible:ring-destructive" : ""}
                       />
+                      {errors.phone && (
+                        <p id="phone-error" className="text-sm text-destructive" role="alert">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -194,33 +334,60 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
+                      className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     >
                       <option value="">Select a service</option>
-                      <option value="vdc-bim-consulting">VDC & BIM Consulting</option>
-                      <option value="architectural-bim">Architectural BIM</option>
-                      <option value="structural-bim">Structural BIM</option>
-                      <option value="mep-bim">MEP BIM</option>
-                      <option value="civil-utilities-bim">Civil & Utilities BIM</option>
-                      <option value="as-built-bim">As-Built BIM</option>
-                      <option value="bim-project-management">BIM Project Management</option>
+                      <option value="VDC & BIM Consulting">VDC & BIM Consulting</option>
+                      <option value="Architectural BIM">Architectural BIM</option>
+                      <option value="Structural BIM">Structural BIM</option>
+                      <option value="MEP BIM">MEP BIM</option>
+                      <option value="Civil & Utilities BIM">Civil & Utilities BIM</option>
+                      <option value="As-Built BIM">As-Built BIM</option>
+                      <option value="BIM Project Management">BIM Project Management</option>
+                      <option value="BIM Coordination">BIM Coordination</option>
+                      <option value="Shop Drawings">Shop Drawings</option>
+                      <option value="Scan to BIM">Scan to BIM</option>
+                      <option value="Estimation & QTO">Estimation & QTO</option>
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Project Details *</Label>
+                    <div className="flex justify-between">
+                      <Label htmlFor="message">Project Details *</Label>
+                      <span className="text-xs text-muted-foreground">
+                        {formData.message.length}/2000
+                      </span>
+                    </div>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your project..."
+                      onBlur={handleBlur}
+                      placeholder="Tell us about your project, timeline, and specific requirements..."
                       rows={5}
-                      required
+                      maxLength={2000}
+                      aria-invalid={!!errors.message}
+                      aria-describedby={errors.message ? "message-error" : undefined}
+                      className={errors.message ? "border-destructive focus-visible:ring-destructive" : ""}
                     />
+                    {errors.message && (
+                      <p id="message-error" className="text-sm text-destructive" role="alert">
+                        {errors.message}
+                      </p>
+                    )}
                   </div>
-                  <Button type="submit" size="lg" disabled={isSubmitting || isVerifying}>
-                    {isSubmitting || isVerifying ? "Sending..." : "Send Message"}
-                    <Send className="ml-2 h-4 w-4" />
+                  <Button type="submit" size="lg" disabled={isLoading}>
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        {isVerifying ? "Verifying..." : "Sending..."}
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-4 w-4" />
+                      </>
+                    )}
                   </Button>
                 </form>
               </div>
