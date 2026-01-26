@@ -84,6 +84,16 @@
     font-family: 'Sora', sans-serif;
     @apply font-semibold tracking-tight;
   }
+
+  /* Accessibility: Enhanced focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Skip link styles */
+  .sr-only:focus {
+    @apply not-sr-only;
+  }
 }
 
 @layer components {

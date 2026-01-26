@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Target, Clock, Users, Globe, ArrowRight, MapPin, Building2, Layers, FileCheck, ScanLine } from "lucide-react";
 import { useCountUp } from "@/hooks/use-count-up";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import SEOSchema from "@/components/SEOSchema";
 import officeTeamImage from "@/assets/office-team.png";
 import unicefLogo from "@/assets/clients/unicef.png";
 import karnatakaLogo from "@/assets/clients/karnataka-govt.png";
@@ -185,7 +186,15 @@ const offices = [{
 }];
 const About = () => {
   return <Layout>
-      {/* Hero Section */}
+      <SEOSchema
+        title="About Arcon Infratek | Global BIM & VDC Services Provider"
+        description="Learn about Arcon Infratek - a leading BIM services company with 75+ professionals delivering precision-driven BIM modeling, coordination, and VDC services to AEC firms across 15+ countries."
+        type="page"
+        breadcrumbs={[
+          { name: "Home", url: "https://infra-precision-forge.lovable.app/" },
+          { name: "About", url: "https://infra-precision-forge.lovable.app/about" }
+        ]}
+      />
       <section className="pt-32 pb-16 bg-background">
         <div className="container-custom">
           {/* Breadcrumb */}

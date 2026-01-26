@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -16,6 +15,7 @@ import IndustriesSection from "@/components/sections/IndustriesSection";
 import RelatedServicesSection from "@/components/sections/RelatedServicesSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTAStrip from "@/components/ui/cta-strip";
+import SEOSchema from "@/components/SEOSchema";
 import bimModelingHero from "@/assets/services/bim-modeling-hero.png";
 
 const heroImage = bimModelingHero;
@@ -136,12 +136,21 @@ const faqs = [
 ];
 
 const BIMModeling = () => {
-  useEffect(() => {
-    document.title = "BIM Modeling Services | Arcon Infratek - LOD 100-500 BIM Solutions";
-  }, []);
-
   return (
     <Layout>
+      <SEOSchema
+        title="BIM Modeling Services | LOD 100-500 | Arcon Infratek"
+        description="Professional BIM modeling services across architectural, structural, MEP, and facade disciplines. LOD 100-500 models with 24-72 hour turnaround. Get accurate, coordinated BIM models for your construction projects."
+        type="service"
+        serviceName="BIM Modeling Services"
+        serviceDescription="Comprehensive Building Information Modeling (BIM) services including architectural, structural, MEP, facade, and landscape modeling at all Levels of Development (LOD 100-500)."
+        faqs={faqs}
+        breadcrumbs={[
+          { name: "Home", url: "https://infra-precision-forge.lovable.app/" },
+          { name: "Services", url: "https://infra-precision-forge.lovable.app/services" },
+          { name: "BIM Modeling", url: "https://infra-precision-forge.lovable.app/services/bim-modeling" }
+        ]}
+      />
       {/* Hero */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-custom">
