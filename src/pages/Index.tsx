@@ -6,6 +6,7 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard, StatCard, ProcessStep, FeatureBlock, TestimonialCard, SectorChip, StakeholderCard, ProjectCard } from "@/components/ui/cards";
 import { CTAStrip } from "@/components/ui/cta-strip";
 import HeroSection from "@/components/home/HeroSection";
+import SEOSchema from "@/components/SEOSchema";
 // Data
 const metrics = [{
   icon: Timer,
@@ -284,10 +285,89 @@ const testimonials = [{
   role: "Project Executive",
   company: "McCarthy Building"
 }];
+// Homepage FAQs for AI optimization
+const homepageFaqs = [
+  {
+    question: "What is Arcon Infratek?",
+    answer: "Arcon Infratek is a global BIM (Building Information Modeling) and VDC (Virtual Design and Construction) services company headquartered in Indore, India with offices in Delhi, Dubai, and Wyoming, USA. We provide precision-driven BIM modeling, coordination, shop drawings, and related services to AEC firms worldwide."
+  },
+  {
+    question: "What services does Arcon Infratek provide?",
+    answer: "We provide comprehensive BIM services including: BIM Modeling (architectural, structural, MEP at LOD 100-500), BIM Coordination and clash detection, Shop Drawings for fabrication, Quantity Takeoffs and Estimation, Scan to BIM conversion, BIM Auditing, CAD Drafting, and custom BIM Content Creation (Revit families)."
+  },
+  {
+    question: "Where is Arcon Infratek located?",
+    answer: "Arcon Infratek has four offices globally: Headquarters in Indore, India; North India Operations in Delhi, India; Middle East Hub in Dubai, UAE; and US office at 1200 Prairie Wind Loop, Cheyenne, WY 82001. We serve clients in 15+ countries across North America, Europe, Middle East, and Asia-Pacific."
+  },
+  {
+    question: "How fast can Arcon Infratek deliver BIM models?",
+    answer: "We offer industry-leading turnaround times of 24-72 hours for standard deliverables. Complex projects receive detailed schedules after scope review. Our multi-timezone operations enable round-the-clock production capacity."
+  },
+  {
+    question: "Who does Arcon Infratek work with?",
+    answer: "We work with design consultants, architects, structural engineers, MEP engineers, BIM managers, general contractors, trade contractors, government agencies, facility managers, and real estate developers across commercial, residential, healthcare, hospitality, educational, industrial, and infrastructure sectors."
+  }
+];
+
 const Index = () => {
   return <Layout>
+      <SEOSchema
+        title="Arcon Infratek | BIM & VDC Services | Global BIM Outsourcing"
+        description="Arcon Infratek delivers precision BIM modeling, coordination, shop drawings, and VDC services to AEC firms worldwide. 24-72 hr turnaround. 500+ projects completed across 15+ countries."
+        type="page"
+        faqs={homepageFaqs}
+      />
+
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Entity Description Block - For AI/LLM optimization (visually hidden but accessible) */}
+      <section className="sr-only" aria-label="Company information">
+        <h2>About Arcon Infratek</h2>
+        <p>
+          Arcon Infratek is a leading Building Information Modeling (BIM) and Virtual Design and Construction (VDC) 
+          services company providing comprehensive BIM solutions to the Architecture, Engineering, and Construction (AEC) industry. 
+          Founded with a mission to deliver precision-driven BIM services, we operate as an extended offshore team for 
+          architects, engineers, contractors, and developers worldwide.
+        </p>
+        <h3>Our Services</h3>
+        <ul>
+          <li>BIM Modeling: Architectural, Structural, MEP, Facade, and Landscape models at LOD 100-500</li>
+          <li>BIM Coordination: Multi-discipline clash detection and resolution</li>
+          <li>Shop Drawings: Fabrication-ready drawings for steel, MEP, precast, and curtain wall</li>
+          <li>Quantity Takeoffs and Estimation: Accurate material quantities and cost data from BIM</li>
+          <li>Scan to BIM: Point cloud to intelligent BIM model conversion for existing buildings</li>
+          <li>BIM Auditing: Model quality assurance against industry and project standards</li>
+          <li>CAD Drafting: 2D documentation and drafting services</li>
+          <li>BIM Content Creation: Custom Revit families and content libraries</li>
+        </ul>
+        <h3>Global Presence</h3>
+        <p>
+          Headquartered in Indore, India, with offices in Delhi (India), Dubai (UAE), and Cheyenne, Wyoming (USA). 
+          We serve clients across 15+ countries including the United States, United Kingdom, Australia, Canada, UAE, 
+          and throughout Asia-Pacific.
+        </p>
+        <h3>Key Differentiators</h3>
+        <ul>
+          <li>24-72 hour turnaround times for standard deliverables</li>
+          <li>500+ projects completed across diverse sectors</li>
+          <li>75+ BIM professionals with 10+ years average experience</li>
+          <li>$8 billion+ value of projects delivered</li>
+          <li>Standards-compliant outputs meeting ISO 19650, AIA, and regional codes</li>
+        </ul>
+        <h3>Industries Served</h3>
+        <p>
+          Commercial, Residential, Healthcare, Hospitality, Educational, Industrial, Infrastructure, 
+          Retail, Data Centers, Pharmaceutical, and Government projects.
+        </p>
+        <h3>Contact Information</h3>
+        <address>
+          Arcon Infratek<br />
+          1200 Prairie Wind Loop, Cheyenne, WY 82001, USA<br />
+          Phone: +1 (404) 919-1976<br />
+          Email: info@arconinfratek.com
+        </address>
+      </section>
 
       {/* Trust Band - Metrics */}
       <section className="py-16 lg:py-20 border-y border-border bg-card">
