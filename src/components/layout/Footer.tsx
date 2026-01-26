@@ -49,9 +49,6 @@ const Footer = () => {
     }, {
       label: "Testimonials",
       href: "/insights/testimonials"
-    }, {
-      label: "Media Kit",
-      href: "/insights/media-kit"
     }],
     legal: [{
       label: "Privacy Policy",
@@ -195,9 +192,18 @@ const Footer = () => {
               © {currentYear} Arcon Infratek. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label={social.label}>
-                  
-                </a>)}
+              {socialLinks.map(social => (
+                <a 
+                  key={social.label} 
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-background/60 hover:text-background transition-colors" 
+                  aria-label={social.label}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
