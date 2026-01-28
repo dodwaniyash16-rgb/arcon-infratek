@@ -6,7 +6,7 @@ const testimonials = [
     quote: "Arcon Infratek transformed our BIM workflow. Their attention to detail and commitment to deadlines has made them an invaluable partner.",
     author: "Sarah Johnson",
     role: "Project Director",
-    company: "Turner Construction",
+    company: "Deskon Construction",
     rating: 5,
   },
   {
