@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Target, Clock, Users, Globe, ArrowRight, MapPin, Building2, Layers, FileCheck, ScanLine } from "lucide-react";
@@ -114,6 +115,75 @@ const ValueCard = ({
       <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
     </div>
   </div>;
+
+// Team section with fade-in animation
+const TeamSection = ({ officeTeamImage }: { officeTeamImage: string }) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${officeTeamImage})`
+      }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70" />
+      </div>
+      <div className="container-custom relative z-10">
+        <div className="max-w-2xl">
+          <span className={`inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Our Team
+          </span>
+          <h2 className={`text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            75+ BIM Professionals Dedicated to Powering Your Most Complex Projects
+          </h2>
+          <p className={`text-white/80 text-lg leading-relaxed mb-10 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Our multidisciplinary team brings together architects, structural engineers, MEP specialists, 
+            and VDC managers with an average of 10+ years of industry experience. Certified in Autodesk 
+            Revit, Navisworks, and BIM 360, our professionals work across all LOD levels from concept 
+            through construction. We operate 24/7 across multiple time zones, ensuring your projects 
+            never stop moving. We don't just model — we understand construction from the ground up.
+          </p>
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white font-heading">75+</div>
+              <div className="text-white/70 mt-1">Team Members</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white font-heading">10+</div>
+              <div className="text-white/70 mt-1">Years Avg. Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white font-heading">24/7</div>
+              <div className="text-white/70 mt-1">Global Operations</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white font-heading">500+</div>
+              <div className="text-white/70 mt-1">Projects Delivered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 // Office location card
 const OfficeCard = ({
@@ -260,48 +330,7 @@ const About = () => {
       </section>
 
       {/* Our Team Section with Office Image */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url(${officeTeamImage})`
-      }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70" />
-        </div>
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
-            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-base mb-6">
-              Our Team
-            </span>
-            <h2 className="text-5xl md:text-6xl font-heading font-bold text-white leading-tight mb-6">
-              75+ BIM Professionals Dedicated to Powering Your Most Complex Projects
-            </h2>
-            <p className="text-white/80 text-xl leading-relaxed mb-10">
-              Our multidisciplinary team brings together architects, structural engineers, MEP specialists, 
-              and VDC managers with an average of 10+ years of industry experience. Certified in Autodesk 
-              Revit, Navisworks, and BIM 360, our professionals work across all LOD levels from concept 
-              through construction. We operate 24/7 across multiple time zones, ensuring your projects 
-              never stop moving. We don't just model — we understand construction from the ground up.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-bold text-white font-heading">75+</div>
-                <div className="text-white/70 mt-2 text-lg">Team Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-bold text-white font-heading">10+</div>
-                <div className="text-white/70 mt-2 text-lg">Years Avg. Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-bold text-white font-heading">24/7</div>
-                <div className="text-white/70 mt-2 text-lg">Global Operations</div>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl md:text-7xl font-bold text-white font-heading">500+</div>
-                <div className="text-white/70 mt-2 text-lg">Projects Delivered</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TeamSection officeTeamImage={officeTeamImage} />
 
       {/* Stats Bar with Rolling Numbers */}
       <section className="py-16 bg-foreground">
