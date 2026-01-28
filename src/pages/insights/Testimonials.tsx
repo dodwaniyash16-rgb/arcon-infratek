@@ -27,7 +27,7 @@ const testimonials = [
     quote: "Their MEP coordination expertise is unmatched. We've reduced our RFIs significantly since partnering with them.",
     author: "Jennifer Walsh",
     role: "MEP Coordinator",
-    company: "DPR Construction",
+    company: "MKS Construction",
     rating: 5,
   },
   {
