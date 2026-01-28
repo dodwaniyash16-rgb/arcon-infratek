@@ -5,7 +5,7 @@ const testimonials = [
     quote: "Arcon Infratek delivered exactly what we needed, on time and with zero rework. Their team understood our standards from day one.",
     author: "James Mitchell",
     role: "VDC Director",
-    company: "Turner Construction",
+    company: "Gilbane Building",
   },
   {
     quote: "We've worked with several BIM providers. Arcon stands out for their communication and consistency. Models arrive ready to use.",
